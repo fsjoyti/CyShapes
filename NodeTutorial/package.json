@@ -1,0 +1,10 @@
+{
+  "name": "example-server",
+  "version": "0.0.1",
+  "description": "An example server",
+  "main": "example.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  }
+}
