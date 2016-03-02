@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\square.png",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\square.png"
+    },
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\skybackground.png",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\skybackground.png"
+    },
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    }
+]
