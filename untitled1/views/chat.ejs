@@ -22,14 +22,40 @@
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
     var socket = io();
+
     $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
+        var date = new Date();
+        var response = {
+            date: (addZero(date.getUTCMonth() + 1)) + "/"
+                    + addZero(date.getUTCDate()) + "/"
+                    + date.getFullYear() + " "
+                    + addZero(changeTime(date.getHours())) + ":"
+                    + addZero(date.getMinutes()) + ":"
+                    + addZero(date.getSeconds()),
+            message: $('#m').val()
+        };
+        socket.emit('chat message', JSON.stringify(response));
         $('#m').val('');
         return false;
     });
     socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
+        var message = JSON.parse(msg, function(){
+            var str = msg.toString();
+            var ret = str.substring(9, 28) + ">    " + str.substring(41, str.length - 2);
+            return ret;
+        });
+        $('#messages').append($('<li>').text(message));
     });
+
+    function addZero(x) {
+        String(x).length < 2 ? x = String("0" + x) : x = String(x);
+        return x;
+    }
+
+    function changeTime(x) {
+        x > 12 ? x = String((x - 12)) : x = String(x);
+        return x;
+    }
 </script>
 </body>
 </html>
