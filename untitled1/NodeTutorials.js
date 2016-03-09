@@ -20,7 +20,7 @@ var config = require('./config.js');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
-
+var favicon = require('static-favicon');
 var flash = require('connect-flash');
 app.use(logger('dev'));
 require('./Config/passport')(passport);

@@ -2,6 +2,9 @@
  * Created by Anastasia on 3/3/2016.
  */
 var User = require('./Models/Users');
+var nodemailer = require('nodemailer');
+var async = require ('async');
+
 
 module.exports = function(app,passport){
     app.get('/index',function(req,res){
@@ -39,6 +42,20 @@ module.exports = function(app,passport){
     app.get('/chat', function(req, res){
         res.render('chat.ejs');
     });
+    app.get('/forgot', function(req, res) {
+        res.render('Forgot.ejs');
+    });
+    app.post('/forgot',function(req,res,next){
+        async.waterfall([
+            function (done){
+
+            }
+
+        ])
+
+    }
+    );
+
 
     app.get('/logout',function(req,res){
         req.logout();
