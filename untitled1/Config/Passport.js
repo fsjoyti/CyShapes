@@ -41,8 +41,7 @@ module.exports = function(passport){
 
 
                         newUser.local.email    = email;
-                        newUser.local.password = password;
-
+                        newUser.local.password = newUser.generateHash(password);
 
                         newUser.save(function(err) {
                             if (err)
@@ -68,7 +67,7 @@ module.exports = function(passport){
                     if(!user){
                         return done(null,false,req.flash('LoginMessage','No User found'));
                     }
-                    if (user.local.password!=password)
+                    if (!user.validPassword(password))
                         return done(null,false,req.flash('LoginMessage','invalid password'));
                     return done(null,user);
 
