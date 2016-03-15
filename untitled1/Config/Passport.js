@@ -3,6 +3,9 @@
  */
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../Routes/Models/Users');
+var nodemailer = require('nodemailer');
+var async = require ('async');
+var crypto = require ('crypto');
 module.exports = function(passport){
     passport.serializeUser(function(user,done){
         done(null,user.id);
@@ -75,6 +78,8 @@ module.exports = function(passport){
             });
         }
     ));
+
+
 
 
 
