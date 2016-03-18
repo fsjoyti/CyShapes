@@ -22,6 +22,7 @@ var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
 var favicon = require('static-favicon');
 var flash = require('connect-flash');
+var mongooseadmin = require('mongooseadmin');
 app.use(logger('dev'));
 require('./Config/passport')(passport);
 
@@ -33,9 +34,12 @@ app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use('/admin',mongooseadmin());
+
 
 
 require('./Routes/Routes.js')(app,passport);
+require('./Controllers/admin.js')(app);
 
 app.get('/process_get', urlencodedParser, function (req, res) {
     // Prepare output in JSON format

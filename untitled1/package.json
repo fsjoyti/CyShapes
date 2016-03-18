@@ -18,6 +18,7 @@
     "httpdispatcher": "^1.0.0",
     "io": "^0.1.10",
     "mongoose": "^4.4.6",
+    "mongooseadmin": "^1.0.5",
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
     "nodemailer": "^2.3.0",
