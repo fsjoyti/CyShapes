@@ -71,8 +71,8 @@ module.exports = function(app,passport){
                     user.local.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
                     user.save(function(err) {
-                        console.log(""+user.local.email);
-                        console.log(""+user.local.resetPasswordToken);
+                        //console.log(""+user.local.email);
+                        //console.log(""+user.local.resetPasswordToken);
                         if(err) throw err;
                         done(null, token, user);
                     });
@@ -105,7 +105,10 @@ module.exports = function(app,passport){
                     from : 'passwordreset@Cyshapes.com',
                     to   :  ''+user.local.email,
                     subject : 'Password reset for your CyShapes Account',
-                    text :'hello user reset password token is '+token
+                    text : 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+                'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+                'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+                'If you did not request this, please ignore this email and your password will remain unchanged.\n'
                 }
                 transporter.sendMail(messages, function(err) {
                     req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
@@ -125,6 +128,75 @@ module.exports = function(app,passport){
             if (err) return next(err);
             res.redirect('/forgot');
         });
+    });
+    app.get('/reset/:token', function(req, res) {
+        User.findOne({'local.resetPasswordToken' : req.params.token, 'local.resetPasswordExpires': { $gt: Date.now() } }, function(err, user) {
+            if (!user) {
+                req.flash('error', 'Password reset token is invalid or has expired.');
+                return res.redirect('/forgot');
+            }
+            console.log(''+req.params.token);
+            res.render('PasswordReset.ejs',{message:req.flash('success')} );
+        });
+    });
+    app.post('/reset/:token', function(req, res) {
+        console.log(req.params.token);
+        async.waterfall([
+            function(done) {
+
+                User.findOne({'local.resetPasswordToken' : req.params.token, 'local.resetPasswordExpires': { $gt: Date.now() } }, function(err, user) {
+                    if (!user) {
+                        req.flash('error', 'Password reset token is invalid or has expired.');
+                        return res.redirect('/forgot');
+                    }
+                    user.local.password = req.body.password;
+                    user.local.resetPasswordToken = undefined;
+                    user.local.resetPasswordExpires = undefined;
+                    user.save(function(err) {
+                        console.log(""+req.body.password);
+                        console.log(""+user.local.password);
+
+                        if(err) throw err;
+                        done( null, user);
+                    });
+
+                });
+
+            },
+
+            function( user,done) {
+
+
+                var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+
+
+                var messages = {
+                    from : 'passwordreset@Cyshapes.com',
+                    to   :  ''+user.local.email,
+                    subject : 'Your password for CyShapes Account',
+                    text: 'Hello,\n\n' +
+                    'This is a confirmation that the password for your account ' + user.local.email + ' has just been changed.\n'
+                }
+                transporter.sendMail(messages, function(err) {
+                    req.flash('success', 'Success! Your password has been changed.');
+                    done(err, 'done');
+                });
+
+                transporter.verify(function(error,success){
+                    if(error){
+                        console.log("Error!");
+                    }
+                    else{
+                        console.log("Server is ready to take messages!");
+
+                    }
+                });
+            }
+        ], function(err) {
+            if (err)  throw err;
+             res.redirect('/index');
+        });
+
     });
     app.get('/logout',function(req,res){
         req.logout();
