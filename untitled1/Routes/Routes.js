@@ -47,6 +47,7 @@ module.exports = function(app,passport){
         res.render('Forgot.ejs', {message:req.flash('info')});
     });
 
+
     app.post('/forgot', function(req, res, next) {
         async.waterfall([
             function(done) {
@@ -111,6 +112,15 @@ module.exports = function(app,passport){
         }
     );
 };
+
+app.all("/admin/*",isLoggedIn , function(req, res, next) {
+    next();
+});
+app.get("/admin/users", function(req, res) {
+    // if we got here, the `app.all` call above has already
+    // ensured that the user is logged in
+    res.render('admin.ejs');
+});
 
 function  isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
