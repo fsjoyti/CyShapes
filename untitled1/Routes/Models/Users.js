@@ -36,7 +36,7 @@ UserSchema.methods.canPlayRoleOf = function(role) {
 
     return false;
 };
-userSchema.methods.defaultReturnUrl = function() {
+UserSchema.methods.defaultReturnUrl = function() {
     var returnUrl = '/index';
 
 

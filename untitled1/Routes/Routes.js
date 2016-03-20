@@ -5,6 +5,8 @@ var User = require('./Models/Users');
 var nodemailer = require('nodemailer');
 var async = require ('async');
 var crypto = require ('crypto');
+var smtpTransport = require('nodemailer-smtp-transport');
+
 
 
 module.exports = function(app,passport){
@@ -77,17 +79,20 @@ module.exports = function(app,passport){
                 });
             },
             function(token, user, done) {
-                var smtpTransport = nodemailer.createTransport('SMTP', {
-                    host:'smtp.gmail.com',
-                    port:465,
-                    secure:true,
-                    auth: {
-                        user: 'fam211092@gmail.com',
-                        pass: 'AnaSHINee21@'
+                var options = {
+                    service : 'gmail',
+                    auth : {
+                        user : 'fam211092@gmail.com',
+                        password: 'AnaSHINee21@'
                     }
-                });
+
+
+                }
+                var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+
+                /*
                 var messages= [
-                    'to: user.email',
+                    'to: user.local.email',
                     'from: passwordreset@demo.com',
                     'subject: Node.js Password Reset',
                     'text: You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
@@ -95,10 +100,25 @@ module.exports = function(app,passport){
                     'http://' + req.headers.host + '/reset/' + token + '\n\n' +
                     'If you did not request this, please ignore this email and your password will remain unchanged.\n'
                 ];
-
-                smtpTransport.sendMail(mailOptions, function(err) {
-                    req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+*/
+                var messages = {
+                    from : 'passwordreset@Cyshapes.com',
+                    to   :  ''+user.local.email,
+                    subject : 'Password reset for your CyShapes Account',
+                    text :'hello user reset password token is '+token
+                }
+                transporter.sendMail(messages, function(err) {
+                    req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
                     done(err, 'done');
+                });
+
+                transporter.verify(function(error,success){
+                    if(error){
+                        console.log("Error!");
+                    }
+                    else{
+                        console.log("Server is ready to take messages!");
+                    }
                 });
             }
         ], function(err) {
@@ -111,16 +131,18 @@ module.exports = function(app,passport){
         res.redirect('/index');
         }
     );
+
+    app.all("/admin/*",isLoggedIn , function(req, res, next) {
+        next();
+    });
+    app.get("/admin/users", function(req, res) {
+        // if we got here, the `app.all` call above has already
+        // ensured that the user is logged in
+        res.render('admin.ejs');
+    });
 };
 
-app.all("/admin/*",isLoggedIn , function(req, res, next) {
-    next();
-});
-app.get("/admin/users", function(req, res) {
-    // if we got here, the `app.all` call above has already
-    // ensured that the user is logged in
-    res.render('admin.ejs');
-});
+
 
 function  isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
