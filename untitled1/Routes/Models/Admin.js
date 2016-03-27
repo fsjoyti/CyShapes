@@ -9,7 +9,7 @@ var AdminSchema = new Schema({
         email: {type: String, default: ''}
 
 },
-    groups: [{ type: String, ref: 'AdminGroup' }],
+
     permissions: [{
         name: String,
         permit: Boolean
@@ -17,4 +17,13 @@ var AdminSchema = new Schema({
     timeCreated: { type: Date, default: Date.now }
 
 });
+AdminSchema.methods.hasPermissionTo = function(permission){
+    for (var k = 0; k < this.permissions[k].name == permission;k++){
+        if(this.permissions[k].permit){
+            return true;
+        }
+        return false;
+    }
+
+};
 module.exports = mongoose.model('Admin',AdminSchema);

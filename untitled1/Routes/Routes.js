@@ -37,7 +37,7 @@ module.exports = function(app,passport){
         }
     ));
 
-    app.get('/profile',isLoggedIn,function(req,res){
+    app.get('/profile',function(req,res){
         res.render('profile.ejs',{user:req.user});
         }
     );
@@ -66,6 +66,7 @@ module.exports = function(app,passport){
                         req.flash('error', 'No account with that email address exists.');
                         return res.redirect('/forgot');
                     }
+
 
                     user.local.resetPasswordToken = token;
                     user.local.resetPasswordExpires = Date.now() + 3600000; // 1 hour
@@ -149,7 +150,7 @@ module.exports = function(app,passport){
                         req.flash('error', 'Password reset token is invalid or has expired.');
                         return res.redirect('/forgot');
                     }
-                    user.local.password = req.body.password;
+                    user.local.password = user.generateHash(req.body.password);
                     user.local.resetPasswordToken = undefined;
                     user.local.resetPasswordExpires = undefined;
                     user.save(function(err) {
@@ -212,6 +213,33 @@ module.exports = function(app,passport){
         // ensured that the user is logged in
         res.render('admin.ejs');
     });
+    app.get("/game", function(req, res) {
+        // if we got here, the `app.all` call above has already
+        // ensured that the user is logged in
+        res.render('game.ejs');
+    });
+    app.get("/search", function(req, res) {
+        // if we got here, the `app.all` call above has already
+        // ensured that the user is logged in
+        res.render('search.ejs',{message:req.flash('searchMessage')});
+    });
+    app.post("/search", function(req, res) {
+        User.findOne({ 'local.email' :  req.body.email }, function(err, user) {
+
+            if (err)
+                return done(err);
+
+
+            if (!user) {
+                return done(null, false, req.flash('searchMessage', 'User not found!'));
+            } else {
+
+
+            }
+        });
+
+    });
+
 };
 
 
