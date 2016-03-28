@@ -60,12 +60,20 @@
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_three.xml",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\layout\\activity_three.xml"
+    },
+    {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_two.xml",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\layout\\activity_two.xml"
     },
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
@@ -162,6 +170,10 @@
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",

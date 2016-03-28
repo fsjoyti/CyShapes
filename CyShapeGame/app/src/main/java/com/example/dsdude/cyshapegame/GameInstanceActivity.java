@@ -10,7 +10,7 @@ public class GameInstanceActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new GamePanel(this));
+        setContentView(new GameView(this));
     }
 
 //    @Override
