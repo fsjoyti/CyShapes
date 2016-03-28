@@ -17,6 +17,8 @@
 <ul id="messages"></ul>
 <form action="">
     <input id="m" autocomplete="off" /><button>Send</button>
+    <br>
+    <input id="g" autocomplete="off" /><button>Join</button>
 </form>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -35,6 +37,7 @@
             message: $('#m').val()
         };
         socket.emit('chat message', JSON.stringify(response));
+        socket.emit('hostCreateNewGame', JSON.stringify(response));
         $('#m').val('');
         return false;
     });

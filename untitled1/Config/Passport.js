@@ -3,6 +3,9 @@
  */
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../Routes/Models/Users');
+var nodemailer = require('nodemailer');
+var async = require ('async');
+var crypto = require ('crypto');
 module.exports = function(passport){
     passport.serializeUser(function(user,done){
         done(null,user.id);
@@ -41,8 +44,7 @@ module.exports = function(passport){
 
 
                         newUser.local.email    = email;
-                        newUser.local.password = password;
-
+                        newUser.local.password = newUser.generateHash(password);
 
                         newUser.save(function(err) {
                             if (err)
@@ -68,7 +70,7 @@ module.exports = function(passport){
                     if(!user){
                         return done(null,false,req.flash('LoginMessage','No User found'));
                     }
-                    if (user.local.password!=password)
+                    if (!user.validPassword(password))
                         return done(null,false,req.flash('LoginMessage','invalid password'));
                     return done(null,user);
 
@@ -76,6 +78,8 @@ module.exports = function(passport){
             });
         }
     ));
+
+
 
 
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <!-- Ensure that everything scales appropriately on a mobile device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Let's borrow a cool looking Font from Google -->
+
+</head>
+
+<body>
+<div id="gameArea">
+    <!-- This is where the templates defined below will be used -->
+    <canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #000000;">
+    </canvas>
+    <button onclick="startup()">Initialize</button>
+</div>
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script>
+    var socket = io();
+    var e1 = document.getElementById("myCanvas");
+    e1.addEventListener("touchstart", handleStart, false);
+    e1.addEventListener("touchend", handleEnd, false);
+    e1.addEventListener("touchcancel", handleCancel, false);
+    e1.addEventListener("touchmove", handleMove, false);
+    var ongoingTouches = new Array();
+    var canvas = e1.getContext("2d");
+
+    canvas.font = '30px Arial';
+    socket.on('newPosition',function(data){
+        canvas.clearRect(0,0,500,500);
+        for(var i = 0;i < data.length;i++)
+        canvas.fillText(data[i].number,data[i].x,data[i].y);
+
+    });
+</script>
+<div id="gameArea">
+    <!-- This is where the templates defined below will be used -->
+<button onclick="createNewGame()">Join Game</button>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+</body>
+</html>
