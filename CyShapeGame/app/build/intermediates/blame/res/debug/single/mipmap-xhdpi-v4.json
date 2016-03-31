@@ -1,11 +1,16 @@
 [
     {
+<<<<<<< Updated upstream
         "merged": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\square.png",
         "source": "C:\\SeveralMidgets\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\square.png"
     },
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\square.png",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\square.png"
+=======
+        "merged": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\skybackground.png",
+        "source": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\skybackground.png"
+>>>>>>> Stashed changes
     },
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\skybackground.png",
@@ -22,5 +27,17 @@
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\square.png",
+        "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\square.png"
+    },
+    {
+        "merged": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\square.png",
+        "source": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\square.png"
+    },
+    {
+        "merged": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]

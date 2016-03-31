@@ -385,7 +385,11 @@
         ]
     },
     {
+<<<<<<< Updated upstream
         "outputFile": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+        "outputFile": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
         "map": [
             {
                 "to": {
@@ -396,7 +400,11 @@
                     "endOffset": 168
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -415,7 +423,11 @@
                     "endOffset": 276
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -434,7 +446,11 @@
                     "endOffset": 399
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -453,7 +469,11 @@
                     "endOffset": 505
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -472,7 +492,11 @@
                     "endOffset": 612
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -491,7 +515,11 @@
                     "endOffset": 702
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -510,7 +538,11 @@
                     "endOffset": 803
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -529,7 +561,11 @@
                     "endOffset": 918
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -548,7 +584,11 @@
                     "endOffset": 995
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -567,7 +607,11 @@
                     "endOffset": 1073
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -586,7 +630,11 @@
                     "endOffset": 1153
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -605,7 +653,11 @@
                     "endOffset": 1265
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -624,7 +676,11 @@
                     "endOffset": 1367
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -643,7 +699,11 @@
                     "endOffset": 1463
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -662,7 +722,11 @@
                     "endOffset": 1572
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -681,7 +745,11 @@
                     "endOffset": 1673
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -700,7 +768,11 @@
                     "endOffset": 1788
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -719,7 +791,11 @@
                     "endOffset": 1911
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -738,7 +814,11 @@
                     "endOffset": 2016
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -757,7 +837,11 @@
                     "endOffset": 2117
                 },
                 "from": {
+<<<<<<< Updated upstream
                     "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+=======
+                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-mr-rIN\\values-mr-rIN.xml",
+>>>>>>> Stashed changes
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,

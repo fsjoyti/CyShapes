@@ -550,6 +550,7 @@ int drawable abc_textfield_default_mtrl_alpha 0x7f020041
 int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020042
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020043
 int drawable abc_textfield_search_material 0x7f020044
+<<<<<<< Updated upstream
 int drawable bluecircle 0x7f020045
 int drawable bluesquare 0x7f020046
 int drawable bluetriangle 0x7f020047
@@ -570,6 +571,16 @@ int drawable spacebackground 0x7f020054
 int drawable square 0x7f020055
 int drawable squareresized 0x7f020056
 int drawable star 0x7f020057
+=======
+int drawable buttonshape 0x7f020045
+int drawable design_fab_background 0x7f020046
+int drawable design_snackbar_background 0x7f020047
+int drawable homescreenbackground 0x7f020048
+int drawable notification_template_icon_bg 0x7f02004c
+int drawable spacebackground 0x7f020049
+int drawable square 0x7f02004a
+int drawable star 0x7f02004b
+>>>>>>> Stashed changes
 int id action0 0x7f0c0078
 int id action_bar 0x7f0c005a
 int id action_bar_activity_content 0x7f0c0000

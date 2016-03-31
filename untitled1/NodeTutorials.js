@@ -66,8 +66,24 @@ var Player = function(id){
         x:250,
         y:250,
         id:id,
-        number:""+ Math.floor(10 * Math.random())
+        number:""+ Math.floor(10 * Math.random()),
+        pressingRight:false,
+        pressingLeft:false,
+        pressingUp:false,
+        pressingDown:false,
+        maxSpd:10
     }
+    self.updatePosition = function(){
+        if(self.pressingRight)
+            self.x += self.maxSpd;
+        if(self.pressingLeft)
+            self.x -= self.maxSpd;
+        if(self.pressingUp)
+            self.y -= self.maxSpd;
+        if(self.pressingDown)
+            self.y += self.maxSpd;
+    }
+
     return self;
 
 }
@@ -85,6 +101,9 @@ io.on('connection', function(socket){
 
     //Useful to know when someone connects
     console.log('\t socket.io:: player ' + socket.id + ' connected');
+    socket.on('hostCreateNewGame', hostCreateNewGame);
+    socket.on('hostRoomFull',hostPrepareNewGame);
+    socket.on('hostCountdownFinished', hostStartGame);
 
 
     socket.on('disconnect', function(){
@@ -93,7 +112,41 @@ io.on('connection', function(socket){
         delete Socket_List[socket.id];
         delete Player_List[socket.id];
     });
+    socket.on('keyPress',function(data){
+        if(data.inputId === 'left')
+            player.pressingLeft = data.state;
+        else if(data.inputId === 'right')
+            player.pressingRight = data.state;
+        else if(data.inputId === 'up')
+            player.pressingUp = data.state;
+        else if(data.inputId === 'down')
+            player.pressingDown = data.state;
+    });
 });
+var thisGameId;
+
+function hostCreateNewGame() {
+    // Create a unique Socket.IO Room
+     thisGameId = ( Math.random() * 100000 ) | 0;
+
+    // Return the Room ID (gameId) and the socket ID (mySocketId) to the browser client
+    this.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id});
+
+    // Join the Room and wait for the players
+    this.join(thisGameId.toString());
+};
+function hostPrepareNewGame(){
+    var data = {
+        mySocketId : socket.id,
+        gameId : thisGameId
+    };
+    //console.log("All Players Present. Preparing game...");
+    sockets.in(data.gameId).emit('beginNewGame', data);
+
+}
+function hostStartGame(){
+    console.log('Game Started.');
+}
 setInterval(function(){
     var pack = [];
     for (var i in Player_List){
