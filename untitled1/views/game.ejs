@@ -61,6 +61,9 @@
       var text=  JSON.stringify(response);
         socket.emit('hostRoomFull',response);
     });
+    socket.on('beginNewGame',function(data){
+        console.log(data);
+    });
 
 
     socket.on('newPosition',function(data){

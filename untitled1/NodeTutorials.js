@@ -118,15 +118,22 @@ io.on('connection', function(socket){
 
     socket.on('hostRoomFull',function(data){
 
-        /*
+
             var sock = this;
             var data = {
                 mySocketId : sock.id,
-                gameId : gameId
+                gameId :data.gameId
             };
-        sockets.in(data.gameId).emit('beginNewGame',data);
-        */
-        console.log(""+data.gameId);
+
+            try {
+                socket.in(data.gameId).emit('beginNewGame',data);  // generates an exception
+            }
+            catch (e) {
+                // statements to handle any exceptions
+                    console.log("Error!");// pass exception object to error handler
+            }
+
+
 
     }
     );
