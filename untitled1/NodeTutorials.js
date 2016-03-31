@@ -87,6 +87,7 @@ var Player = function(id){
     return self;
 
 }
+var thisGameId;
 io.on('connection', function(socket){
     console.log('a user connected');
 
@@ -101,8 +102,28 @@ io.on('connection', function(socket){
 
     //Useful to know when someone connects
     console.log('\t socket.io:: player ' + socket.id + ' connected');
-    socket.on('hostCreateNewGame', hostCreateNewGame);
-    socket.on('hostRoomFull',hostPrepareNewGame);
+    socket.on('hostCreateNewGame', function(){
+            thisGameId = ( Math.random() * 100000 ) | 0;
+            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: this.id});
+            console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
+
+            // Join the Room and wait for the players
+            socket.join(thisGameId.toString());
+        console.log(thisGameId.toString());
+
+    }
+    );
+
+
+    socket.on('hostRoomFull',function(gameId){
+            var sock = this;
+            var data = {
+                mySocketId : sock.id,
+                gameId : gameId
+            };
+        sockets.in(data.gameId).emit('beginNewGame',data);
+    }
+    );
     socket.on('hostCountdownFinished', hostStartGame);
 
 
@@ -123,18 +144,9 @@ io.on('connection', function(socket){
             player.pressingDown = data.state;
     });
 });
-var thisGameId;
 
-function hostCreateNewGame() {
-    // Create a unique Socket.IO Room
-     thisGameId = ( Math.random() * 100000 ) | 0;
 
-    // Return the Room ID (gameId) and the socket ID (mySocketId) to the browser client
-    this.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id});
 
-    // Join the Room and wait for the players
-    this.join(thisGameId.toString());
-};
 function hostPrepareNewGame(){
     var data = {
         mySocketId : socket.id,

@@ -31,10 +31,16 @@
     var canvas = e1.getContext("2d");
 
     canvas.font = '30px Arial';
-    socket.on('hostCreateNewGame', function(data){
-        console.log(data);
+    socket.emit('hostCreateNewGame',function() {
+        socket.on('newGameCreated', function (data) {
+            var str = data.toString();
+            console.log(str);
+                }
+        );
+        console.log("Success");
     }
     );
+
     socket.on('newPosition',function(data){
         canvas.clearRect(0,0,500,500);
 
