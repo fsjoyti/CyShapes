@@ -110,19 +110,24 @@ io.on('connection', function(socket){
 
             //Join the Room and wait for the players
             socket.join(thisGameId.toString());
-        console.log(thisGameId.toString());
+
 
     }
     );
 
-/*
-    socket.on('hostRoomFull',function(gameId){
+
+    socket.on('hostRoomFull',function(data){
+
+        /*
             var sock = this;
             var data = {
                 mySocketId : sock.id,
                 gameId : gameId
             };
         sockets.in(data.gameId).emit('beginNewGame',data);
+        */
+        console.log(""+data.gameId);
+
     }
     );
     socket.on('hostCountdownFinished',function(){
@@ -130,7 +135,7 @@ io.on('connection', function(socket){
 
     });
 
-*/
+
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );

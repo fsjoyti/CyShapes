@@ -17,8 +17,11 @@
     </canvas>
 
 </div>
+<button type='button' id = "button1">
+    Create a new  game
+</button>
 <button type='button' id = "button2">
-    Create New Game
+    Join an existing game
 </button>
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
@@ -38,18 +41,26 @@
 
     });
 
+
+    $('#button1').click(function(){
         socket.emit('hostCreateNewGame',{message:'Client message'},function() {
 
 
                     console.log("Success");
                 }
         );
+        socket.on('newGameCreated', function(data){
+            console.log("Game id is : "+data.gameId+"Your socket id is  "+data.mySocketId);
 
-    socket.on('newGameCreated', function(data){
-        console.log("Game id is : "+data.gameId+"Your socket id is  "+data.mySocketId);
-
+        });
     });
 
+
+    $('#button2').click(function(){
+        var response = {gameId :$('#text').val()};
+      var text=  JSON.stringify(response);
+        socket.emit('hostRoomFull',response);
+    });
 
 
     socket.on('newPosition',function(data){
