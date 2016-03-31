@@ -102,19 +102,20 @@ io.on('connection', function(socket){
 
     //Useful to know when someone connects
     console.log('\t socket.io:: player ' + socket.id + ' connected');
-    socket.on('hostCreateNewGame', function(){
+    socket.on('hostCreateNewGame', function(data){
+                console.log(data);
             thisGameId = ( Math.random() * 100000 ) | 0;
-            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: this.id});
-            console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
+            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id});
+           // console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
 
-            // Join the Room and wait for the players
+            //Join the Room and wait for the players
             socket.join(thisGameId.toString());
         console.log(thisGameId.toString());
 
     }
     );
 
-
+/*
     socket.on('hostRoomFull',function(gameId){
             var sock = this;
             var data = {
@@ -124,9 +125,12 @@ io.on('connection', function(socket){
         sockets.in(data.gameId).emit('beginNewGame',data);
     }
     );
-    socket.on('hostCountdownFinished', hostStartGame);
+    socket.on('hostCountdownFinished',function(){
+        console.log('Game Started.');
 
+    });
 
+*/
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
