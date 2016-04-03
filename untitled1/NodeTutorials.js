@@ -88,7 +88,8 @@ var Player = function(id){
 
 }
 var thisGameId;
-io.on('connection', function(socket){
+
+io.sockets.on('connection', function(socket){
     console.log('a user connected');
 
     socket.id = Math.random();
@@ -104,39 +105,46 @@ io.on('connection', function(socket){
     console.log('\t socket.io:: player ' + socket.id + ' connected');
     socket.on('hostCreateNewGame', function(data){
                 console.log(data);
+            //socket.room = 'room1';
+        //socket.join('room1');
             thisGameId = ( Math.random() * 100000 ) | 0;
-            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id});
+            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id,room:1});
+
+
+            socket.broadcast.to('room1').emit('updateGame', {message: socket.id+'connected to room1'});
+        socket.emit('updateGame',rooms,'room1');
            // console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
 
             //Join the Room and wait for the players
             socket.join(thisGameId.toString());
+                socket.room = thisGameId.toString();
+            var clients = io.sockets.adapter.rooms[thisGameId.toString()];
+            console.log(clients);
 
 
     }
     );
 
-
-    socket.on('hostRoomFull',function(data){
-
-
-            var sock = this;
-            var data = {
-                mySocketId : sock.id,
-                gameId :data.gameId
-            };
-
-            try {
-                socket.in(data.gameId).emit('beginNewGame',data);  // generates an exception
-            }
-            catch (e) {
-                // statements to handle any exceptions
-                    console.log("Error!");// pass exception object to error handler
-            }
+    socket.on('sendMessage', function (data) {
+        console.log(data.gameId);
+        console.log(io.sockets.adapter.rooms[data.gameId]);
+        if(io.sockets.adapter.rooms[data.gameId]!=undefined){
+            socket.join(data.gameId);
+            console.log(io.sockets.adapter.rooms[data.gameId]);
+            socket.emit('joinPlayer',{message:'You successfully  joined the game'});
+        }
 
 
+        else {
+            console.log("Sorry the following room doesn't exist");
+            socket.emit('joinPlayer',{message:'Sorry the following room doesnot exist'});
+        }
 
-    }
-    );
+        //io.sockets.in(data.gameId).emit('updateGame',data);
+
+        //io.sockets.in(socket.room).emit('updateGame', socket.id, data);
+    });
+
     socket.on('hostCountdownFinished',function(){
         console.log('Game Started.');
 
@@ -146,6 +154,7 @@ io.on('connection', function(socket){
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
+        socket.leave(socket.room);
         delete Socket_List[socket.id];
         delete Player_List[socket.id];
     });
@@ -160,9 +169,31 @@ io.on('connection', function(socket){
             player.pressingDown = data.state;
     });
 });
+/*
+socket.on('hostRoomFull',function(data){
+
+
+        var sock = this;
+        var data = {
+            mySocketId : sock.id,
+            gameId :data.gameId
+        };
+
+        try {
+
+            io.sockets.in(data.gameId).emit('beginNewGame',data);
+            // generates an exception
+        }
+        catch (e) {
+            // statements to handle any exceptions
+            console.log("Error!");// pass exception object to error handler
+        }
 
 
 
+    }
+);
+*/
 function hostPrepareNewGame(){
     var data = {
         mySocketId : socket.id,

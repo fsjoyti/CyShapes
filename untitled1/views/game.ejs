@@ -53,13 +53,28 @@
             console.log("Game id is : "+data.gameId+"Your socket id is  "+data.mySocketId);
 
         });
+        socket.on('updateGame', function(data){
+            console.log(data);
+
+        });
+
+
+
     });
 
 
     $('#button2').click(function(){
         var response = {gameId :$('#text').val()};
       var text=  JSON.stringify(response);
-        socket.emit('hostRoomFull',response);
+
+        socket.emit('sendMessage',response,function(){
+
+        });
+
+    });
+    socket.on('joinPlayer',function(data){
+        console.log(data);
+
     });
     socket.on('beginNewGame',function(data){
         console.log(data);
