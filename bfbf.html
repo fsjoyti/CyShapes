@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+<img  style="position:absolute;" src = "PLYGON26.jpg" id = "image1"  draggable="true" height="50px" width = "50px">
+
+<script>
+var el = document.getElementById('image1');
+var hammer = Hammer(el, {
+    drag: true,
+    drag_block_horizontal: true,
+    drag_block_vertical:true,
+    drag_min_distance: 3,
+    gesture:true,
+    hold: false,
+    release: true,
+    swipe: false,
+    tap: false,
+    touch: false,
+    transform: false
+});
+
+var lastPosx = 0 +'px';
+var lastPosty = 0 +'px';
+hammer.on("drag transform", function(event) {
+
+
+    el.style.left = event.gesture.deltaX +'px';
+
+    el.style.top = event.gesture.deltaY +'px';
+
+
+
+});
+
+
+
+hammer.on("release", function() {
+
+    console.log('release');
+});
+</script>
+</body>
+</html>
