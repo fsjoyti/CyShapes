@@ -1,6 +1,7 @@
 package com.example.dsdude.cyshapegame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -53,7 +54,9 @@ public class MultiplayerLoopThread extends Thread {
             startTime = System.currentTimeMillis();
             long checkTime = endTime - System.currentTimeMillis();
             if (checkTime <= 0) {
-                break;   // Should probably show some "Game Over" screen
+                updateScores();
+                ((MultiplayerInstanceActivity) view.getContext()).changeActivity();
+                break;
             }
             try {
                 c = view.getHolder().lockCanvas();
@@ -90,6 +93,17 @@ public class MultiplayerLoopThread extends Thread {
             return;
         }
         socket.emit("send_position", data);
+    }
+
+    private void updateScores() {
+        JSONObject data = new JSONObject();
+        try {
+            data.put("score", view.players.get(0).getScore());
+            data.put("id", view.players.get(0).getID());
+        } catch (JSONException e) {
+            return;
+        }
+        socket.emit("update_score", data);
     }
 
     private Emitter.Listener update = new Emitter.Listener() {

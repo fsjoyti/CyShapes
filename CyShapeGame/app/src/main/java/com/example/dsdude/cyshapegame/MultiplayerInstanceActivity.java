@@ -1,6 +1,7 @@
 package com.example.dsdude.cyshapegame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,6 +40,11 @@ public class MultiplayerInstanceActivity extends Activity{
 
     public Socket getSocket() {
         return socket;
+    }
+
+    public void changeActivity(){
+        Intent homescreenIntent = new Intent(getApplicationContext(), HomeScreenActivity.class);
+        startActivity(homescreenIntent);
     }
 
     @Override

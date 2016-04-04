@@ -90,12 +90,14 @@ var Player = function(id){
 
 }
 var thisGameId;
+var numPlayers;
 
 io.sockets.on('connection', function(socket){
     console.log('a user connected');
 
     socket.id = Math.random();
     //player.id = socket.id;
+    numPlayers++;
     var endTime;
     Socket_List[socket.id] = socket;
     var player = Player(socket.id);
@@ -136,7 +138,6 @@ io.sockets.on('connection', function(socket){
     var i = 0;
     socket.on('send_position',function(data){
         console.log(data);
-
         endTime = data.time;
 
         //positionx[player.id] = data.x;
@@ -181,6 +182,7 @@ io.sockets.on('connection', function(socket){
 
 //TO DO LISTEN FOR JSON FROM THE CLIENT AND THEN TAKE THE JSON FROM THE CLIENT AND EMIT ALL THE POSITIONS WITH THEIR ID
     socket.on('disconnect', function(){
+        numPlayers--;
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
         socket.leave(socket.room);

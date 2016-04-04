@@ -10,6 +10,7 @@ public class Player extends GameObject {
     Bitmap createPlayer;    //create the player
     boolean playerFingerMove;
     int id;
+    int score;
 
     public Player(Bitmap bitmap, int id){
 
@@ -29,6 +30,13 @@ public class Player extends GameObject {
         this.id = id;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void updateScore(int score) {
+        this.score = score;
+    }
 
     public void Update(){
         //TODO
