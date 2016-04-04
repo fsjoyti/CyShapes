@@ -61,6 +61,8 @@ app.get('/chat', function(req, res){
 
 var Socket_List = {};
 var Player_List = {};
+var positionx = {};
+var positiony = {};
 var Player = function(id){
     var self = {
         x:250,
@@ -88,64 +90,100 @@ var Player = function(id){
 
 }
 var thisGameId;
-io.on('connection', function(socket){
+
+io.sockets.on('connection', function(socket){
     console.log('a user connected');
 
     socket.id = Math.random();
-
+    //player.id = socket.id;
 
     Socket_List[socket.id] = socket;
     var player = Player(socket.id);
+    player.id = socket.id;
+    console.log(player.id);
     Player_List[socket.id] = player;
     //tell the player they connected, giving them their id
     socket.emit('onconnected', { id: socket.id } );
-
+    socket .on('existing player',function(data){
+       console.log(data) ;
+    });
+    socket.broadcast.emit('new player connected' ,{id: socket.id});
     //Useful to know when someone connects
     console.log('\t socket.io:: player ' + socket.id + ' connected');
     socket.on('hostCreateNewGame', function(data){
                 console.log(data);
+            //socket.room = 'room1';
+        //socket.join('room1');
             thisGameId = ( Math.random() * 100000 ) | 0;
-            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id});
+
+            socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id,room:1});
+
+
+
            // console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
 
             //Join the Room and wait for the players
             socket.join(thisGameId.toString());
+                socket.room = thisGameId.toString();
+            var clients = io.sockets.adapter.rooms[thisGameId.toString()];
+            console.log(clients);
 
 
     }
     );
-
-
-    socket.on('hostRoomFull',function(data){
-
-
-            var sock = this;
-            var data = {
-                mySocketId : sock.id,
-                gameId :data.gameId
-            };
-
-            try {
-                socket.in(data.gameId).emit('beginNewGame',data);  // generates an exception
-            }
-            catch (e) {
-                // statements to handle any exceptions
-                    console.log("Error!");// pass exception object to error handler
-            }
+    var value = '';
+var array  = {};
+    var i = 0;
+    socket.on('send_position',function(data){
+        console.log(data);
 
 
 
-    }
-    );
+          positionx[player.id] = data.x;
+           positiony[player.id] = data.y;
+        socket.broadcast.emit('update', {x:positionx[player.id] ,y:positiony[player.id],id:player.id});
+        //io.sockets.emit('update',{x:positionx[player.id],y:positiony[player.id],id:player.id});
+
+
+
+
+    });
+
+io.sockets.emit('message',{message:'hello'});
+    io.sockets.emit('message',{x:positionx[player.id],y:positiony[player.id],id:player.id});
+
+
+    socket.on('sendMessage', function (data) {
+        console.log(data.gameId);
+        console.log(io.sockets.adapter.rooms[data.gameId]);
+        if(io.sockets.adapter.rooms[data.gameId]!=undefined){
+            socket.join(data.gameId);
+            console.log(io.sockets.adapter.rooms[data.gameId]);
+            socket.emit('joinPlayer',{message:'You successfully  joined the game'});
+        }
+
+
+        else {
+            console.log("Sorry the following room doesn't exist");
+            socket.emit('joinPlayer',{message:'Sorry the following room doesnot exist'});
+        }
+
+        //io.sockets.in(data.gameId).emit('updateGame',data);
+
+        //io.sockets.in(socket.room).emit('updateGame', socket.id, data);
+    });
+
     socket.on('hostCountdownFinished',function(){
         console.log('Game Started.');
 
     });
 
-
+//TO DO LISTEN FOR JSON FROM THE CLIENT AND THEN TAKE THE JSON FROM THE CLIENT AND EMIT ALL THE POSITIONS WITH THEIR ID
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
+        socket.leave(socket.room);
+        socket.emit('playerleft',{message:'another player left the room'});
         delete Socket_List[socket.id];
         delete Player_List[socket.id];
     });
@@ -160,9 +198,31 @@ io.on('connection', function(socket){
             player.pressingDown = data.state;
     });
 });
+/*
+socket.on('hostRoomFull',function(data){
+
+
+        var sock = this;
+        var data = {
+            mySocketId : sock.id,
+            gameId :data.gameId
+        };
+
+        try {
+
+            io.sockets.in(data.gameId).emit('beginNewGame',data);
+            // generates an exception
+        }
+        catch (e) {
+            // statements to handle any exceptions
+            console.log("Error!");// pass exception object to error handler
+        }
 
 
 
+    }
+);
+*/
 function hostPrepareNewGame(){
     var data = {
         mySocketId : socket.id,
@@ -184,11 +244,13 @@ setInterval(function(){
         pack.push({
             x:player.x,
             y:player.y,
-            number:player.number
+            number:player.number,
+            id: player.id
         });
         for (var i in Socket_List) {
             var socket = Socket_List[i];
             socket.emit('newPosition', pack);
+
         }
     }
 

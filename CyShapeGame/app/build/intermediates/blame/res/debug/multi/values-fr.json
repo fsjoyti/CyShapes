@@ -11,6 +11,7 @@
                     "endOffset": 161
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 4,
@@ -18,6 +19,15 @@
                         "startOffset": 229,
                         "endColumn": 110,
                         "endOffset": 335
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 110,
+                        "endOffset": 161
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -30,6 +40,7 @@
                     "endOffset": 269
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 5,
@@ -37,6 +48,15 @@
                         "startOffset": 340,
                         "endColumn": 107,
                         "endOffset": 443
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 166,
+                        "endColumn": 107,
+                        "endOffset": 269
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -49,6 +69,7 @@
                     "endOffset": 392
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 6,
@@ -56,6 +77,15 @@
                         "startOffset": 448,
                         "endColumn": 122,
                         "endOffset": 566
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 274,
+                        "endColumn": 122,
+                        "endOffset": 392
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -68,6 +98,7 @@
                     "endOffset": 507
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 7,
@@ -75,6 +106,15 @@
                         "startOffset": 571,
                         "endColumn": 114,
                         "endOffset": 681
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 397,
+                        "endColumn": 114,
+                        "endOffset": 507
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -87,6 +127,7 @@
                     "endOffset": 618
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 8,
@@ -94,6 +135,15 @@
                         "startOffset": 686,
                         "endColumn": 110,
                         "endOffset": 792
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 512,
+                        "endColumn": 110,
+                        "endOffset": 618
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -106,6 +156,7 @@
                     "endOffset": 700
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 9,
@@ -113,6 +164,15 @@
                         "startOffset": 797,
                         "endColumn": 81,
                         "endOffset": 874
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 623,
+                        "endColumn": 81,
+                        "endOffset": 700
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -125,6 +185,7 @@
                     "endOffset": 806
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 10,
@@ -132,6 +193,15 @@
                         "startOffset": 879,
                         "endColumn": 105,
                         "endOffset": 980
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 705,
+                        "endColumn": 105,
+                        "endOffset": 806
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -144,6 +214,7 @@
                     "endOffset": 936
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 11,
@@ -151,6 +222,15 @@
                         "startOffset": 985,
                         "endColumn": 129,
                         "endOffset": 1110
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 811,
+                        "endColumn": 129,
+                        "endOffset": 936
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -163,6 +243,7 @@
                     "endOffset": 1019
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 12,
@@ -170,6 +251,15 @@
                         "startOffset": 1115,
                         "endColumn": 82,
                         "endOffset": 1193
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 941,
+                        "endColumn": 82,
+                        "endOffset": 1019
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -182,6 +272,7 @@
                     "endOffset": 1099
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 13,
@@ -189,6 +280,15 @@
                         "startOffset": 1198,
                         "endColumn": 79,
                         "endOffset": 1273
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1024,
+                        "endColumn": 79,
+                        "endOffset": 1099
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -201,6 +301,7 @@
                     "endOffset": 1185
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 14,
@@ -208,6 +309,15 @@
                         "startOffset": 1278,
                         "endColumn": 85,
                         "endOffset": 1359
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1104,
+                        "endColumn": 85,
+                        "endOffset": 1185
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -220,6 +330,7 @@
                     "endOffset": 1295
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 15,
@@ -227,6 +338,15 @@
                         "startOffset": 1364,
                         "endColumn": 109,
                         "endOffset": 1469
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1190,
+                        "endColumn": 109,
+                        "endOffset": 1295
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -239,6 +359,7 @@
                     "endOffset": 1407
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 16,
@@ -246,6 +367,15 @@
                         "startOffset": 1474,
                         "endColumn": 111,
                         "endOffset": 1581
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1300,
+                        "endColumn": 111,
+                        "endOffset": 1407
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -258,6 +388,7 @@
                     "endOffset": 1510
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 17,
@@ -265,6 +396,15 @@
                         "startOffset": 1586,
                         "endColumn": 102,
                         "endOffset": 1684
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1412,
+                        "endColumn": 102,
+                        "endOffset": 1510
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -277,6 +417,7 @@
                     "endOffset": 1621
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 18,
@@ -284,6 +425,15 @@
                         "startOffset": 1689,
                         "endColumn": 110,
                         "endOffset": 1795
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1515,
+                        "endColumn": 110,
+                        "endOffset": 1621
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -296,6 +446,7 @@
                     "endOffset": 1728
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 19,
@@ -303,6 +454,15 @@
                         "startOffset": 1800,
                         "endColumn": 106,
                         "endOffset": 1902
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1626,
+                        "endColumn": 106,
+                        "endOffset": 1728
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -315,6 +475,7 @@
                     "endOffset": 1835
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 20,
@@ -322,6 +483,15 @@
                         "startOffset": 1907,
                         "endColumn": 106,
                         "endOffset": 2009
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1733,
+                        "endColumn": 106,
+                        "endOffset": 1835
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -334,6 +504,7 @@
                     "endOffset": 1957
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 21,
@@ -341,6 +512,15 @@
                         "startOffset": 2014,
                         "endColumn": 121,
                         "endOffset": 2131
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1840,
+                        "endColumn": 121,
+                        "endOffset": 1957
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -353,6 +533,7 @@
                     "endOffset": 2056
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 22,
@@ -360,6 +541,15 @@
                         "startOffset": 2136,
                         "endColumn": 98,
                         "endOffset": 2230
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1962,
+                        "endColumn": 98,
+                        "endOffset": 2056
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -372,13 +562,19 @@
                     "endOffset": 2157
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-fr\\values-fr.xml",
                     "position": {
                         "startLine": 23,
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-fr\\values-fr.xml",
+                    "position": {
+                        "startLine": 21,
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                         "startColumn": 4,
-                        "startOffset": 2235,
+                        "startOffset": 2061,
                         "endColumn": 100,
-                        "endOffset": 2331
+                        "endOffset": 2157
                     }
                 }
             }

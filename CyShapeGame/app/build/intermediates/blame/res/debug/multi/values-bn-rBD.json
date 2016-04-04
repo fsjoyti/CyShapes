@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-bn-rBD\\values-bn-rBD.xml",
+=======
+        "outputFile": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-bn-rBD\\values-bn-rBD.xml",
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
         "map": [
             {
                 "to": {
@@ -11,6 +15,7 @@
                     "endOffset": 159
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 4,
@@ -18,6 +23,15 @@
                         "startOffset": 233,
                         "endColumn": 108,
                         "endOffset": 337
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 108,
+                        "endOffset": 159
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -30,6 +44,7 @@
                     "endOffset": 267
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 5,
@@ -37,6 +52,15 @@
                         "startOffset": 342,
                         "endColumn": 107,
                         "endOffset": 445
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 107,
+                        "endOffset": 267
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -49,6 +73,7 @@
                     "endOffset": 390
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 6,
@@ -56,6 +81,15 @@
                         "startOffset": 450,
                         "endColumn": 122,
                         "endOffset": 568
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 272,
+                        "endColumn": 122,
+                        "endOffset": 390
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -68,6 +102,7 @@
                     "endOffset": 502
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 7,
@@ -75,6 +110,15 @@
                         "startOffset": 573,
                         "endColumn": 111,
                         "endOffset": 680
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 395,
+                        "endColumn": 111,
+                        "endOffset": 502
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -87,6 +131,7 @@
                     "endOffset": 608
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 8,
@@ -94,6 +139,15 @@
                         "startOffset": 685,
                         "endColumn": 105,
                         "endOffset": 786
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 507,
+                        "endColumn": 105,
+                        "endOffset": 608
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -106,6 +160,7 @@
                     "endOffset": 702
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 9,
@@ -113,6 +168,15 @@
                         "startOffset": 791,
                         "endColumn": 93,
                         "endOffset": 880
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 613,
+                        "endColumn": 93,
+                        "endOffset": 702
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -125,6 +189,7 @@
                     "endOffset": 807
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 10,
@@ -132,6 +197,15 @@
                         "startOffset": 885,
                         "endColumn": 104,
                         "endOffset": 985
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 707,
+                        "endColumn": 104,
+                        "endOffset": 807
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -144,6 +218,7 @@
                     "endOffset": 937
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 11,
@@ -151,6 +226,15 @@
                         "startOffset": 990,
                         "endColumn": 129,
                         "endOffset": 1115
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 812,
+                        "endColumn": 129,
+                        "endOffset": 937
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -163,6 +247,7 @@
                     "endOffset": 1015
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 12,
@@ -170,6 +255,15 @@
                         "startOffset": 1120,
                         "endColumn": 77,
                         "endOffset": 1193
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 942,
+                        "endColumn": 77,
+                        "endOffset": 1015
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -182,6 +276,7 @@
                     "endOffset": 1093
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 13,
@@ -189,6 +284,15 @@
                         "startOffset": 1198,
                         "endColumn": 77,
                         "endOffset": 1271
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1020,
+                        "endColumn": 77,
+                        "endOffset": 1093
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -201,6 +305,7 @@
                     "endOffset": 1180
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 14,
@@ -208,6 +313,15 @@
                         "startOffset": 1276,
                         "endColumn": 86,
                         "endOffset": 1358
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1098,
+                        "endColumn": 86,
+                        "endOffset": 1180
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -220,6 +334,7 @@
                     "endOffset": 1290
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 15,
@@ -227,6 +342,15 @@
                         "startOffset": 1363,
                         "endColumn": 109,
                         "endOffset": 1468
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1185,
+                        "endColumn": 109,
+                        "endOffset": 1290
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -239,6 +363,7 @@
                     "endOffset": 1406
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 16,
@@ -246,6 +371,15 @@
                         "startOffset": 1473,
                         "endColumn": 115,
                         "endOffset": 1584
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1295,
+                        "endColumn": 115,
+                        "endOffset": 1406
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -258,6 +392,7 @@
                     "endOffset": 1513
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 17,
@@ -265,6 +400,15 @@
                         "startOffset": 1589,
                         "endColumn": 106,
                         "endOffset": 1691
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1411,
+                        "endColumn": 106,
+                        "endOffset": 1513
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -277,6 +421,7 @@
                     "endOffset": 1623
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 18,
@@ -284,6 +429,15 @@
                         "startOffset": 1696,
                         "endColumn": 109,
                         "endOffset": 1801
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1518,
+                        "endColumn": 109,
+                        "endOffset": 1623
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -296,6 +450,7 @@
                     "endOffset": 1729
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 19,
@@ -303,6 +458,15 @@
                         "startOffset": 1806,
                         "endColumn": 105,
                         "endOffset": 1907
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1628,
+                        "endColumn": 105,
+                        "endOffset": 1729
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -315,6 +479,7 @@
                     "endOffset": 1839
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 20,
@@ -322,6 +487,15 @@
                         "startOffset": 1912,
                         "endColumn": 109,
                         "endOffset": 2017
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1734,
+                        "endColumn": 109,
+                        "endOffset": 1839
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -334,6 +508,7 @@
                     "endOffset": 1964
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 21,
@@ -341,6 +516,15 @@
                         "startOffset": 2022,
                         "endColumn": 124,
                         "endOffset": 2142
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1844,
+                        "endColumn": 124,
+                        "endOffset": 1964
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -353,6 +537,7 @@
                     "endOffset": 2069
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 22,
@@ -360,6 +545,15 @@
                         "startOffset": 2147,
                         "endColumn": 104,
                         "endOffset": 2247
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1969,
+                        "endColumn": 104,
+                        "endOffset": 2069
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -372,6 +566,7 @@
                     "endOffset": 2170
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-bn-rBD\\values-bn-rBD.xml",
                     "position": {
                         "startLine": 23,
@@ -379,6 +574,15 @@
                         "startOffset": 2252,
                         "endColumn": 100,
                         "endOffset": 2348
+=======
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2074,
+                        "endColumn": 100,
+                        "endOffset": 2170
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             }

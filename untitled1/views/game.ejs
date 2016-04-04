@@ -41,9 +41,26 @@
 
     });
 
-
+    socket.on('players_present',function(data){
+        console.log(data);
+    });
+    socket.on('new player connected',function(data)
+    {
+        console.log(data);
+    });
+    var xposition = Math.random();
+    var yposition =Math.random();
+    socket.on('message',function(data){
+        console.log(data);
+    });
+    socket.emit('send_position',{x:xposition,y:yposition});
+    socket.on('update',function(data){
+        console.log(data);
+    });
     $('#button1').click(function(){
-        socket.emit('hostCreateNewGame',{message:'Client message'},function() {
+
+        socket.emit('hostCreateNewGame',{message:'23'},function() {
+
 
 
                     console.log("Success");
@@ -53,28 +70,51 @@
             console.log("Game id is : "+data.gameId+"Your socket id is  "+data.mySocketId);
 
         });
+        socket.on('updateGame', function(data){
+            console.log(data);
+
+        });
+
+
+
     });
 
 
     $('#button2').click(function(){
         var response = {gameId :$('#text').val()};
       var text=  JSON.stringify(response);
-        socket.emit('hostRoomFull',response);
+
+        socket.emit('sendMessage',response,function(){
+
+        });
+
     });
+    socket.on('joinPlayer',function(data){
+        console.log(data);
+
+    });
+    socket.on('playerleft',function(data){
+        console.log(data);
+
+    });
+
     socket.on('beginNewGame',function(data){
         console.log(data);
     });
 
 
     socket.on('newPosition',function(data){
+
         canvas.clearRect(0,0,500,500);
 
         obj = {x:50,y:50,w:70,h:70};
         for(var i = 0;i < data.length;i++) {
             canvas.fillText(data[i].number, data[i].x, data[i].y);
-
+           //onsole.log(data[i].id);
 
         }
+
+
     });
         document.onkeydown - function(event){
             if (event.keyCode==68)

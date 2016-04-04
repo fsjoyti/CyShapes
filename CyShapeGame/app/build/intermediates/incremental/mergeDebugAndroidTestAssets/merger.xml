@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="C:\Users\DsDude\AndroidStudioProjects\CyShapeGame\app\src\androidTest\assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="C:\SeveralMidgets\CyShapeGame\app\src\androidTest\assets"/></dataSet></merger>
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e

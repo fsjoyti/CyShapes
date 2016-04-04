@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\skybackground.png",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-mdpi\\skybackground.png"
     },
@@ -10,5 +11,17 @@
     {
         "merged": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\square.png",
         "source": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\mipmap-mdpi\\square.png"
+=======
+        "merged": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\skybackground.png",
+        "source": "C:\\SeveralMidgets\\CyShapeGame\\app\\src\\main\\res\\mipmap-mdpi\\skybackground.png"
+    },
+    {
+        "merged": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\square.png",
+        "source": "C:\\SeveralMidgets\\CyShapeGame\\app\\src\\main\\res\\mipmap-mdpi\\square.png"
+    },
+    {
+        "merged": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\SeveralMidgets\\CyShapeGame\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
     }
 ]

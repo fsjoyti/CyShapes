@@ -13,6 +13,7 @@ public class Player extends View {
     Bitmap playerBitmap;    //player image
     Bitmap createPlayer;    //create the player
     boolean playerFingerMove;
+<<<<<<< HEAD
     float dX;
     float dY;
     int lastAction;
@@ -66,6 +67,35 @@ public class Player extends View {
                 return false;
         }
         return true;
+=======
+    int id;
+    int score;
+
+    public Player(Bitmap bitmap, int id){
+
+//        playerBitmap = bitmap;
+//        //playerResized = Bitmap.createScaledBitmap(playerBitmap, 40, 40, true);
+//        //createPlayer = Bitmap.createBitmap(playerBitmap, 50, 50, width, height);
+//        createPlayer = Bitmap.createBitmap(playerBitmap, 300, 300, 60, 40);
+        this.id = id;
+
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id = id;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void updateScore(int score) {
+        this.score = score;
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
     }
 
     public void Update(){
@@ -100,6 +130,7 @@ public class Player extends View {
 //        return super.dispatchTouchEvent(event);
 //    }
 
+<<<<<<< HEAD
 //    public void draw(Canvas canvas){
 //
 //        canvas.drawBitmap(createPlayer, 400, 400, null);
@@ -109,6 +140,9 @@ public class Player extends View {
         super.onDraw(canvas);
         canvas.drawCircle(x, y, r + 2, mWhite); //White stroke.
         canvas.drawCircle(x, y, r, mPaint); //Black circle.
+=======
+//        canvas.drawBitmap(createPlayer, 400, 400, null);
+>>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
     }
 
 }
