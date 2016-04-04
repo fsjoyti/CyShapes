@@ -61,6 +61,8 @@ app.get('/chat', function(req, res){
 
 var Socket_List = {};
 var Player_List = {};
+var positionx = {};
+var positiony = {};
 var Player = function(id){
     var self = {
         x:250,
@@ -93,14 +95,19 @@ io.sockets.on('connection', function(socket){
     console.log('a user connected');
 
     socket.id = Math.random();
-
+    //player.id = socket.id;
 
     Socket_List[socket.id] = socket;
     var player = Player(socket.id);
+    player.id = socket.id;
+    console.log(player.id);
     Player_List[socket.id] = player;
     //tell the player they connected, giving them their id
     socket.emit('onconnected', { id: socket.id } );
-
+    socket .on('existing player',function(data){
+       console.log(data) ;
+    });
+    socket.broadcast.emit('new player connected' ,{id: socket.id});
     //Useful to know when someone connects
     console.log('\t socket.io:: player ' + socket.id + ' connected');
     socket.on('hostCreateNewGame', function(data){
@@ -108,11 +115,11 @@ io.sockets.on('connection', function(socket){
             //socket.room = 'room1';
         //socket.join('room1');
             thisGameId = ( Math.random() * 100000 ) | 0;
+
             socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id,room:1});
 
 
-            socket.broadcast.to('room1').emit('updateGame', {message: socket.id+'connected to room1'});
-        socket.emit('updateGame',rooms,'room1');
+
            // console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
 
             //Join the Room and wait for the players
@@ -124,6 +131,27 @@ io.sockets.on('connection', function(socket){
 
     }
     );
+    var value = '';
+var array  = {};
+    var i = 0;
+    socket.on('send_position',function(data){
+        console.log(data);
+
+
+
+          positionx[player.id] = data.x;
+           positiony[player.id] = data.y;
+        socket.broadcast.emit('update', {x:positionx[player.id] ,y:positiony[player.id],id:player.id});
+        //io.sockets.emit('update',{x:positionx[player.id],y:positiony[player.id],id:player.id});
+
+
+
+
+    });
+
+io.sockets.emit('message',{message:'hello'});
+    io.sockets.emit('message',{x:positionx[player.id],y:positiony[player.id],id:player.id});
+
 
     socket.on('sendMessage', function (data) {
         console.log(data.gameId);
@@ -150,11 +178,12 @@ io.sockets.on('connection', function(socket){
 
     });
 
-
+//TO DO LISTEN FOR JSON FROM THE CLIENT AND THEN TAKE THE JSON FROM THE CLIENT AND EMIT ALL THE POSITIONS WITH THEIR ID
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
         socket.leave(socket.room);
+        socket.emit('playerleft',{message:'another player left the room'});
         delete Socket_List[socket.id];
         delete Player_List[socket.id];
     });
@@ -215,11 +244,13 @@ setInterval(function(){
         pack.push({
             x:player.x,
             y:player.y,
-            number:player.number
+            number:player.number,
+            id: player.id
         });
         for (var i in Socket_List) {
             var socket = Socket_List[i];
             socket.emit('newPosition', pack);
+
         }
     }
 
