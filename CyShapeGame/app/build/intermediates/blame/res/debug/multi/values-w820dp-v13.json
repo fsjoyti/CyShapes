@@ -1,10 +1,6 @@
 [
     {
-<<<<<<< HEAD
         "outputFile": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
-=======
-        "outputFile": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-w820dp-v13\\values-w820dp-v13.xml",
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
         "map": [
             {
                 "to": {
@@ -15,11 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

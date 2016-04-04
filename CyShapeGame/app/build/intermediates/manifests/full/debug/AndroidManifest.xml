@@ -27,7 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.dsdude.cyshapegame.GameInstanceActivity" />
-        <activity android:name="com.example.dsdude.cyshapegame.MultiplayerInstanceActivity" />
         <activity android:name="com.example.dsdude.cyshapegame.LoginActivity" />
         <activity android:name="com.example.dsdude.cyshapegame.Object" />
     </application>

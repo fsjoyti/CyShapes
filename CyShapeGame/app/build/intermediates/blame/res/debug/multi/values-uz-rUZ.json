@@ -11,7 +11,6 @@
                     "endOffset": 155
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 4,
@@ -19,15 +18,6 @@
                         "startOffset": 233,
                         "endColumn": 104,
                         "endOffset": 333
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 104,
-                        "endOffset": 155
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -40,7 +30,6 @@
                     "endOffset": 263
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 5,
@@ -48,15 +37,6 @@
                         "startOffset": 338,
                         "endColumn": 107,
                         "endOffset": 441
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 160,
-                        "endColumn": 107,
-                        "endOffset": 263
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -69,7 +49,6 @@
                     "endOffset": 386
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 6,
@@ -77,15 +56,6 @@
                         "startOffset": 446,
                         "endColumn": 122,
                         "endOffset": 564
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 268,
-                        "endColumn": 122,
-                        "endOffset": 386
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -98,7 +68,6 @@
                     "endOffset": 490
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 7,
@@ -106,15 +75,6 @@
                         "startOffset": 569,
                         "endColumn": 103,
                         "endOffset": 668
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 391,
-                        "endColumn": 103,
-                        "endOffset": 490
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -127,7 +87,6 @@
                     "endOffset": 607
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 8,
@@ -135,15 +94,6 @@
                         "startOffset": 673,
                         "endColumn": 116,
                         "endOffset": 785
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 116,
-                        "endOffset": 607
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -156,7 +106,6 @@
                     "endOffset": 693
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 9,
@@ -164,15 +113,6 @@
                         "startOffset": 790,
                         "endColumn": 85,
                         "endOffset": 871
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 612,
-                        "endColumn": 85,
-                        "endOffset": 693
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -185,7 +125,6 @@
                     "endOffset": 804
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 10,
@@ -193,15 +132,6 @@
                         "startOffset": 876,
                         "endColumn": 110,
                         "endOffset": 982
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 698,
-                        "endColumn": 110,
-                        "endOffset": 804
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -214,7 +144,6 @@
                     "endOffset": 920
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 11,
@@ -222,15 +151,6 @@
                         "startOffset": 987,
                         "endColumn": 115,
                         "endOffset": 1098
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 809,
-                        "endColumn": 115,
-                        "endOffset": 920
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -243,7 +163,6 @@
                     "endOffset": 1000
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 12,
@@ -251,15 +170,6 @@
                         "startOffset": 1103,
                         "endColumn": 79,
                         "endOffset": 1178
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 925,
-                        "endColumn": 79,
-                        "endOffset": 1000
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -272,7 +182,6 @@
                     "endOffset": 1079
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 13,
@@ -280,15 +189,6 @@
                         "startOffset": 1183,
                         "endColumn": 78,
                         "endOffset": 1257
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1005,
-                        "endColumn": 78,
-                        "endOffset": 1079
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -301,7 +201,6 @@
                     "endOffset": 1163
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 14,
@@ -309,15 +208,6 @@
                         "startOffset": 1262,
                         "endColumn": 83,
                         "endOffset": 1341
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1084,
-                        "endColumn": 83,
-                        "endOffset": 1163
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -330,7 +220,6 @@
                     "endOffset": 1272
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 15,
@@ -338,15 +227,6 @@
                         "startOffset": 1346,
                         "endColumn": 108,
                         "endOffset": 1450
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1168,
-                        "endColumn": 108,
-                        "endOffset": 1272
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -359,7 +239,6 @@
                     "endOffset": 1379
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 16,
@@ -367,15 +246,6 @@
                         "startOffset": 1455,
                         "endColumn": 106,
                         "endOffset": 1557
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1277,
-                        "endColumn": 106,
-                        "endOffset": 1379
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -388,7 +258,6 @@
                     "endOffset": 1480
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 17,
@@ -396,15 +265,6 @@
                         "startOffset": 1562,
                         "endColumn": 100,
                         "endOffset": 1658
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1384,
-                        "endColumn": 100,
-                        "endOffset": 1480
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -417,7 +277,6 @@
                     "endOffset": 1588
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 18,
@@ -425,15 +284,6 @@
                         "startOffset": 1663,
                         "endColumn": 107,
                         "endOffset": 1766
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1485,
-                        "endColumn": 107,
-                        "endOffset": 1588
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -446,7 +296,6 @@
                     "endOffset": 1693
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 19,
@@ -454,15 +303,6 @@
                         "startOffset": 1771,
                         "endColumn": 104,
                         "endOffset": 1871
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1593,
-                        "endColumn": 104,
-                        "endOffset": 1693
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -475,7 +315,6 @@
                     "endOffset": 1798
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 20,
@@ -483,15 +322,6 @@
                         "startOffset": 1876,
                         "endColumn": 104,
                         "endOffset": 1976
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1698,
-                        "endColumn": 104,
-                        "endOffset": 1798
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -504,7 +334,6 @@
                     "endOffset": 1897
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 21,
@@ -512,15 +341,6 @@
                         "startOffset": 1981,
                         "endColumn": 98,
                         "endOffset": 2075
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1803,
-                        "endColumn": 98,
-                        "endOffset": 1897
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -533,19 +353,13 @@
                     "endOffset": 1998
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
                     "position": {
                         "startLine": 22,
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "position": {
-                        "startLine": 20,
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                         "startColumn": 4,
-                        "startOffset": 1902,
+                        "startOffset": 2080,
                         "endColumn": 100,
-                        "endOffset": 1998
+                        "endOffset": 2176
                     }
                 }
             }

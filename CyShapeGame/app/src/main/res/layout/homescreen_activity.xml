@@ -14,26 +14,17 @@
         android:layout_height="wrap_content"
         android:text="Start Game"
         android:id="@+id/startGame"
-        android:layout_above="@+id/multiplayer"
+        android:layout_above="@+id/loginButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="13dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Multiplayer"
-        android:id="@+id/multiplayer"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/loginButton"
-        android:layout_below="@id/multiplayer"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"/>
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,7 +34,6 @@
         android:id="@+id/textView2"
         android:layout_marginTop="44dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"/>
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

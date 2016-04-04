@@ -11,7 +11,6 @@
                     "endOffset": 164
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 4,
@@ -19,15 +18,6 @@
                         "startOffset": 233,
                         "endColumn": 113,
                         "endOffset": 342
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 113,
-                        "endOffset": 164
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -40,7 +30,6 @@
                     "endOffset": 272
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 5,
@@ -48,15 +37,6 @@
                         "startOffset": 347,
                         "endColumn": 107,
                         "endOffset": 450
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 169,
-                        "endColumn": 107,
-                        "endOffset": 272
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -69,7 +49,6 @@
                     "endOffset": 395
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 6,
@@ -77,15 +56,6 @@
                         "startOffset": 455,
                         "endColumn": 122,
                         "endOffset": 573
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 277,
-                        "endColumn": 122,
-                        "endOffset": 395
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -98,7 +68,6 @@
                     "endOffset": 500
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 7,
@@ -106,15 +75,6 @@
                         "startOffset": 578,
                         "endColumn": 104,
                         "endOffset": 678
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 400,
-                        "endColumn": 104,
-                        "endOffset": 500
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -127,7 +87,6 @@
                     "endOffset": 615
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 8,
@@ -135,15 +94,6 @@
                         "startOffset": 683,
                         "endColumn": 114,
                         "endOffset": 793
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 505,
-                        "endColumn": 114,
-                        "endOffset": 615
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -156,7 +106,6 @@
                     "endOffset": 704
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 9,
@@ -164,15 +113,6 @@
                         "startOffset": 798,
                         "endColumn": 88,
                         "endOffset": 882
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 620,
-                        "endColumn": 88,
-                        "endOffset": 704
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -185,7 +125,6 @@
                     "endOffset": 811
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 10,
@@ -193,15 +132,6 @@
                         "startOffset": 887,
                         "endColumn": 106,
                         "endOffset": 989
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 709,
-                        "endColumn": 106,
-                        "endOffset": 811
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -214,7 +144,6 @@
                     "endOffset": 937
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 11,
@@ -222,15 +151,6 @@
                         "startOffset": 994,
                         "endColumn": 125,
                         "endOffset": 1115
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 816,
-                        "endColumn": 125,
-                        "endOffset": 937
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -243,7 +163,6 @@
                     "endOffset": 1018
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 12,
@@ -251,15 +170,6 @@
                         "startOffset": 1120,
                         "endColumn": 80,
                         "endOffset": 1196
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 942,
-                        "endColumn": 80,
-                        "endOffset": 1018
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -272,7 +182,6 @@
                     "endOffset": 1098
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 13,
@@ -280,15 +189,6 @@
                         "startOffset": 1201,
                         "endColumn": 79,
                         "endOffset": 1276
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1023,
-                        "endColumn": 79,
-                        "endOffset": 1098
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -301,7 +201,6 @@
                     "endOffset": 1180
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 14,
@@ -309,15 +208,6 @@
                         "startOffset": 1281,
                         "endColumn": 81,
                         "endOffset": 1358
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1103,
-                        "endColumn": 81,
-                        "endOffset": 1180
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -330,7 +220,6 @@
                     "endOffset": 1282
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 15,
@@ -338,15 +227,6 @@
                         "startOffset": 1363,
                         "endColumn": 101,
                         "endOffset": 1460
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1185,
-                        "endColumn": 101,
-                        "endOffset": 1282
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -359,7 +239,6 @@
                     "endOffset": 1386
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 16,
@@ -367,15 +246,6 @@
                         "startOffset": 1465,
                         "endColumn": 103,
                         "endOffset": 1564
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1287,
-                        "endColumn": 103,
-                        "endOffset": 1386
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -388,7 +258,6 @@
                     "endOffset": 1483
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 17,
@@ -396,15 +265,6 @@
                         "startOffset": 1569,
                         "endColumn": 96,
                         "endOffset": 1661
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1391,
-                        "endColumn": 96,
-                        "endOffset": 1483
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -417,7 +277,6 @@
                     "endOffset": 1593
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 18,
@@ -425,15 +284,6 @@
                         "startOffset": 1666,
                         "endColumn": 109,
                         "endOffset": 1771
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1488,
-                        "endColumn": 109,
-                        "endOffset": 1593
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -446,7 +296,6 @@
                     "endOffset": 1695
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 19,
@@ -454,15 +303,6 @@
                         "startOffset": 1776,
                         "endColumn": 101,
                         "endOffset": 1873
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1598,
-                        "endColumn": 101,
-                        "endOffset": 1695
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -475,7 +315,6 @@
                     "endOffset": 1802
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 20,
@@ -483,15 +322,6 @@
                         "startOffset": 1878,
                         "endColumn": 106,
                         "endOffset": 1980
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1700,
-                        "endColumn": 106,
-                        "endOffset": 1802
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -504,7 +334,6 @@
                     "endOffset": 1921
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 21,
@@ -512,15 +341,6 @@
                         "startOffset": 1985,
                         "endColumn": 118,
                         "endOffset": 2099
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1807,
-                        "endColumn": 118,
-                        "endOffset": 1921
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -533,7 +353,6 @@
                     "endOffset": 2021
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 22,
@@ -541,15 +360,6 @@
                         "startOffset": 2104,
                         "endColumn": 99,
                         "endOffset": 2199
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1926,
-                        "endColumn": 99,
-                        "endOffset": 2021
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                     }
                 }
             },
@@ -562,19 +372,13 @@
                     "endOffset": 2122
                 },
                 "from": {
-<<<<<<< HEAD
                     "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ta-rIN\\values-ta-rIN.xml",
                     "position": {
                         "startLine": 23,
-=======
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ta-rIN\\values-ta-rIN.xml",
-                    "position": {
-                        "startLine": 21,
->>>>>>> 0114111e8281eece1ea8e14e455e3659f8a9536e
                         "startColumn": 4,
-                        "startOffset": 2026,
+                        "startOffset": 2204,
                         "endColumn": 100,
-                        "endOffset": 2122
+                        "endOffset": 2300
                     }
                 }
             }
