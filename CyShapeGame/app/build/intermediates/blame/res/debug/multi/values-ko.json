@@ -1,395 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-ko\\values-ko.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 94,
-                    "endOffset": 145
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 94,
-                        "endOffset": 319
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 150,
-                    "endColumn": 107,
-                    "endOffset": 253
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 324,
-                        "endColumn": 107,
-                        "endOffset": 427
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 258,
-                    "endColumn": 122,
-                    "endOffset": 376
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 432,
-                        "endColumn": 122,
-                        "endOffset": 550
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 381,
-                    "endColumn": 93,
-                    "endOffset": 470
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 555,
-                        "endColumn": 93,
-                        "endOffset": 644
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 475,
-                    "endColumn": 101,
-                    "endOffset": 572
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 649,
-                        "endColumn": 101,
-                        "endOffset": 746
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 577,
-                    "endColumn": 81,
-                    "endOffset": 654
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 751,
-                        "endColumn": 81,
-                        "endOffset": 828
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 659,
-                    "endColumn": 97,
-                    "endOffset": 752
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 833,
-                        "endColumn": 97,
-                        "endOffset": 926
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 757,
-                    "endColumn": 105,
-                    "endOffset": 858
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 931,
-                        "endColumn": 105,
-                        "endOffset": 1032
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 863,
-                    "endColumn": 78,
-                    "endOffset": 937
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1037,
-                        "endColumn": 78,
-                        "endOffset": 1111
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 942,
-                    "endColumn": 75,
-                    "endOffset": 1013
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1116,
-                        "endColumn": 75,
-                        "endOffset": 1187
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1018,
-                    "endColumn": 79,
-                    "endOffset": 1093
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1192,
-                        "endColumn": 79,
-                        "endOffset": 1267
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1098,
-                    "endColumn": 97,
-                    "endOffset": 1191
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 1272,
-                        "endColumn": 97,
-                        "endOffset": 1365
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1196,
-                    "endColumn": 94,
-                    "endOffset": 1286
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 1370,
-                        "endColumn": 94,
-                        "endOffset": 1460
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 1291,
-                    "endColumn": 94,
-                    "endOffset": 1381
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 1465,
-                        "endColumn": 94,
-                        "endOffset": 1555
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 1386,
-                    "endColumn": 99,
-                    "endOffset": 1481
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 1560,
-                        "endColumn": 99,
-                        "endOffset": 1655
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 1486,
-                    "endColumn": 95,
-                    "endOffset": 1577
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 1660,
-                        "endColumn": 95,
-                        "endOffset": 1751
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 1582,
-                    "endColumn": 98,
-                    "endOffset": 1676
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 1756,
-                        "endColumn": 98,
-                        "endOffset": 1850
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 19,
-                    "startColumn": 4,
-                    "startOffset": 1681,
-                    "endColumn": 114,
-                    "endOffset": 1791
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 1855,
-                        "endColumn": 114,
-                        "endOffset": 1965
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 20,
-                    "startColumn": 4,
-                    "startOffset": 1796,
-                    "endColumn": 93,
-                    "endOffset": 1885
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 1970,
-                        "endColumn": 93,
-                        "endOffset": 2059
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 21,
-                    "startColumn": 4,
-                    "startOffset": 1890,
-                    "endColumn": 100,
-                    "endOffset": 1986
-                },
-                "from": {
-                    "file": "C:\\Users\\DsDude\\AndroidStudioProjects\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 2064,
-                        "endColumn": 100,
-                        "endOffset": 2160
-                    }
-                }
-            }
-        ]
-    },
-    {
-<<<<<<< Updated upstream
         "outputFile": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-ko\\values-ko.xml",
-=======
-        "outputFile": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\res\\merged\\debug\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
         "map": [
             {
                 "to": {
@@ -400,17 +11,13 @@
                     "endOffset": 145
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 229,
+                        "startOffset": 55,
                         "endColumn": 94,
-                        "endOffset": 319
+                        "endOffset": 145
                     }
                 }
             },
@@ -423,17 +30,13 @@
                     "endOffset": 253
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 324,
+                        "startOffset": 150,
                         "endColumn": 107,
-                        "endOffset": 427
+                        "endOffset": 253
                     }
                 }
             },
@@ -446,17 +49,13 @@
                     "endOffset": 376
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 432,
+                        "startOffset": 258,
                         "endColumn": 122,
-                        "endOffset": 550
+                        "endOffset": 376
                     }
                 }
             },
@@ -469,17 +68,13 @@
                     "endOffset": 470
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 555,
+                        "startOffset": 381,
                         "endColumn": 93,
-                        "endOffset": 644
+                        "endOffset": 470
                     }
                 }
             },
@@ -492,17 +87,13 @@
                     "endOffset": 572
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 649,
+                        "startOffset": 475,
                         "endColumn": 101,
-                        "endOffset": 746
+                        "endOffset": 572
                     }
                 }
             },
@@ -515,17 +106,13 @@
                     "endOffset": 654
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 751,
+                        "startOffset": 577,
                         "endColumn": 81,
-                        "endOffset": 828
+                        "endOffset": 654
                     }
                 }
             },
@@ -538,17 +125,13 @@
                     "endOffset": 752
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 833,
+                        "startOffset": 659,
                         "endColumn": 97,
-                        "endOffset": 926
+                        "endOffset": 752
                     }
                 }
             },
@@ -561,17 +144,13 @@
                     "endOffset": 858
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 931,
+                        "startOffset": 757,
                         "endColumn": 105,
-                        "endOffset": 1032
+                        "endOffset": 858
                     }
                 }
             },
@@ -584,17 +163,13 @@
                     "endOffset": 937
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 1037,
+                        "startOffset": 863,
                         "endColumn": 78,
-                        "endOffset": 1111
+                        "endOffset": 937
                     }
                 }
             },
@@ -607,17 +182,13 @@
                     "endOffset": 1013
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1116,
+                        "startOffset": 942,
                         "endColumn": 75,
-                        "endOffset": 1187
+                        "endOffset": 1013
                     }
                 }
             },
@@ -630,17 +201,13 @@
                     "endOffset": 1093
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 1192,
+                        "startOffset": 1018,
                         "endColumn": 79,
-                        "endOffset": 1267
+                        "endOffset": 1093
                     }
                 }
             },
@@ -653,17 +220,13 @@
                     "endOffset": 1191
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1272,
+                        "startOffset": 1098,
                         "endColumn": 97,
-                        "endOffset": 1365
+                        "endOffset": 1191
                     }
                 }
             },
@@ -676,17 +239,13 @@
                     "endOffset": 1286
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1370,
+                        "startOffset": 1196,
                         "endColumn": 94,
-                        "endOffset": 1460
+                        "endOffset": 1286
                     }
                 }
             },
@@ -699,17 +258,13 @@
                     "endOffset": 1381
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1465,
+                        "startOffset": 1291,
                         "endColumn": 94,
-                        "endOffset": 1555
+                        "endOffset": 1381
                     }
                 }
             },
@@ -722,17 +277,13 @@
                     "endOffset": 1481
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 1560,
+                        "startOffset": 1386,
                         "endColumn": 99,
-                        "endOffset": 1655
+                        "endOffset": 1481
                     }
                 }
             },
@@ -745,17 +296,13 @@
                     "endOffset": 1577
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1660,
+                        "startOffset": 1486,
                         "endColumn": 95,
-                        "endOffset": 1751
+                        "endOffset": 1577
                     }
                 }
             },
@@ -768,17 +315,13 @@
                     "endOffset": 1676
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1756,
+                        "startOffset": 1582,
                         "endColumn": 98,
-                        "endOffset": 1850
+                        "endOffset": 1676
                     }
                 }
             },
@@ -791,17 +334,13 @@
                     "endOffset": 1791
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 1855,
+                        "startOffset": 1681,
                         "endColumn": 114,
-                        "endOffset": 1965
+                        "endOffset": 1791
                     }
                 }
             },
@@ -814,17 +353,13 @@
                     "endOffset": 1885
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 22,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 1970,
+                        "startOffset": 1796,
                         "endColumn": 93,
-                        "endOffset": 2059
+                        "endOffset": 1885
                     }
                 }
             },
@@ -837,17 +372,13 @@
                     "endOffset": 1986
                 },
                 "from": {
-<<<<<<< Updated upstream
-                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
-=======
-                    "file": "C:\\Users\\Anastasia\\G43_CyShape\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-ko\\values-ko.xml",
->>>>>>> Stashed changes
+                    "file": "C:\\SeveralMidgets\\CyShapeGame\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\values-ko\\values-ko.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 2064,
+                        "startOffset": 1890,
                         "endColumn": 100,
-                        "endOffset": 2160
+                        "endOffset": 1986
                     }
                 }
             }

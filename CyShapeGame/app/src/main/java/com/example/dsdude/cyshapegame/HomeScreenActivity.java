@@ -21,22 +21,31 @@ public class HomeScreenActivity extends Activity {
         //set to full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button loginButton = (Button)findViewById(R.id.loginButton);
         Button startGame = (Button)findViewById(R.id.startGame);
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(loginIntent);
-            }
-        });
+        Button multiplayer = (Button)findViewById(R.id.multiplayer);
+        Button loginButton = (Button)findViewById(R.id.loginButton);
 
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startgameIntent = new Intent(getApplicationContext(), GameInstanceActivity.class);
                 startActivity(startgameIntent);
+            }
+        });
+
+        multiplayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent multiplayerIntent = new Intent(getApplicationContext(), MultiplayerInstanceActivity.class);
+                startActivity(multiplayerIntent);
+            }
+        });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(loginIntent);
             }
         });
     }
