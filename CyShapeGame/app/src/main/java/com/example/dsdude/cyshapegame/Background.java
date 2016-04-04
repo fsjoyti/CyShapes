@@ -1,4 +1,4 @@
-package com.example.dsdude.cyshapegame;
+/*package com.example.dsdude.cyshapegame;
 
 
 import android.graphics.Bitmap;
@@ -32,3 +32,4 @@ public class Background {
         this.dx = dx;
     }
 }
+*/

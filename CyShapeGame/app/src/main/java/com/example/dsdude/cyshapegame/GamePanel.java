@@ -1,4 +1,4 @@
-package com.example.dsdude.cyshapegame;
+/**package com.example.dsdude.cyshapegame;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -172,3 +172,4 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     }
 
 }
+*/
