@@ -55,8 +55,18 @@
     });
     socket.emit('send_position',{x:xposition,y:yposition});
     socket.on('update',function(data){
-        console.log(data);
+        console.log("Update data: "+data.x);
+        console.log("Update data: "+data.y);
+        console.log("Update data: "+data.id);
+
+
     });
+    socket.on('updatePlayer',function(data){
+        console.log("Update Player :"+data);
+    });
+
+
+    socket.emit('update_score',{scores:5});
     $('#button1').click(function(){
 
         socket.emit('hostCreateNewGame',{message:'23'},function() {

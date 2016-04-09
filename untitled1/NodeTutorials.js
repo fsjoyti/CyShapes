@@ -21,7 +21,7 @@ var config = require('./config.js');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
-var favicon = require('static-favicon');
+var PlayerDatabase = require('./Routes/Models/PlayerScores');
 var flash = require('connect-flash');
 var mongooseadmin = require('mongooseadmin');
 app.use(logger('dev'));
@@ -145,6 +145,18 @@ var array  = {};
         //io.sockets.emit('update',{x:positionx[player.id],y:positiony[player.id],id:player.id});
 
 
+
+
+    });
+    socket.on('update_score',function(data){
+        console.log("score:"+data.scores);
+        var playerScore = ''+data.scores;
+        var playerData = new PlayerDatabase();
+        playerData.scores = playerScore;
+        playerData.id  = socket.id.toString();
+        playerData.save(function(err){
+            console.log('saved!');
+        });
 
 
     });
