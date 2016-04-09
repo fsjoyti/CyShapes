@@ -16,7 +16,8 @@ var UserSchema = new Schema({
         isActive: String,
         timeCreated: { type: Date, default: Date.now },
         resetPasswordToken: String,
-        resetPasswordExpires: Date
+        resetPasswordExpires: Date,
+        scores : {type:String,default:'',ref :'PlayerScores'}
 
 
     }

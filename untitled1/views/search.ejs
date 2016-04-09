@@ -5,17 +5,16 @@
     <title>Title</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
 </head>
-<body>
-<div  class="container">
-    <% if (message.length > 0) { %>
-    <div class="alert alert-danger"><%= message %></div>
-    <% } %>
-<form  method = "post" >
+
+<body ng-app = "myApp" ng-controller="myController" >
+
+<form  name = "form"  ng-submit="submitForm()">
 
     <div class="form-group">
-        <label >Enter the user name:</label>
-        <textarea class="form-control" rows="1" name="name" placeholder = "Enter user name" ng-model = "formData.name" ></textarea>
+        <label >Enter the user email:</label>
+        <textarea class="form-control" rows="1" name="email" placeholder = "Enter user name" ng-model = "formData.email" ></textarea>
 
 
     </div>
@@ -23,8 +22,61 @@
     <button type="submit"   class="btn btn-warning btn-lg">Search this user</button>
 
 </form>
-</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+
+<script>
+
+    var app = angular.module('myApp', []);
+
+    console.log('Controller is ready!');
+    app.controller('myController',['$scope','$http',function($scope,$http){
+        console.log('Controller is ready!');
+        $scope.formData = {};
+        $scope.submitForm = function() {
+            console.log("submit");
+            var onSuccess = function (response) {
+                console.log(response.data);
+                var obj = JSON.parse(response.data);
+                console.log(obj.success);
+                $scope.formData = {};
+                /*
+                $scope.isAvailable = function () {
+                    if (data.success == false) {
+                        $scope.message = data.message;
+                        console.log(data.message);
+                        return false;
+                    }
+                    else {
+
+
+                        return true;
+                    }
+                }
+
+                */
+            }
+            var onFailure = function(response){
+
+            }
+            $http.post('/search',$scope.formData).then(onSuccess,onFailure);
+        }
+
+
+
+
+
+
+
+
+    }]);
+
+
+
+
+</script>
 </body>
 </html>

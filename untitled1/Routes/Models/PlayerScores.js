@@ -8,7 +8,8 @@ var PlayerSchema = new Schema({
 
 
     scores : {type:String,default:''},
-    id:  {type:String,default:''}
+    socket_id:  {type:String,default:''},
+    id: { type: Schema.Types.ObjectId, ref: 'Players' }
 });
 
 

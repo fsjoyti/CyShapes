@@ -218,27 +218,47 @@ module.exports = function(app,passport){
         // ensured that the user is logged in
         res.render('game.ejs');
     });
+    
     app.get("/search", function(req, res) {
         // if we got here, the `app.all` call above has already
         // ensured that the user is logged in
-        res.render('search.ejs',{message:req.flash('searchMessage')});
+
+        res.render('search.ejs');
     });
+    
+
     app.post("/search", function(req, res) {
+
+      
+        console.log(req.body.email);
+
+            
         User.findOne({ 'local.email' :  req.body.email }, function(err, user) {
+            
 
             if (err)
                 return done(err);
 
 
             if (!user) {
-                return done(null, false, req.flash('searchMessage', 'User not found!'));
+                //req.flash('searchMessage', 'the following user was not found!');
+                //res.redirect('/search');
+                res.json({success :false,message:'the following user was not found!'});
+
             } else {
 
+                    var response = JSON.stringify({success:true,user:user});
+                res.json(response);
+                
+
+                //req.flash('searchMessage', 'the following user was  found!');
+               //res.render('search.ejs',user);
 
             }
         });
 
     });
+
 
 };
 

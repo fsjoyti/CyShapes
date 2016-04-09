@@ -28,7 +28,7 @@ app.use(logger('dev'));
 require('./Config/passport')(passport);
 
 app.use(cookieparser());
-app.use(urlencodedParser);
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new MongoStore({mongooseConnection:mongoose.connection})}));
