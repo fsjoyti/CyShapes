@@ -22,6 +22,18 @@
     <button type="submit"   class="btn btn-warning btn-lg">Search this user</button>
 
 </form>
+<div ng-show = "!isAvailable()">
+    <p>{{message}}</p>
+
+
+</div>
+<div ng-show = "isAvailable()">
+    <p>{{email}}</p>
+    <p>{{timeCreated}}</p>
+    <p>{{scores}}</p>
+
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
@@ -40,24 +52,28 @@
             console.log("submit");
             var onSuccess = function (response) {
                 console.log(response.data);
-                var obj = JSON.parse(response.data);
-                console.log(obj.success);
+                console.log(response.data.success);
+
                 $scope.formData = {};
-                /*
+
                 $scope.isAvailable = function () {
-                    if (data.success == false) {
-                        $scope.message = data.message;
-                        console.log(data.message);
+                    if (response.data.success==false) {
+                        $scope.message = response.data.message;
+                        console.log(response.data.message);
                         return false;
                     }
                     else {
+
+                        $scope.email = response.data.user.local.email;
+                        $scope.timeCreated = response.data.user.local.timeCreated;
+                        $scope.scores = response.data.scores;
 
 
                         return true;
                     }
                 }
 
-                */
+
             }
             var onFailure = function(response){
 

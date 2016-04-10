@@ -230,8 +230,7 @@ module.exports = function(app,passport){
     app.post("/search", function(req, res) {
 
       
-        console.log(req.body.email);
-
+       
             
         User.findOne({ 'local.email' :  req.body.email }, function(err, user) {
             
@@ -247,7 +246,7 @@ module.exports = function(app,passport){
 
             } else {
 
-                    var response = JSON.stringify({success:true,user:user});
+                    var response = {success:true,user:user};
                 res.json(response);
                 
 
