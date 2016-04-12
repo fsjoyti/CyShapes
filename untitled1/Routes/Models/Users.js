@@ -10,14 +10,18 @@ var UserSchema = new Schema({
         email: { type: String, unique: true } ,
         password: String,
         roles: {
-            admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
-            account: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' }
+            admin: { type: Schema.Types.ObjectId, ref: 'Admin' },
+            account: { type: Schema.Types.ObjectId, ref: 'Account' }
         },
         isActive: String,
         timeCreated: { type: Date, default: Date.now },
         resetPasswordToken: String,
         resetPasswordExpires: Date,
-        scores : {type:String,default:'',ref :'PlayerScores'}
+        
+        scores: [{
+            type: Schema.Types.ObjectId,
+            ref: 'PlayerScores' 
+        }]
 
 
     }

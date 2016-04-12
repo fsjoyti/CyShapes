@@ -23,7 +23,9 @@ var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
 var PlayerDatabase = require('./Routes/Models/PlayerScores');
 var flash = require('connect-flash');
-var mongooseadmin = require('mongooseadmin');
+//var mongooseadmin = require('mongooseadmin');
+var node_restful = require ('node-restful');
+
 app.use(logger('dev'));
 require('./Config/passport')(passport);
 
@@ -35,12 +37,14 @@ app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use('/admin',mongooseadmin());
+//app.use('/admin',mongooseadmin());
+
 
 
 
 require('./Routes/Routes.js')(app,passport);
 require('./Controllers/admin.js')(app);
+
 
 app.get('/process_get', urlencodedParser, function (req, res) {
     // Prepare output in JSON format
@@ -152,8 +156,8 @@ var array  = {};
         console.log("score:"+data.scores);
         var playerScore = ''+data.scores;
         var playerData = new PlayerDatabase();
-        playerData.scores = playerScore;
-        playerData.id  = socket.id.toString();
+        playerData.scores.push(playerScore);
+        playerData.socket_id  = socket.id.toString();
         playerData.save(function(err){
             console.log('saved!');
         });

@@ -204,15 +204,8 @@ module.exports = function(app,passport){
         res.redirect('/index');
         }
     );
-
-    app.all("/admin/*",isLoggedIn , function(req, res, next) {
-        next();
-    });
-    app.get("/admin/users", function(req, res) {
-        // if we got here, the `app.all` call above has already
-        // ensured that the user is logged in
-        res.render('admin.ejs');
-    });
+    
+    
     app.get("/game", function(req, res) {
         // if we got here, the `app.all` call above has already
         // ensured that the user is logged in
