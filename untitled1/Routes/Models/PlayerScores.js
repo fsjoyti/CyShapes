@@ -7,8 +7,8 @@ var Schema = mongoose.Schema;
 var PlayerSchema = new Schema({
 
 
-    scores : {type:Array,default:''},
-    socket_id:  {type:String,default:''}
+    scores : {type:Array},
+    ///socket_id:  {type:String,default:''}
    
 });
 

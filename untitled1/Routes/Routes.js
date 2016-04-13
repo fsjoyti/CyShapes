@@ -11,7 +11,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 module.exports = function(app,passport){
     app.get('/index',function(req,res){
-        res.render('index.ejs');
+        res.render('home.ejs');
 
     });
 

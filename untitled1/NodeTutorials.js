@@ -156,12 +156,10 @@ var array  = {};
         console.log("score:"+data.scores);
         var playerScore = ''+data.scores;
         var playerData = new PlayerDatabase();
-        playerData.scores.push(playerScore);
-        playerData.socket_id  = socket.id.toString();
+        playerData.scores.push("9");
         playerData.save(function(err){
             console.log('saved!');
         });
-
 
     });
 
