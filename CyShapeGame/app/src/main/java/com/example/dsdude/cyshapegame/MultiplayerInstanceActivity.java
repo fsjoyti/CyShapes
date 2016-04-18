@@ -16,10 +16,11 @@ import java.net.URISyntaxException;
  */
 public class MultiplayerInstanceActivity extends Activity{
 
+    private String ip;
     private Socket socket;
     {
         try {
-            socket = IO.socket("http://10.36.23.216:3000");
+            socket = IO.socket("http://10.36.23.204:3000");
         } catch (URISyntaxException e) {
 
         }
@@ -29,6 +30,10 @@ public class MultiplayerInstanceActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(new MultiplayerView(this));
+
+        Intent intent = getIntent();
+        ip = intent.getStringExtra("ip");
+//        SocketHandler.setSocket(ip);
     }
 
 //    @Override
@@ -39,7 +44,7 @@ public class MultiplayerInstanceActivity extends Activity{
 //    }
 
     public Socket getSocket() {
-        return socket;
+        return ip == null ? socket : SocketHandler.getSocket();
     }
 
     public void changeActivity(){

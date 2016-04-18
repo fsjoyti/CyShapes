@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.JsonWriter;
+import android.util.Log;
 
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -35,6 +36,7 @@ public class MultiplayerLoopThread extends Thread {
         socket.on("onconnected", onconnected);
         socket.on("update", update);
         socket.connect();
+        Log.d("SocketConnectionStatus", socket.connected() ? "true" : "false");
     }
 
     public void setRunning(boolean run) {

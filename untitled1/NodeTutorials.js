@@ -282,8 +282,6 @@ io.on('connection', function(socket){
     });
 });
 
-
-
 http.listen(3000,function (socket) {
     console.log("Example app listening at http://localhost:3000");
 });
