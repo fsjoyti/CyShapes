@@ -35,20 +35,20 @@
         <button ng-click="toggleModal()" class="btn btn-default">Add new user</button>
 
         <modal title="Add new user form" visible="showModal">
-            <form role="form" >
+            <form role="form" id = "myForm" ng-submit="addnewUser()">
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                    <label for="local.email">Email address</label>
+                    <input type="email" class="form-control" id="local.email" ng-model = "local.email" placeholder="Enter email" />
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" />
+                    <label for="local.password">Password</label>
+                    <input type="password" class="form-control" id="local.password" ng-model = "local.password" placeholder="Password" />
                 </div>
                 <div class="form-group">
-                    <label for="timeCreated">timeCreated</label>
-                    <input type="text" class="form-control" id="password" placeholder="Date Created" />
+                    <label for="local.timeCreated">timeCreated</label>
+                    <input type="text" class="form-control" id="local.timeCreated"ng-model = "local.timeCreated" placeholder="Date Created" />
                 </div>
-                <button ng-click="addnewUser()" class="btn btn-default">Submit</button>
+                <input type="submit"  value="Submit" class="btn btn-default">Submit</input>
             </form>
         </modal>
     </div>
@@ -91,7 +91,6 @@
                 $scope.selected = this.x;
                 $scope.email = this.x.local.email;
                 $scope.password = this.x.local.password;
-                console.log($scope.selected);
                 $scope.showModal = !$scope.showModal;
             };
 
@@ -155,12 +154,37 @@
 
 
     // post request to add new user
-    app.controller('ModalController', function ($scope) {
+    app.controller('ModalController',['$scope','$http' ,function ($scope,$http) {
         $scope.showModal = false;
         $scope.toggleModal = function(){
             $scope.showModal = !$scope.showModal;
         };
-    });
+        $scope.local = {};
+        $scope.addnewUser = function() {
+
+
+
+            $scope.data = {local:$scope.local};
+            $http({
+                method: 'POST',
+                url: '/admin/api/Players',
+                data: $scope.data
+            }).then(function successCallback(response) {
+
+
+
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+
+                console.log("Error!");
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+
+        }
+
+    }]);
 
 
 </script>

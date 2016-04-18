@@ -76,6 +76,7 @@
 
             }
             var onFailure = function(response){
+                console.log("Error!");
 
             }
             $http.post('/search',$scope.formData).then(onSuccess,onFailure);

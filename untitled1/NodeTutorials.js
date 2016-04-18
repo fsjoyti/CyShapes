@@ -37,10 +37,7 @@ app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-
 //app.use('/admin',mongooseadmin());
-
-
 
 
 
