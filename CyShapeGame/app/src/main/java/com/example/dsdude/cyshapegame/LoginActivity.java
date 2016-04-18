@@ -1,31 +1,43 @@
 package com.example.dsdude.cyshapegame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
+import com.github.nkzawa.socketio.client.Socket;
 
-    private WebView loginScreen;
+public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.login_activity);
 
-        loginScreen = new WebView(this);
-        loginScreen.getSettings().setJavaScriptEnabled(true);
+        Intent intent = getIntent();
+        String ip = intent.getStringExtra("ip");
+        Log.d("IP", ip);
+        SocketHandler.setSocket(ip);
+        Socket socket = SocketHandler.getSocket();
+        socket.connect();
+        Log.d("SocketConnectionStatus", socket.connected() ? "true" : "false");
 
-        final Activity activity = this;
+        EditText email = (EditText)findViewById(R.id.email);
+        EditText password = (EditText)findViewById(R.id.password);
+        Button login = (Button)findViewById(R.id.login);
 
-        loginScreen.setWebViewClient(new WebViewClient() {
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
-                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
-             }
-         });
-                loginScreen.loadUrl("http://10.36.23.91:3000/index");
-                setContentView(loginScreen);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 }

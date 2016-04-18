@@ -35,12 +35,22 @@
         android:layout_below="@id/host"
         android:layout_marginTop="13dp" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter IP Address Here"
+        android:textColor="@color/white"
+        android:id="@+id/ip"
+        android:layout_below="@id/join"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/loginButton"
-        android:layout_below="@id/join"
+        android:layout_below="@id/ip"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"/>
 
