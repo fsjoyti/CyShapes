@@ -20,9 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameInstanceActivity" ></activity>
-        <activity android:name=".MultiplayerInstanceActivity"></activity>
         <activity android:name=".LoginActivity" ></activity>
-        <activity android:name=".HostRoom"></activity>
+        <activity android:name=".Object"></activity>
     </application>
 
 </manifest>
