@@ -19,7 +19,7 @@ public class MultiplayerInstanceActivity extends Activity{
     private Socket socket;
     {
         try {
-            socket = IO.socket("http://10.36.23.216:3000");
+            socket = IO.socket("http://10.36.22.80:3000");
         } catch (URISyntaxException e) {
 
         }
