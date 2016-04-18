@@ -11,9 +11,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.Socket;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LoginActivity extends Activity {
+
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +27,28 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.login_activity);
 
         Intent intent = getIntent();
-        String ip = intent.getStringExtra("ip");
+        final String ip = intent.getStringExtra("ip");
         Log.d("IP", ip);
         SocketHandler.setSocket(ip);
         Socket socket = SocketHandler.getSocket();
+        socket.on("onconnected", onconnected);
         socket.connect();
         Log.d("SocketConnectionStatus", socket.connected() ? "true" : "false");
+        Log.d("SocketID", Integer.toString(id));
 
         EditText email = (EditText)findViewById(R.id.email);
         EditText password = (EditText)findViewById(R.id.password);
         Button login = (Button)findViewById(R.id.login);
+        Button multiplayer = (Button)findViewById(R.id.multiplayer);
+
+        multiplayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent multiplayerIntent = new Intent(getApplicationContext(), MultiplayerInstanceActivity.class);
+                multiplayerIntent.putExtra("ip", ip);
+                startActivity(multiplayerIntent);
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +58,17 @@ public class LoginActivity extends Activity {
         });
     }
 
+    private Emitter.Listener onconnected = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            // Update the other players
+            JSONObject data = (JSONObject) args[0];
+            try {
+                id = (int) Math.floor(data.getDouble("id") * 100);
+            } catch (JSONException e) {
+                return;
+            }
+        }
+    };
 }
 

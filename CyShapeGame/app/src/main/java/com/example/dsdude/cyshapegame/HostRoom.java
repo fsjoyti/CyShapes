@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by Andrew Snyder on 4/17/2016.
+ * Created by Andrew Snyder on 4/18/2016.
  */
 public class HostRoom extends Activity {
-
     @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-
+    public void onCreate(Bundle onSavedInstance) {
+        super.onCreate(onSavedInstance);
     }
 }
