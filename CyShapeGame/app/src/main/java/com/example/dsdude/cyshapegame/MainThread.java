@@ -1,4 +1,4 @@
-package com.example.dsdude.cyshapegame;
+/*package com.example.dsdude.cyshapegame;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
@@ -6,7 +6,7 @@ import android.view.SurfaceHolder;
 /**
  * Created by DsDude on 3/6/2016.
  */
-public class MainThread extends Thread {
+/*public class MainThread extends Thread {
 
     private int FPS = 30;
     private double averageFPS;
@@ -81,3 +81,4 @@ public class MainThread extends Thread {
         running=b;
     }
 }
+**/

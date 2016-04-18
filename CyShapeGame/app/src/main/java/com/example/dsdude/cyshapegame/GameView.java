@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class GameView extends SurfaceView {
     private SurfaceHolder holder;
     private GameLoopThread gameLoopThread;
     private List<Enemy> enemies = new ArrayList<Enemy>();
+    private Player player;
 
     public GameView(Context context) {
         super(context);
@@ -51,6 +53,7 @@ public class GameView extends SurfaceView {
                                        int width, int height) {
             }
         });
+        player = new Player(this,80,80,25);
     }
 
     private void createEnemies(){
@@ -76,5 +79,6 @@ public class GameView extends SurfaceView {
         for (Enemy enemy : enemies) {
             enemy.onDraw(canvas);
         }
+        player.onDraw(canvas);
     }
 }

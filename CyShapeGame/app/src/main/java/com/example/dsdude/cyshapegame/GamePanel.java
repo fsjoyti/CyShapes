@@ -1,4 +1,4 @@
-package com.example.dsdude.cyshapegame;
+/**package com.example.dsdude.cyshapegame;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -61,7 +61,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder holder){
 
-        thePlayer = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.square), 0);
+        thePlayer = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.square));
         bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebackground));
         missiles = new ArrayList<Missile>();
         missileStartTime = System.nanoTime();
@@ -172,3 +172,4 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     }
 
 }
+*/

@@ -3,7 +3,6 @@ package com.example.dsdude.cyshapegame;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.view.SurfaceView;
 
 import java.util.Random;
 
@@ -19,14 +18,14 @@ public class Enemy {
     private int x = 0;
     private int y = 0;
     private int xSpeed = 5;
-    private SurfaceView gameView;
+    private GameView gameView;
     private Bitmap bmp;
     private int currentFrame = 0;
     private int width;
     private int height;
     private int ySpeed;
 
-    public Enemy(SurfaceView gameView, Bitmap bmp) {
+    public Enemy(GameView gameView, Bitmap bmp) {
         this.width = bmp.getWidth() / BMP_COLUMNS;
         this.height = bmp.getHeight() / BMP_ROWS;
         this.gameView = gameView;
