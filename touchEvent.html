@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width = device-width , user-scalable = no">
+    <title>Title</title>
+
+    <link rel = "stylesheet" media = "screen and (-webkit-device-pixel-ratio:1.5)" href="hdpi.css"/>
+    <link rel = "stylesheet" media = "screen and (-webkit-device-pixel-ratio:1.0)" href="mdpi.css"/>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="http://canvasengine.net/cdn/canvasengine-latest.all.min.js"></script>
+
+</head>
+<body>
+<div id="gameArea">
+    <!-- This is where the templates defined below will be used -->
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+    </canvas>
+
+</div>
+<script>
+    var canvas = CE.defines("myCanvas").
+    ready(function() {
+        canvas.Scene.call("MyScene");
+    });
+    canvas.Scene.new({
+        name: "MyScene",
+        ready: function(stage) {
+
+            var el = this.createElement();
+            el.fillStyle = "red";
+            el.fillRect(0, 0, 100, 100);
+            el.on("dragleft", function(e, mouse) {
+                this.x = e.gesture.deltaX;
+                this.y = e.gesture.deltaY;
+                console.log(e.type+" gesture detected");
+            });
+            el.on("dragright", function(e, mouse) {
+                this.x = e.gesture.deltaX;
+                this.y = e.gesture.deltaY;
+
+                console.log(e.type+" gesture detected");
+            });
+            el.on("tap",function(e,mouse){
+                console.log(e.type+" gesture detected");
+            });
+
+
+            stage.append(el);
+        }
+    });
+
+
+</script>
+</body>
+</html>

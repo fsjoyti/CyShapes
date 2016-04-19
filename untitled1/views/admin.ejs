@@ -1,0 +1,193 @@
+<!doctype html>
+<html ng-app ="AdminApp">
+<head>
+    <title>CyShapes Admin Page</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body ng-controller="AdminController">
+
+<!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1><span class="fa fa-lock"></span> Welcome to CyShapes Admin </h1>
+
+    </div>
+
+    <table>
+        <tr ng-repeat="x in test"  ng-click="setSelected();">
+            <td>{{ x.local.email }}</td>
+            <td>{{ x.local.password }}</td>
+            <td>{{ x.local.timeCreated }}</td>
+        </tr>
+    </table>
+
+    <div ng-controller="ModalController" class="container">
+        <button ng-click="toggleModal()" class="btn btn-default">Add new user</button>
+
+        <modal title="Add new user form" visible="showModal">
+            <form role="form" id = "myForm" ng-submit="addnewUser()">
+                <div class="form-group">
+                    <label for="local.email">Email address</label>
+                    <input type="email" class="form-control" id="local.email" ng-model = "local.email" placeholder="Enter email" />
+                </div>
+                <div class="form-group">
+                    <label for="local.password">Password</label>
+                    <input type="password" class="form-control" id="local.password" ng-model = "local.password" placeholder="Password" />
+                </div>
+                <div class="form-group">
+                    <label for="local.timeCreated">timeCreated</label>
+                    <input type="text" class="form-control" id="local.timeCreated"ng-model = "local.timeCreated" placeholder="Date Created" />
+                </div>
+                <input type="submit"  value="Submit" class="btn btn-default">Submit</input>
+            </form>
+        </modal>
+    </div>
+
+    <modal title="User info" visible="showModal">
+        <form role="form">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" ng-model = "formData.email" placeholder="{{email}}" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" ng-model = "formData.password" placeholder="{{password}}" />
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </modal>
+</div>
+
+
+
+
+<script>
+    var app = angular.module('AdminApp', []);
+
+    console.log('Controller is ready!');
+    app.controller('AdminController',['$scope','$http',function($scope,$http){
+        console.log('Controller is ready!');
+        $scope.showModal = false;
+        $http({
+            method: 'GET',
+            url: '/admin/api/Players'
+        }).then(function successCallback(response) {
+            console.log(response.data[0]);
+            console.log(response.data[0].local.email);
+
+            $scope.test = response.data;
+            $scope.setSelected = function() {
+
+                $scope.selected = this.x;
+                $scope.email = this.x.local.email;
+                $scope.password = this.x.local.password;
+                $scope.showModal = !$scope.showModal;
+            };
+
+            // this callback will be called asynchronously
+            // when the response is available
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+
+
+
+
+
+
+
+
+    }]);
+
+    app.directive('modal', function () {
+        return {
+            template: '<div class="modal fade">' +
+            '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+            '<h4 class="modal-title">{{ title }}</h4>' +
+            '</div>' +
+            '<div class="modal-body" ng-transclude></div>' +
+            '</div>' +
+            '</div>' +
+            '</div>',
+            restrict: 'E',
+            transclude: true,
+            replace:true,
+            scope:true,
+            link: function postLink(scope, element, attrs) {
+                scope.title = attrs.title;
+
+                scope.$watch(attrs.visible, function(value){
+                    if(value == true)
+                        $(element).modal('show');
+                    else
+                        $(element).modal('hide');
+                });
+
+                $(element).on('shown.bs.modal', function(){
+                    scope.$apply(function(){
+                        scope.$parent[attrs.visible] = true;
+                    });
+                });
+
+                $(element).on('hidden.bs.modal', function(){
+                    scope.$apply(function(){
+                        scope.$parent[attrs.visible] = false;
+                    });
+                });
+            }
+        };
+    });
+
+
+    // post request to add new user
+    app.controller('ModalController',['$scope','$http' ,function ($scope,$http) {
+        $scope.showModal = false;
+        $scope.toggleModal = function(){
+            $scope.showModal = !$scope.showModal;
+        };
+        $scope.local = {};
+        $scope.addnewUser = function() {
+
+
+
+            $scope.data = {local:$scope.local};
+            $http({
+                method: 'POST',
+                url: '/admin/api/Players',
+                data: $scope.data
+            }).then(function successCallback(response) {
+
+
+
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+
+                console.log("Error!");
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+
+        }
+
+    }]);
+
+
+</script>
+</body>
+</html>
+

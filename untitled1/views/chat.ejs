@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO Chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+        form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+    </style>
+</head>
+<body>
+<ul id="messages"></ul>
+<form action="">
+    <input id="m" autocomplete="off" /><button>Send</button>
+    <br>
+    <input id="g" autocomplete="off" /><button>Join</button>
+</form>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io();
+
+    $('form').submit(function(){
+        var date = new Date();
+        var response = {
+            date: (addZero(date.getUTCMonth() + 1)) + "/"
+                    + addZero(date.getUTCDate()) + "/"
+                    + date.getFullYear() + " "
+                    + addZero(changeTime(date.getHours())) + ":"
+                    + addZero(date.getMinutes()) + ":"
+                    + addZero(date.getSeconds()),
+            message: $('#m').val()
+        };
+        socket.emit('chat message', JSON.stringify(response));
+        socket.emit('hostCreateNewGame', JSON.stringify(response));
+        $('#m').val('');
+        return false;
+    });
+    socket.on('chat message', function(msg){
+        var message = JSON.parse(msg, function(){
+            var str = msg.toString();
+            var ret = str.substring(9, 28) + ">    " + str.substring(41, str.length - 2);
+            return ret;
+        });
+        $('#messages').append($('<li>').text(message));
+    });
+
+    function addZero(x) {
+        String(x).length < 2 ? x = String("0" + x) : x = String(x);
+        return x;
+    }
+
+    function changeTime(x) {
+        x > 12 ? x = String((x - 12)) : x = String(x);
+        return x;
+    }
+</script>
+</body>
+</html>
