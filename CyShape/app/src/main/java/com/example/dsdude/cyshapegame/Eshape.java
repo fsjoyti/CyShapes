@@ -57,13 +57,13 @@ public class Eshape extends GameObject{
         x-=xspeed;
         y-=yspeed;
         if(score<0){
-            if (x < 0 || x + width > 894) {
+            if (x < 0 || x + width > 2000) {
                 xspeed = -1 * xspeed;
 //                bmp=BitmapFactory.decodeResource(getResources(), R.drawable.blackstar);
 //                this.draw(canvas);
 //                score=-100;
             }
-            if (y < 0 || y + height > 894) {
+            if (y < 0 || y + height > 1200) {
                 yspeed = -1 * yspeed;
 //                bmp=BitmapFactory.decodeResource(getResources(), R.drawable.blackstar);
 //                score=-100;

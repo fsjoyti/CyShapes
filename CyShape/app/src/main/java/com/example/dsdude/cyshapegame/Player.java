@@ -77,6 +77,33 @@ public class Player extends GameObject {
         animation.update();
     }
 
+//    @Override
+//    public boolean onTouchEvent (MotionEvent event) {
+//        int x = (int) event.getX();
+//        int y = (int) event.getY();
+//        switch(event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                if(!rect.contains(x, y)) {
+//                    return false;//没有在矩形上点击，不处理触摸消息
+//                }
+//                deltaX = x - rect.left;
+//                deltaY = y - rect.top;
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//            case MotionEvent.ACTION_UP:
+//                Rect old = new Rect(rect);
+//                //更新矩形的位置
+//                rect.left = x - deltaX;
+//                rect.top = y - deltaY;
+//                rect.right = rect.left + WIDTH;
+//                rect.bottom = rect.top + WIDTH;
+//                old.union(rect);//要刷新的区域，求新矩形区域与旧矩形区域的并集
+//                invalidate(old);//出于效率考虑，设定脏区域，只进行局部刷新，不是刷新整个view
+//                break;
+//        }
+//        return true;//处理了触摸消息，消息不再传递
+//    }
+
     @Override
     public void onDraw(Canvas canvas)
     {
@@ -90,28 +117,4 @@ public class Player extends GameObject {
     public void resetDY(){dy = 0;}
     public void resetScore(){score = 0;}
 }
-//public class Player extends View {
-//
-//    private final float x;
-//    private final float y;
-//    private final int r;
-//    private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//    private final Paint mWhite = new Paint(Paint.ANTI_ALIAS_FLAG);
-//
-//    public Player(Context context, float x, float y, int r) {
-//        super(context);
-//        mPaint.setColor(0xFF000000); //Black
-//        mWhite.setColor(0xFFFFFFFF); //White
-//        this.x = x;
-//        this.y = y;
-//        this.r = r;
-//    }
-//
-//    @Override
-//    protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
-//        canvas.drawCircle(x, y, r + 2, mWhite); //White stroke.
-//        canvas.drawCircle(x, y, r, mPaint); //Black circle.
-//    }
-//
-//}
+

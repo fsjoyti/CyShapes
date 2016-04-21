@@ -7,8 +7,8 @@ import android.view.View;
 
 public abstract class GameObject extends View {
     protected Context context;
-    protected float x;
-    protected float y;
+    protected int x;
+    protected int y;
     protected int dy;
     protected int dx;
     protected int width;
@@ -17,19 +17,16 @@ public abstract class GameObject extends View {
     public GameObject(Context context) {
         super (context);
     }
-    public void setx(float x)
-    {
-        this.x = x;
-    }
-    public void sety(float y)
+    public void setx(int x) { this.x = x; }
+    public void sety(int y)
     {
         this.y = y;
     }
-    public float getx()
+    public int getx()
     {
         return x;
     }
-    public float gety()
+    public int gety()
     {
         return y;
     }

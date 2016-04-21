@@ -24,117 +24,20 @@ import android.view.MotionEvent;
 import android.graphics.Rect;
 import java.util.Random;
 
-public class GameInstanceActivity extends Activity implements View.OnTouchListener {
-    float dX= 100;
-    float dY= GamePanel.HEIGHT / 2;
+public class GameInstanceActivity extends Activity  {
     int lastAction;
 
-    private GamePanel gameView;
+    private GamePanel gamePanel;
 
     Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        gameView = new GamePanel(this);
-        setContentView(gameView);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        FrameLayout rootLayout = (FrameLayout)findViewById(android.R.id.content);
-        View.inflate(this, R.layout.draggableview, rootLayout);
-        rootLayout.addView(new Player(this, BitmapFactory.decodeResource(getResources(), R.drawable.cyshapes_transparentbg), 32, 32, 3));
-
-        final View dragView = findViewById(R.id.draggable_view);
-        dragView.setOnTouchListener(this);
-
-
-        player = new Player(this,BitmapFactory.decodeResource(getResources(), R.drawable.cyshapes_transparentbg), 32, 32, 3);
-        View.OnTouchListener touchListener = new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                switch (event.getActionMasked()) {
-                    case MotionEvent.ACTION_DOWN:
-                        player.setx(view.getX() - event.getRawX());
-                        player.sety(view.getY() - event.getRawY());
-                        player.lastAction = MotionEvent.ACTION_DOWN;
-                        break;
-
-                    case MotionEvent.ACTION_MOVE:
-                        view.setY(event.getRawY() + player.gety());
-                        view.setX(event.getRawX() + player.getx());
-                        player.lastAction = MotionEvent.ACTION_MOVE;
-                        break;
-
-                    case MotionEvent.ACTION_UP:
-                        if (player.lastAction == MotionEvent.ACTION_DOWN)
-                            //Toast.makeText(draggableview.this, "Clicked!", Toast.LENGTH_SHORT).show();
-                            break;
-
-                    default:
-                        return false;
-                }
-                return true;
-            }
-        };
-        player.setOnTouchListener(touchListener);
-//        player.setOnTouchListener(this);
-//
-//        player.setOnTouchListener(new View.OnTouchListener(){
-//            public boolean onTouch(View view, MotionEvent event) {
-//                switch (event.getActionMasked()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        dX = view.getX() - event.getRawX();
-//                        dY = view.getY() - event.getRawY();
-//                        lastAction = MotionEvent.ACTION_DOWN;
-//                        break;
-//
-//                    case MotionEvent.ACTION_MOVE:
-//                        view.setY(event.getRawY() + dY);
-//                        view.setX(event.getRawX() + dX);
-//                        lastAction = MotionEvent.ACTION_MOVE;
-//                        break;
-//
-//                    case MotionEvent.ACTION_UP:
-//                        if (lastAction == MotionEvent.ACTION_DOWN)
-//                            //Toast.makeText(draggableview.this, "Clicked!", Toast.LENGTH_SHORT).show();
-//                            break;
-//
-//                    default:
-//                        return false;
-//                }
-//                float x = event.getX();
-//                float y = event.getY();
-//                return true;
-//            }
-//        });
-    }
-
-
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
-        switch (event.getActionMasked()) {
-            case MotionEvent.ACTION_DOWN:
-                dX = view.getX() - event.getRawX();
-                dY = view.getY() - event.getRawY();
-                lastAction = MotionEvent.ACTION_DOWN;
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                view.setY(event.getRawY() + dY);
-                view.setX(event.getRawX() + dX);
-                lastAction = MotionEvent.ACTION_MOVE;
-                break;
-
-            case MotionEvent.ACTION_UP:
-                if (lastAction == MotionEvent.ACTION_DOWN)
-                    //Toast.makeText(draggableview.this, "Clicked!", Toast.LENGTH_SHORT).show();
-                    break;
-
-            default:
-                return false;
-        }
-        return true;
+        gamePanel = new GamePanel(this);
+        setContentView(gamePanel);
     }
 
 //    @Override

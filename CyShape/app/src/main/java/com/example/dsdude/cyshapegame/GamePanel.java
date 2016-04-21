@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import java.util.ArrayList;
@@ -18,9 +19,8 @@ import java.util.Random;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 {
-    public static final int WIDTH = 894;
-    public static final int HEIGHT = 894;
-    //    public static final int MOVESPEED = -5;
+    public static final int WIDTH = 2000;
+    public static final int HEIGHT = 1200;
     private long eshapesStartTime;
     private MainThread thread;
     private Background bg;
@@ -34,7 +34,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     private boolean dissapear;
     private boolean started;
     private int eshapesCN;
-    private GameInstanceActivity gio;
+
+    private Point point=new Point(); //touch point
+    private boolean canDrag=false; //determine whether touch on the Player image
+    private int offsetX=0, offsetY=0; //distance between point and left top of Player image
 
     public GamePanel(Context context)
     {
@@ -73,11 +76,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     @Override
     public void surfaceCreated(SurfaceHolder holder){
 
-        bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebackground));
-        player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.bluesquare), 69, 69, 1);
+        bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebg));
+        player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.playerstar), 60,60,1);
         eshapes = new ArrayList<Eshape>();
         eshapesStartTime = System.nanoTime();
-
 
 
         //we can safely start the game loop
@@ -86,23 +88,62 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
     }
 
+
+
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
-        if(event.getAction()==MotionEvent.ACTION_DOWN){
-            if(!player.getPlaying()&& newGameCreated && reset)
-            {
-                player.setPlaying(true);
-            }
-            if(player.getPlaying())
-            {
-                if(!started)started = true;
-                reset = false;
-            }
-            return true;
-        }
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                if(!player.getPlaying()&& newGameCreated && reset)
+                {
+                    player.setPlaying(true);
+                }
+                if(player.getPlaying())
+                {
+                    if(!started)started = true;
+                    reset = false;
+                    point.x=(int)event.getX();
+                    point.y=(int)event.getY();
+                    if(player.getx()<=point.x&&point.x<=player.getx()+player.getwidth()&&player.gety()<=point.y&&point.y<=player.gety()+player.getheight()){
+                        canDrag=true;
+                        offsetX=point.x-player.getx();
+                        offsetY=point.y-player.gety();
+                    }
+                }
+                break;
 
-        return super.onTouchEvent(event);
+            case MotionEvent.ACTION_MOVE:
+//            if(canDrag){
+                player.setx((int)event.getX()-offsetX);
+                player.sety((int) event.getY() - offsetY);
+
+                if (player.getx() < 0) {
+                    player.setx(0);
+                }
+
+                if (player.getx()+player.getwidth() >  WIDTH) {
+                    player.setx(WIDTH-player.getwidth());
+                }
+
+                if (player.gety() < 0) {
+                    player.sety(0);
+                }
+
+                if (player.gety()+player.getheight() > HEIGHT) {
+                    player.sety(HEIGHT - player.getheight());
+                }
+//            }
+            break;
+
+            case MotionEvent.ACTION_UP:
+                canDrag=false;
+                break;
+
+            default:
+                break;
+        }
+        return true;
     }
 
     public void update()
@@ -239,7 +280,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
         player.resetDY();
         player.resetScore();
-        player.setY(HEIGHT/2);
+        player.setx(100);
+        player.sety(HEIGHT/2);
 
 //        if(player.getScore()>best)
 //        {
@@ -256,7 +298,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         paint.setColor(Color.WHITE);
         paint.setTextSize(40);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        canvas.drawText("SCORE: " + player.getScore(), 10, HEIGHT+120, paint);
+        canvas.drawText("SCORE: " + player.getScore(), 0, HEIGHT/2+450, paint);
 
         if(!player.getPlaying()&&newGameCreated&&reset)
         {
@@ -264,71 +306,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             paint1.setColor(Color.WHITE);
             paint1.setTextSize(80);
             paint1.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-            canvas.drawText("PRESS TO START", WIDTH/2+300, HEIGHT/2+100, paint1);
+            canvas.drawText("PRESS TO START", WIDTH/2-200, HEIGHT/2, paint1);
         }
     }
 }
-//public class GameView extends SurfaceView {
-//    private Bitmap bmp;
-//    private SurfaceHolder holder;
-//    private MainThread gameLoopThread;
-//    private List<Enemy> enemies = new ArrayList<Enemy>();
-//
-//    public GameView(Context context) {
-//        super(context);
-//        gameLoopThread = new MainThread(this);
-//        holder = getHolder();
-//        holder.addCallback(new SurfaceHolder.Callback() {
-//
-//            @Override
-//            public void surfaceDestroyed(SurfaceHolder holder) {
-//                boolean retry = true;
-//                gameLoopThread.setRunning(false);
-//                while (retry) {
-//                    try {
-//                        gameLoopThread.join();
-//                        retry = false;
-//                    } catch (InterruptedException e) {
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void surfaceCreated(SurfaceHolder holder) {
-//                createEnemies();
-//                gameLoopThread.setRunning(true);
-//                gameLoopThread.start();
-//            }
-//
-//            @Override
-//            public void surfaceChanged(SurfaceHolder holder, int format,
-//                                       int width, int height) {
-//            }
-//        });
-//    }
-//
-//    private void createEnemies(){
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//        enemies.add(createEnemy(R.drawable.cyshapes_transparentbg));
-//    }
-//
-//    private Enemy createEnemy(int resource){
-//        Bitmap bmp = BitmapFactory.decodeResource(getResources(), resource);
-//        return new Enemy(this,bmp);
-//    }
-//
-//    @Override
-//    protected void onDraw(Canvas canvas) {
-//        canvas.drawColor(Color.BLACK);
-//        for (Enemy enemy : enemies) {
-//            enemy.onDraw(canvas);
-//        }
-//    }
-//}
