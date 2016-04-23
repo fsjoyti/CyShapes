@@ -278,36 +278,35 @@ app.get("/report",function (req,res) {
 });
 
     app.post("/report",function(req,res){
-        console.log(req.body);
+
+        /*
         User.find({'local.admin':true},function(error,data){
             if (error) throw error;
-            
-            console.log(data);
             res.json(data);
         });
-        /*
+        */
+        var emailAdmin =  req.body.adminEmail;
+        var usertoban = req.body.email;
+        var report = req.body.report;
+
+
         var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
         var messages = {
             from : 'frustratedUser@Cyshapes.com',
-            to   :  ''+user.local.email,
+            to   :  ''+emailAdmin,
             subject : 'Request for ban',
-            text :  req.body +'\n\n' 
+            text : "Ban request for player:  "+ usertoban +" Reason: "+report +'\n\n'
             
         };
+
         transporter.sendMail(messages, function(err) {
-            req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
-            done(err, 'done');
+           // req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+
+            res.status('info').json('An e-mail has been sent to ' + emailAdmin + ' with your request.');
         });
 
-        transporter.verify(function(error,success){
-            if(error){
-                console.log("Error!");
-            }
-            else{
-                console.log("Server is ready to take messages!");
-            }
-        });
-*/
+        
+
 
     });
 

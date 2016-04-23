@@ -130,13 +130,14 @@
                             });
 
                             $scope.sendReport = function(){
-                              console.log(email);
 
+
+                                    var adminEmail = $scope.adminEmails.repeatSelect;
 
 
                                 var report = $scope.formData.report;
 
-                                $scope.data = {email: email , report:report};
+                                $scope.data = {email: email , report:report,adminEmail:adminEmail};
                                 $http({
                                     method: 'POST',
                                     url: '/report',
