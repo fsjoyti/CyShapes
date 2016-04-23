@@ -50,6 +50,14 @@
                     <label for="local.timeCreated">timeCreated</label>
                     <input type="text" class="form-control" id="local.timeCreated"ng-model = "local.timeCreated" placeholder="Date Created" />
                 </div>
+                <div class="form-group">
+                    <label for="local.admin">Is an Admin</label>
+                    <input type="text" class="form-control" id="local.admin" ng-model = "local.admin" placeholder="{{admin}}" />
+                </div>
+                <div class="form-group">
+                    <label for="local.banned">Banned</label>
+                    <input type="text" class="form-control" id="local.banned" ng-model = "local.banned" placeholder="{{banned}}" />
+                </div>
 
                 <input type="submit"  value="Submit" class="btn btn-default">Submit</input>
             </form>
@@ -71,6 +79,15 @@
                 <label for="local.timeCreated">timeCreated</label>
                 <input type="text" class="form-control" id="local.timeCreated" ng-model = "local.timeCreated" placeholder="{{timeCreated}}" />
             </div>
+            <div class="form-group">
+                <label for="local.admin">Is an Admin</label>
+                <input type="text" class="form-control" id="local.admin" ng-model = "local.admin" placeholder="{{admin}}" />
+            </div>
+            <div class="form-group">
+                <label for="local.banned">Banned</label>
+                <input type="text" class="form-control" id="local.banned" ng-model = "local.banned" placeholder="{{banned}}" />
+            </div>
+
 
             <button ng-click="deletethisUser()" class="btn btn-default">Delete this user</button>
             <button type="submit" class="btn btn-default">Submit</button>
@@ -102,8 +119,8 @@
                 $scope.email = this.x.local.email;
                 $scope.password = this.x.local.password;
                 $scope.timeCreated = this.x.local.timeCreated;
-                $scope.admin = this.x.admin;
-                $scope.banned = this.x.banned;
+                $scope.admin = this.x.local.admin;
+                $scope.banned = this.x.local.banned;
                 $scope.id = this.x._id;
                 $scope.showModal = !$scope.showModal;
                 $scope.local = {};

@@ -41,7 +41,7 @@ module.exports = function(app,passport){
         }
     ));
 
-    app.get('/profile',function(req,res){
+    app.get('/profile',isnotBanned,function(req,res){
 
         res.render('profile.ejs',{user:req.user});
         }
@@ -294,6 +294,20 @@ function isAdmin(req,res,next){
         res.redirect ('/profile');
 
     }
+
+
+}
+
+function isnotBanned(req,res,next) {
+    if( req .user.local != undefined && req.user.local.banned ==false){
+
+        return next();
+    }
+    if( req .user.local != undefined && req.user.local.banned ==true){
+        res.redirect ('/index');
+
+    }
+
 
 
 }

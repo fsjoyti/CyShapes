@@ -29,8 +29,11 @@
 </div>
 <div ng-show = "isAvailable()">
     <p>{{email}}</p>
+    <p>Admin:{{admin}}</p>
+    <p>Banned:{{banned}}</p>
     <p>{{timeCreated}}</p>
     <p>{{scores}}</p>
+    <button ng-click="reportthisUser()" class="btn btn-default">Report this user</button>
 
 </div>
 
@@ -65,8 +68,13 @@
                     else {
 
                         $scope.email = response.data.user.local.email;
+                        $scope.admin = response.data.user.local.admin;
+                        $scope.banned = response.data.user.local.banned;
                         $scope.timeCreated = response.data.user.local.timeCreated;
                         $scope.scores = response.data.scores;
+                        $scope.reporthisUser = function(){
+
+                        }
 
 
                         return true;
