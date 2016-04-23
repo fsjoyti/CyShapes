@@ -16,15 +16,19 @@ module.exports = function(app,passport){
     });
 
     app.get('/login',function(req,res) {
+
         res.render('login.ejs',{message:req.flash('LoginMessage')});
     });
 
     app.post('/login',passport.authenticate('local-login',{
+
             successRedirect :'/profile',
             failureRedirect : '/login',
             failureFlash : true
             }
         )
+
+
     );
     app.get('/signup',function(req,res){
         res.render('signup.ejs',{message:req.flash('signupMessage')});
@@ -38,6 +42,7 @@ module.exports = function(app,passport){
     ));
 
     app.get('/profile',function(req,res){
+
         res.render('profile.ejs',{user:req.user});
         }
     );
@@ -88,7 +93,7 @@ module.exports = function(app,passport){
                     }
 
 
-                }
+                };
                 var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
 
                 /*
@@ -110,7 +115,7 @@ module.exports = function(app,passport){
                 'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                 'http://' + req.headers.host + '/reset/' + token + '\n\n' +
                 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-                }
+                };
                 transporter.sendMail(messages, function(err) {
                     req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
                     done(err, 'done');
@@ -177,7 +182,7 @@ module.exports = function(app,passport){
                     subject : 'Your password for CyShapes Account',
                     text: 'Hello,\n\n' +
                     'This is a confirmation that the password for your account ' + user.local.email + ' has just been changed.\n'
-                }
+                };
                 transporter.sendMail(messages, function(err) {
                     req.flash('success', 'Success! Your password has been changed.');
                     done(err, 'done');
@@ -250,7 +255,7 @@ module.exports = function(app,passport){
         });
 
     });
-    app.all("/admin/*", isLoggedIn, function (req, res, next) {
+    app.all("/admin/*",isLoggedIn, isAdmin, function (req, res, next) {
 
         next();
 
@@ -277,4 +282,18 @@ function  isLoggedIn(req,res,next){
         return next();
     }
     res.redirect ('/login');
+}
+function isAdmin(req,res,next){
+
+    if( req .user.local != undefined && req.user.local.admin ==true){
+
+        return next();
+    }
+
+    if( req .user.local != undefined && req.user.local.admin ==false){
+        res.redirect ('/profile');
+
+    }
+
+
 }

@@ -9,10 +9,8 @@ var UserSchema = new Schema({
     local:{
         email: { type: String, unique: true } ,
         password: String,
-        roles: {
-            admin: { type: Schema.Types.ObjectId, ref: 'Admin' },
-            account: { type: Schema.Types.ObjectId, ref: 'Account' }
-        },
+        admin : Boolean,
+        banned: Boolean,
         isActive: String,
         timeCreated: { type: Date, default: Date.now },
         resetPasswordToken: String,

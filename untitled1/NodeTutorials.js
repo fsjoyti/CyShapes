@@ -23,7 +23,7 @@ var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
 var PlayerDatabase = require('./Routes/Models/PlayerScores');
 var flash = require('connect-flash');
-//var mongooseadmin = require('mongooseadmin');
+
 var node_restful = require ('node-restful');
 
 app.use(logger('dev'));
@@ -37,7 +37,7 @@ app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-//app.use('/admin',mongooseadmin());
+
 
 
 
