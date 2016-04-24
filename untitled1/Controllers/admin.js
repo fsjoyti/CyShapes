@@ -24,6 +24,8 @@ module.exports = function(app){
         newUser.local.email = Player.local.email;
         newUser.local.password = newUser.generateHash(Player.local.password);
         newUser.local.timeCreated =Player.local.timeCreated;
+        newUser.local.admin = false;
+        newUser.local.banned = false;
 
         newUser.save(function(error,data){
             if (error) throw error;
@@ -43,7 +45,8 @@ module.exports = function(app){
     app.put('/admin/api/Players/:_id',function(req,res){
         var id = req.params._id;
         var Playerobject = req.body;
-        console.log(Playerobject);
+
+
            User.findById(id,function(err,Player){
 
                if (err) throw err;
@@ -54,6 +57,13 @@ module.exports = function(app){
                    Player.local.password = Player.generateHash(Playerobject.local.password);
                if(Playerobject.local.timeCreated)
                    Player.local.timeCreated = Playerobject.local.timeCreated;
+
+               if(Playerobject.local.admin !=undefined){
+                   Player.local.admin = Playerobject.local.admin;
+               }
+               if(Playerobject.local.banned !=undefined){
+                   Player.local.banned = Playerobject.local.banned;
+               }
                if(Player!=null) {
                    Player.save(function (err) {
 
