@@ -350,6 +350,38 @@ app.get("/report",function (req,res) {
 
     });
 
+    app.get("/adminrequest",function (req,res) {
+        User.find({'local.admin':true},function(error,data){
+            if (error) throw error;
+            res.json(data);
+        });
+
+    });
+
+    app.post("/adminrequest",function (req,res) {
+        
+        var emailAdmin =  req.body.adminEmail;
+        var request = req.body.request;
+        var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+        var messages = {
+            from : 'InterestedUser@Cyshapes.com',
+            to   :  ''+emailAdmin,
+            subject : 'Request to become an admin',
+            text : "You received the following request "+request +'\n\n' +"from " +req.user.local.email
+
+        };
+
+        transporter.sendMail(messages, function(err) {
+            // req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+
+            res.status('info').json('An e-mail has been sent to ' + emailAdmin + ' with your request.');
+        });
+
+
+    });
+
+
+
 };
 
 

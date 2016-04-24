@@ -40,6 +40,7 @@
         <a href="/game" class="btn btn-default btn-sm">Play Game</a>
         <a href="/search" class="btn btn-default btn-sm">Search other users</a>
         <button ng-click="editmyInfo()" class="btn btn-default">Edit my info</button>
+        <button ng-click="becomeanAdmin()" class="btn btn-default">Request to become an admin</button>
         <modal title="Update my info" visible="showModal" ng-submit="modifyInfo()">
             <form role="form">
 
@@ -58,6 +59,26 @@
             </form>
         </modal>
 
+        <modal title="Request to become an admin" visible="ModalPresent" ng-submit="sendRequest()">
+            <form role="form">
+
+                <div class="form-group">
+                    <label for="repeatSelect"> Select admin to send your request : </label>
+                    <select name="repeatSelect" id="repeatSelect" ng-model="adminEmails.repeatSelect">
+                        <option ng-repeat="option in adminEmails.availableOptions" value="{{option.email}}">{{option.email}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label >Enter your request here:</label>
+                    <textarea class="form-control" rows="5" name="report" placeholder="Enter  your request here" ng-model = "formData.request"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+
+            </form>
+        </modal>
+
     </div>
 
 </div>
@@ -73,7 +94,9 @@
 
     app.controller('profileController',['$scope','$http',function($scope,$http){
         $scope.showModal = false;
+        $scope.ModalPresent = false;
         $scope.local = {};
+        $scope.formData = {};
         $scope.editmyInfo  = function(){
             $scope.showModal = !$scope.showModal;
             $http({
@@ -118,6 +141,74 @@
 
 
         }
+        $scope.becomeanAdmin = function(){
+            $scope.ModalPresent = !$scope.ModalPresent;
+            $http({
+                method: 'GET',
+                url: '/report'
+            }).then(function successCallback(response) {
+
+                var myData = [];
+                for(var i = 0; i <response.data.length;i++){
+
+                    var emailList = {email:response.data[i].local.email};
+                    myData.push(emailList);
+
+                }
+                $scope.adminEmails = {
+                    repeatSelect: null,
+                    availableOptions:myData
+                };
+
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+
+            $scope.sendRequest = function(){
+                var adminEmail = $scope.adminEmails.repeatSelect;
+
+
+                var request = $scope.formData.request;
+                console.log(request);
+
+                $scope.data = { request:request,adminEmail:adminEmail};
+                $http({
+                    method: 'POST',
+                    url: '/adminrequest',
+                    data: $scope.data
+                }).then(function successCallback(response) {
+                    console.log(response);
+
+
+
+                    $scope.ModalPresent = !$scope.ModalPresent;
+                    alert(response.data);
+
+                    /*
+                     console.log(response.data[0].local);
+                     for(var i = 0; i <response.data.length;i++){
+                     console.log("zzz");
+                     }
+                     */
+
+                    // this callback will be called asynchronously
+                    // when the response is available
+                }, function errorCallback(response) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                    alert("Sorry we were unable to send your request.Check if you have entered the admin email correctly");
+                });
+
+            }
+
+
+
+        }
+
+
 
 
     }]);
