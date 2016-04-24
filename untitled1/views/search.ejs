@@ -71,7 +71,7 @@
     var app = angular.module('myApp', []);
     var message  = "";
 
-    console.log('Controller is ready!');
+
     app.controller('myController',['$scope','$http',function($scope,$http){
         console.log('Controller is ready!');
         $scope.formData = {};
@@ -163,7 +163,7 @@
                                 }, function errorCallback(response) {
                                     // called asynchronously if an error occurs
                                     // or server returns response with an error status.
-                                    console.log("Error!");
+                                   alert("Sorry we were unable to send your request.Check if you have entered the admin email correctly");
                                 });
 
 

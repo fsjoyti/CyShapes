@@ -46,6 +46,46 @@ module.exports = function(app,passport){
         res.render('profile.ejs',{user:req.user});
         }
     );
+    app.get('/modifyprofile',isnotBanned,function(req,res){
+
+        res.json({user:req.user})   ;
+
+        }
+    );
+    app.put('/modifyprofile',isnotBanned,function(req,res){
+               // console.log(req.user);
+              console.log(req.body);
+        var user = req.body;
+        console.log(req.body.password);
+        User.find({'local.email':req.user.local.email,'local.password':req.user.local.password},function(error,player){
+
+            var playerobject = player[0];
+            console.log(playerobject);
+            if(user.email!=undefined){
+                playerobject.local.email = user.email;
+            }
+            if(user.password!=undefined){
+                playerobject.local.password = player[0].generateHash(user.password);
+            }
+
+
+
+
+
+            playerobject.save(function(err){
+                if(err)res.send(err);
+                else {
+                    res.json('Your information is updated');
+                }
+            });
+
+
+        });
+
+
+        }
+    );
+
 
     app.get('/chat', function(req, res){
         res.render('chat.ejs');
