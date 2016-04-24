@@ -55,6 +55,7 @@
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>
+
     </form>
 </modal>
 </div>
@@ -68,7 +69,7 @@
 <script>
 
     var app = angular.module('myApp', []);
-
+    var message  = "";
 
     console.log('Controller is ready!');
     app.controller('myController',['$scope','$http',function($scope,$http){
@@ -144,6 +145,12 @@
                                     data: $scope.data
                                 }).then(function successCallback(response) {
                                     console.log(response);
+
+
+
+                                    $scope.showModal = !$scope.showModal;
+                                    alert(response.data);
+
                                     /*
                                      console.log(response.data[0].local);
                                      for(var i = 0; i <response.data.length;i++){
@@ -171,6 +178,7 @@
 
 
                         }
+
 
 
                         return true;
