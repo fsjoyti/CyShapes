@@ -28,7 +28,7 @@ module.exports = function(passport){
 
             process.nextTick(function() {
 
-
+              
                 User.findOne({ 'local.email' :  email }, function(err, user) {
 
                     if (err)
@@ -56,6 +56,8 @@ module.exports = function(passport){
                 });
 
             });
+            
+
         }));
     passport.use('local-login',new LocalStrategy({
         usernameField : 'email',

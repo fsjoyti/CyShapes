@@ -249,8 +249,22 @@ function hostPrepareNewGame(){
 function hostStartGame(){
     console.log('Game Started.');
 }
+
+function createEnemies(){
+    var enemies = [];
+    for(var i = 0; i < 10 ; i++){
+        var xposition = Math.random();
+        var yposition =Math.random();
+        var jsonObject = {x:xposition,y:yposition};
+        enemies.push(jsonObject);
+
+
+    }
+
+}
 setInterval(function(){
     var pack = [];
+    
     for (var i in Player_List){
         var player = Player_List[i];
         player.x++;
