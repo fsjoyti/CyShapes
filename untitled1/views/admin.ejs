@@ -90,11 +90,7 @@
 
 
             <button ng-click="deletethisUser()" class="btn btn-default">Delete this user</button>
-            <button ng-click="makeAdmin()" class="btn btn-default">Make this user an admin</button>
-            <button ng-click="removeAdmin()" class="btn btn-default">Remove Admin Rights</button>
-            <button ng-click="banPlayer()" class="btn btn-default">Ban</button>
-            <button ng-click="removeban()" class="btn btn-default"> Remove Ban</button>
-            <button type="submit" class="btn btn-default">Modify other info</button>
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </modal>
 </div>
@@ -172,111 +168,8 @@
 
                 }
 
-
             };
-            $scope.makeAdmin = function(){
-                var admin = true;
-                var json = {local:{admin:admin}};
-                console.log(json);
 
-                $scope.info = json;
-                console.log("$scope.data "+$scope.info);
-                $http({
-                    method: 'PUT',
-                    url: '/admin/api/Players/' + $scope.id,
-                    data: $scope.info
-                }).then(function successCallback(response) {
-                    //console.log(response);
-
-
-                    // this callback will be called asynchronously
-                    // when the response is available
-                }, function errorCallback(response) {
-
-                    console.log("Error!");
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                });
-
-
-            }
-
-            $scope.removeAdmin = function(){
-                var admin = false;
-                var json = {local:{admin:admin}};
-                console.log(json);
-
-                $scope.info = json;
-                console.log("$scope.data "+$scope.info);
-                $http({
-                    method: 'PUT',
-                    url: '/admin/api/Players/' + $scope.id,
-                    data: $scope.info
-                }).then(function successCallback(response) {
-                    //console.log(response);
-
-
-                    // this callback will be called asynchronously
-                    // when the response is available
-                }, function errorCallback(response) {
-
-                    console.log("Error!");
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                });
-
-
-            }
-            $scope.banPlayer = function () {
-                var banned = true;
-                var json = {local:{banned:banned}};
-                $scope.info = json;
-                console.log("$scope.data "+$scope.info);
-                $http({
-                    method: 'PUT',
-                    url: '/admin/api/Players/' + $scope.id,
-                    data: $scope.info
-                }).then(function successCallback(response) {
-                    //console.log(response);
-
-
-                    // this callback will be called asynchronously
-                    // when the response is available
-                }, function errorCallback(response) {
-
-                    console.log("Error!");
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                });
-
-
-
-            }
-            $scope.removeban  = function(){
-                var banned = false;
-                var json = {local:{banned:banned}};
-                $scope.info = json;
-                console.log("$scope.data "+$scope.info);
-                $http({
-                    method: 'PUT',
-                    url: '/admin/api/Players/' + $scope.id,
-                    data: $scope.info
-                }).then(function successCallback(response) {
-                    //console.log(response);
-
-
-                    // this callback will be called asynchronously
-                    // when the response is available
-                }, function errorCallback(response) {
-
-                    console.log("Error!");
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                });
-
-
-
-            }
 
 
 
