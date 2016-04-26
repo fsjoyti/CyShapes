@@ -35,7 +35,9 @@
 
             </div>
         </div>
-
+        <% if (user.local.admin ) { %>
+        <a href="/admin/users" class="btn btn-default btn-sm">Go to admin page</a>
+        <% } %>
         <a href="/chat" class="btn btn-default btn-sm">Chat</a>
         <a href="/game" class="btn btn-default btn-sm">Play Game</a>
         <a href="/search" class="btn btn-default btn-sm">Search other users</a>
