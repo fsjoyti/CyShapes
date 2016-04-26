@@ -23,8 +23,8 @@ public class GameInstanceActivity extends Activity  {
 
     View pausaButton;
     View PauseMenu;
-//
-//    MediaPlayer MainMusic;
+
+    MediaPlayer MainMusic;
 
     OnClickListener Continue_list = new OnClickListener() {
 
@@ -95,9 +95,9 @@ public class GameInstanceActivity extends Activity  {
         MainMenuTo.setOnTouchListener(new TouchButton(MainMenuTo));
         MainMenuTo.setOnClickListener(To_Main_Menu_list);
 
-//        MainMusic = MediaPlayer.create(GameInstanceActivity.this, R.raw.music);
-//        MainMusic.setVolume(0.3f, 0.3f);
-//        MainMusic.start();
+        MainMusic = MediaPlayer.create(GameInstanceActivity.this, R.raw.music);
+        MainMusic.setVolume(0.3f, 0.3f);
+        MainMusic.start();
     }
 
     @Override
@@ -107,12 +107,12 @@ public class GameInstanceActivity extends Activity  {
         gamePanel.Pause_game=true;
     }
 
-//    @Override
-//    protected void onStop() {
-//        if (MainMusic.isPlaying())
-//            MainMusic.stop();
-//        super.onStop();
-//    }
+    @Override
+    protected void onStop() {
+        if (MainMusic.isPlaying())
+            MainMusic.stop();
+        super.onStop();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

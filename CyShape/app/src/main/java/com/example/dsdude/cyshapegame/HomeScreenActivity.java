@@ -13,7 +13,7 @@ package com.example.dsdude.cyshapegame;
 
 public class HomeScreenActivity extends Activity {
 
-//    MediaPlayer MainMenuMusic;
+    MediaPlayer MainMenuMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +46,20 @@ public class HomeScreenActivity extends Activity {
         });
     }
 
-//    @Override
-//    protected void onStart() {
-//        MainMenuMusic = MediaPlayer.create(HomeScreenActivity.this, R.raw.music);
-//        MainMenuMusic.setVolume(0.3f, 0.3f);
-//        MainMenuMusic.start();
-//        super.onStart();
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        if (MainMenuMusic.isPlaying())
-//            MainMenuMusic.stop();
-//        super.onStop();
-//    }
+    @Override
+    protected void onStart() {
+        MainMenuMusic = MediaPlayer.create(HomeScreenActivity.this, R.raw.music);
+        MainMenuMusic.setVolume(0.3f, 0.3f);
+        MainMenuMusic.start();
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        if (MainMenuMusic.isPlaying())
+            MainMenuMusic.stop();
+        super.onStop();
+    }
 
 }
 
