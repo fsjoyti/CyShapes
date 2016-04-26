@@ -97,8 +97,14 @@ var thisGameId;
 
 io.sockets.on('connection', function(socket){
     console.log('a user connected');
+  var enemies=  createEnemies();
+    console.log(enemies);
+    socket.on('onstart',function(){
+        socket.emit('enemies',enemies);
+    });
 
-    socket.id = Math.random() * 100;
+
+    socket.id = Math.random();
     //player.id = socket.id;
 
     Socket_List[socket.id] = socket;
@@ -251,15 +257,18 @@ function hostStartGame(){
 }
 
 function createEnemies(){
+    console.log("Inside create enemies");
     var enemies = [];
     for(var i = 0; i < 10 ; i++){
         var xposition = Math.random();
         var yposition =Math.random();
         var jsonObject = {x:xposition,y:yposition};
+       console.log(jsonObject);
         enemies.push(jsonObject);
 
 
     }
+    return enemies;
 
 }
 setInterval(function(){
@@ -300,13 +309,8 @@ http.listen(3000,function (socket) {
     console.log("Example app listening at http://localhost:3000");
 });
 
-/*
-socket.on('connection', function(socket){
-    socket.on('enemy', function(enemy){
-        io.emit('enemy', enemy);
-    });
-});
-*/
+
+
 
 
 // For whatever reason the code below didn't want to play nicely with socket.io, so I commented it out
