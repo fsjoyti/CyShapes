@@ -2,13 +2,18 @@ package com.example.dsdude.cyshapegame;
 
         import android.app.Activity;
         import android.content.Intent;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.view.View;
         import android.view.Window;
         import android.view.WindowManager;
         import android.widget.Button;
+        import android.widget.ImageView;
+        import android.widget.RelativeLayout;
 
 public class HomeScreenActivity extends Activity {
+
+//    MediaPlayer MainMenuMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,21 @@ public class HomeScreenActivity extends Activity {
             }
         });
     }
+
+//    @Override
+//    protected void onStart() {
+//        MainMenuMusic = MediaPlayer.create(HomeScreenActivity.this, R.raw.music);
+//        MainMenuMusic.setVolume(0.3f, 0.3f);
+//        MainMenuMusic.start();
+//        super.onStart();
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        if (MainMenuMusic.isPlaying())
+//            MainMenuMusic.stop();
+//        super.onStop();
+//    }
 
 }
 

@@ -1,50 +1,117 @@
 package com.example.dsdude.cyshapegame;
 
 import android.app.Activity;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
-import java.util.ArrayList;
-import android.graphics.Paint;
-import android.graphics.Typeface;
-import android.view.MotionEvent;
-import android.graphics.Rect;
+import android.media.MediaPlayer;
+import android.util.DisplayMetrics;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import java.util.Random;
 
 public class GameInstanceActivity extends Activity  {
-    int lastAction;
-
+    RelativeLayout Rel_main_game;
     private GamePanel gamePanel;
+    TextView txt;
 
-    Player player;
+    View pausaButton;
+    View PauseMenu;
+//
+//    MediaPlayer MainMusic;
 
+    OnClickListener Continue_list = new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            PauseMenu.setVisibility(View.GONE);
+            pausaButton.setVisibility(View.VISIBLE);
+            gamePanel.Pause_game=false;
+        }
+    };
+
+    OnClickListener To_Main_Menu_list = new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            gamePanel.thread.setRunning(false);
+            GameInstanceActivity.this.finish();
+
+        }
+    };
+
+
+    OnClickListener Pausa_click =new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            pausaButton.setVisibility(View.GONE);
+            PauseMenu.setVisibility(View.VISIBLE);
+            gamePanel.Pause_game=true;
+
+
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.game);
+        Rel_main_game = (RelativeLayout) findViewById(R.id.game);
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        gamePanel = new GamePanel(this);
-        setContentView(gamePanel);
+        final int heightS = dm.heightPixels;
+        final int widthS = dm.widthPixels;
+        gamePanel = new GamePanel(getApplicationContext(), this,widthS, heightS);
+        Rel_main_game.addView(gamePanel);
+
+        LayoutInflater myInflater = (LayoutInflater) getApplicationContext().getSystemService(getApplicationContext().LAYOUT_INFLATER_SERVICE);
+        pausaButton = myInflater.inflate(R.layout.pause, null, false);
+        pausaButton.setX(widthS-250);
+        pausaButton.setY(0);
+        Rel_main_game.addView(pausaButton);
+
+        ImageView pauseImage = (ImageView) pausaButton.findViewById(R.id.PauseImage);
+        pausaButton.setOnTouchListener(new TouchButton(pauseImage));
+        pausaButton.setOnClickListener(Pausa_click);
+        pausaButton.getLayoutParams().height=250;
+        pausaButton.getLayoutParams().width=250;
+
+        PauseMenu= myInflater.inflate(R.layout.pausemenu, null, false);
+        Rel_main_game.addView(PauseMenu);
+        PauseMenu.setVisibility(View.GONE);
+
+        ImageView Cont = (ImageView)PauseMenu.findViewById(R.id.imCont);
+        ImageView MainMenuTo = (ImageView)PauseMenu.findViewById(R.id.toMain);
+        Cont.setOnTouchListener(new TouchButton(Cont));
+        Cont.setOnClickListener(Continue_list);
+        MainMenuTo.setOnTouchListener(new TouchButton(MainMenuTo));
+        MainMenuTo.setOnClickListener(To_Main_Menu_list);
+
+//        MainMusic = MediaPlayer.create(GameInstanceActivity.this, R.raw.music);
+//        MainMusic.setVolume(0.3f, 0.3f);
+//        MainMusic.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        pausaButton.setVisibility(View.GONE);
+        PauseMenu.setVisibility(View.VISIBLE);
+        gamePanel.Pause_game=true;
     }
 
 //    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_game, menu);
-//        return true;
+//    protected void onStop() {
+//        if (MainMusic.isPlaying())
+//            MainMusic.stop();
+//        super.onStop();
 //    }
 
     @Override
@@ -61,6 +128,10 @@ public class GameInstanceActivity extends Activity  {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 
 }
 
