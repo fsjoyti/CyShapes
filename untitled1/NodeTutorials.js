@@ -23,7 +23,7 @@ var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
 var PlayerDatabase = require('./Routes/Models/PlayerScores');
 var flash = require('connect-flash');
-//var mongooseadmin = require('mongooseadmin');
+
 var node_restful = require ('node-restful');
 
 app.use(logger('dev'));
@@ -37,7 +37,7 @@ app.use(session({secret:'supernova',saveUninitialized:true,resave:true,store:new
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-//app.use('/admin',mongooseadmin());
+
 
 
 
@@ -249,8 +249,22 @@ function hostPrepareNewGame(){
 function hostStartGame(){
     console.log('Game Started.');
 }
+
+function createEnemies(){
+    var enemies = [];
+    for(var i = 0; i < 10 ; i++){
+        var xposition = Math.random();
+        var yposition =Math.random();
+        var jsonObject = {x:xposition,y:yposition};
+        enemies.push(jsonObject);
+
+
+    }
+
+}
 setInterval(function(){
     var pack = [];
+    
     for (var i in Player_List){
         var player = Player_List[i];
         player.x++;
@@ -285,6 +299,24 @@ io.on('connection', function(socket){
 http.listen(3000,function (socket) {
     console.log("Example app listening at http://localhost:3000");
 });
+
+
+function createEnemies(){
+
+}
+
+
+var Enemy = function(id){
+
+}
+
+socket.on('connection', function(socket){
+    socket.on('enemy', function(enemy){
+        io.emit('enemy', enemy);
+    });
+});
+
+
 
 // For whatever reason the code below didn't want to play nicely with socket.io, so I commented it out
 

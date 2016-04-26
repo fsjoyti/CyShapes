@@ -6,7 +6,7 @@ var PlayerScores = require('../Routes/Models/PlayerScores');
 var ObjectId = require('mongodb').ObjectId;
 module.exports = function(app){
 
-    app.all("/admin/*",isLoggedIn , function(req, res, next) {
+    app.all("/admin/*",  isLoggedIn,isAdmin,function(req, res, next) {
         next();
     });
     app.get('/admin/api/Players',function(req,res){
@@ -18,9 +18,14 @@ module.exports = function(app){
     });
 
     app.post('/admin/api/Players',function(req,res){
-            var Player = req.body;
-        console.log(Player);
-        User.create(Player,function(error,data){
+        var Player = req.body;
+
+        var newUser            = new User();
+        newUser.local.email = Player.local.email;
+        newUser.local.password = newUser.generateHash(Player.local.password);
+        newUser.local.timeCreated =Player.local.timeCreated;
+
+        newUser.save(function(error,data){
             if (error) throw error;
             res.json(data);
         });
@@ -34,25 +39,30 @@ module.exports = function(app){
             res.json(data);
         });
     });
+
     app.put('/admin/api/Players/:_id',function(req,res){
         var id = req.params._id;
         var Playerobject = req.body;
+        console.log(Playerobject);
            User.findById(id,function(err,Player){
+
                if (err) throw err;
-
-                if(!isEmpty(Playerobject.local.email))
+         
+                if(Playerobject.local.email)
                     Player.local.email = Playerobject.local.email;
-               if(!isEmpty(Playerobject.local.password))
-                   Player.local.password = Playerobject.local.password;
-               if(!isEmpty(Playerobject.local.timeCreated))
+               if(Playerobject.local.password)
+                   Player.local.password = Player.generateHash(Playerobject.local.password);
+               if(Playerobject.local.timeCreated)
                    Player.local.timeCreated = Playerobject.local.timeCreated;
-               Player.save(function(err){
-                   if(err) res.send(err);
+               if(Player!=null) {
+                   Player.save(function (err) {
 
-                   res.json({message:'Player updated'});
+                       if (err) res.send(err);
 
-               });
+                       res.json({message: 'Player updated'});
 
+                   });
+               }
 
            });
 
@@ -89,6 +99,15 @@ function  isLoggedIn(req,res,next){
     }
     res.redirect ('/login');
 }
-function isEmpty(str) {
-    return (!str || 0 === str.length);
+
+function isAdmin(req,res,next){
+    
+    if( req .user.local != undefined && req.user.local.admin ==true){
+
+        return next();
+    }
+
+    res.redirect ('/profile');
+
+
 }

@@ -16,15 +16,19 @@ module.exports = function(app,passport){
     });
 
     app.get('/login',function(req,res) {
+
         res.render('login.ejs',{message:req.flash('LoginMessage')});
     });
 
     app.post('/login',passport.authenticate('local-login',{
+
             successRedirect :'/profile',
             failureRedirect : '/login',
             failureFlash : true
             }
         )
+
+
     );
     app.get('/signup',function(req,res){
         res.render('signup.ejs',{message:req.flash('signupMessage')});
@@ -37,10 +41,51 @@ module.exports = function(app,passport){
         }
     ));
 
-    app.get('/profile',function(req,res){
+    app.get('/profile',isnotBanned,function(req,res){
+
         res.render('profile.ejs',{user:req.user});
         }
     );
+    app.get('/modifyprofile',isnotBanned,function(req,res){
+
+        res.json({user:req.user})   ;
+
+        }
+    );
+    app.put('/modifyprofile',isnotBanned,function(req,res){
+               // console.log(req.user);
+              console.log(req.body);
+        var user = req.body;
+        console.log(req.body.password);
+        User.find({'local.email':req.user.local.email,'local.password':req.user.local.password},function(error,player){
+
+            var playerobject = player[0];
+            console.log(playerobject);
+            if(user.email!=undefined){
+                playerobject.local.email = user.email;
+            }
+            if(user.password!=undefined){
+                playerobject.local.password = player[0].generateHash(user.password);
+            }
+
+
+
+
+
+            playerobject.save(function(err){
+                if(err)res.send(err);
+                else {
+                    res.json('Your information is updated');
+                }
+            });
+
+
+        });
+
+
+        }
+    );
+
 
     app.get('/chat', function(req, res){
         res.render('chat.ejs');
@@ -88,7 +133,7 @@ module.exports = function(app,passport){
                     }
 
 
-                }
+                };
                 var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
 
                 /*
@@ -110,7 +155,7 @@ module.exports = function(app,passport){
                 'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                 'http://' + req.headers.host + '/reset/' + token + '\n\n' +
                 'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-                }
+                };
                 transporter.sendMail(messages, function(err) {
                     req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
                     done(err, 'done');
@@ -177,7 +222,7 @@ module.exports = function(app,passport){
                     subject : 'Your password for CyShapes Account',
                     text: 'Hello,\n\n' +
                     'This is a confirmation that the password for your account ' + user.local.email + ' has just been changed.\n'
-                }
+                };
                 transporter.sendMail(messages, function(err) {
                     req.flash('success', 'Success! Your password has been changed.');
                     done(err, 'done');
@@ -250,7 +295,7 @@ module.exports = function(app,passport){
         });
 
     });
-    app.all("/admin/*", isLoggedIn, function (req, res, next) {
+    app.all("/admin/*",isLoggedIn, isAdmin, function (req, res, next) {
 
         next();
 
@@ -264,11 +309,82 @@ module.exports = function(app,passport){
             res.render('admin.ejs');
 
     });
+app.get("/report",function (req,res) {
+    User.find({'local.admin':true},function(error,data){
+        if (error) throw error;
+        res.json(data);
+    });
 
+});
+
+    app.post("/report",function(req,res){
+
+        /*
+        User.find({'local.admin':true},function(error,data){
+            if (error) throw error;
+            res.json(data);
+        });
+        */
+        var emailAdmin =  req.body.adminEmail;
+        var usertoban = req.body.email;
+        var report = req.body.report;
+
+
+        var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+        var messages = {
+            from : 'frustratedUser@Cyshapes.com',
+            to   :  ''+emailAdmin,
+            subject : 'Request for ban',
+            text : "Ban request for player:  "+ usertoban +" Reason: "+report +'\n\n'
+            
+        };
+
+        transporter.sendMail(messages, function(err) {
+           // req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+
+            res.status('info').json('An e-mail has been sent to ' + emailAdmin + ' with your request.');
+        });
+
+        
+
+
+    });
+
+    app.get("/adminrequest",function (req,res) {
+        User.find({'local.admin':true},function(error,data){
+            if (error) throw error;
+            res.json(data);
+        });
+
+    });
+
+    app.post("/adminrequest",function (req,res) {
+        
+        var emailAdmin =  req.body.adminEmail;
+        var request = req.body.request;
+        var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+        var messages = {
+            from : 'InterestedUser@Cyshapes.com',
+            to   :  ''+emailAdmin,
+            subject : 'Request to become an admin',
+            text : "You received the following request "+request +'\n\n' +"from " +req.user.local.email
+
+        };
+
+        transporter.sendMail(messages, function(err) {
+            // req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+
+            res.status('info').json('An e-mail has been sent to ' + emailAdmin + ' with your request.');
+        });
+
+
+    });
 
 
 
 };
+
+
 
 
 
@@ -277,4 +393,32 @@ function  isLoggedIn(req,res,next){
         return next();
     }
     res.redirect ('/login');
+}
+function isAdmin(req,res,next){
+
+    if( req .user.local != undefined && req.user.local.admin ==true){
+
+        return next();
+    }
+
+    if( req .user.local != undefined && req.user.local.admin ==false){
+        res.redirect ('/profile');
+
+    }
+
+
+}
+
+function isnotBanned(req,res,next) {
+    if( req .user.local != undefined && req.user.local.banned ==false){
+
+        return next();
+    }
+    if( req .user.local != undefined && req.user.local.banned ==true){
+        res.redirect ('/index');
+
+    }
+
+
+
 }

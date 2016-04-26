@@ -8,7 +8,7 @@
         body        { padding-top:80px; word-wrap:break-word; }
     </style>
 </head>
-<body>
+<body  ng-app = "myApp" ng-controller="profileController">
 <div class="container">
 
     <div class="page-header text-center">
@@ -26,7 +26,11 @@
                 <p>
                     <strong>id</strong>: <%= user._id %><br>
                     <strong>email</strong>: <%= user.local.email %><br>
-                    <strong>password</strong>: <%= user.local.password %>
+                    <strong>password</strong>: <%= user.local.password %><br>
+                    <strong>admin</strong>: <%= user.local.admin %><br>
+
+
+
                 </p>
 
             </div>
@@ -34,9 +38,224 @@
 
         <a href="/chat" class="btn btn-default btn-sm">Chat</a>
         <a href="/game" class="btn btn-default btn-sm">Play Game</a>
+        <a href="/search" class="btn btn-default btn-sm">Search other users</a>
+        <button ng-click="editmyInfo()" class="btn btn-default">Edit my info</button>
+        <button ng-click="becomeanAdmin()" class="btn btn-default">Request to become an admin</button>
+        <modal title="Update my info" visible="showModal" ng-submit="modifyInfo()">
+            <form role="form">
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="local.email" ng-model = "local.email" placeholder="{{email}}"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" ng-model = "local.password" placeholder="{{password}}" />
+                </div>
+
+
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </modal>
+
+        <modal title="Request to become an admin" visible="ModalPresent" ng-submit="sendRequest()">
+            <form role="form">
+
+                <div class="form-group">
+                    <label for="repeatSelect"> Select admin to send your request : </label>
+                    <select name="repeatSelect" id="repeatSelect" ng-model="adminEmails.repeatSelect">
+                        <option ng-repeat="option in adminEmails.availableOptions" value="{{option.email}}">{{option.email}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label >Enter your request here:</label>
+                    <textarea class="form-control" rows="5" name="report" placeholder="Enter  your request here" ng-model = "formData.request"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+
+            </form>
+        </modal>
 
     </div>
 
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    console.log('Controller is ready!');
+
+    app.controller('profileController',['$scope','$http',function($scope,$http){
+        $scope.showModal = false;
+        $scope.ModalPresent = false;
+        $scope.local = {};
+        $scope.formData = {};
+        $scope.editmyInfo  = function(){
+            $scope.showModal = !$scope.showModal;
+            $http({
+                method: 'GET',
+                url: '/modifyprofile'
+            }).then(function successCallback(response) {
+
+                var myEmail = response.data.user.local.email;
+                var myPassword =response.data.user.local.password;
+              $scope.email = myEmail;
+                $scope.password = myPassword;
+
+            }, function errorCallback(response) {
+
+
+            });
+
+
+
+
+            $scope.modifyInfo = function(){
+
+                $http({
+                    method: 'PUT',
+                    url: '/modifyprofile',
+                    data: $scope.local
+
+                }).then(function successCallback(response) {
+
+                    $scope.showModal = !$scope.showModal;
+                    alert(response.data);
+
+
+                }, function errorCallback(response) {
+
+
+                });
+
+            }
+
+
+
+
+        }
+        $scope.becomeanAdmin = function(){
+            $scope.ModalPresent = !$scope.ModalPresent;
+            $http({
+                method: 'GET',
+                url: '/report'
+            }).then(function successCallback(response) {
+
+                var myData = [];
+                for(var i = 0; i <response.data.length;i++){
+
+                    var emailList = {email:response.data[i].local.email};
+                    myData.push(emailList);
+
+                }
+                $scope.adminEmails = {
+                    repeatSelect: null,
+                    availableOptions:myData
+                };
+
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+
+            $scope.sendRequest = function(){
+                var adminEmail = $scope.adminEmails.repeatSelect;
+
+
+                var request = $scope.formData.request;
+                console.log(request);
+
+                $scope.data = { request:request,adminEmail:adminEmail};
+                $http({
+                    method: 'POST',
+                    url: '/adminrequest',
+                    data: $scope.data
+                }).then(function successCallback(response) {
+                    console.log(response);
+
+
+
+                    $scope.ModalPresent = !$scope.ModalPresent;
+                    alert(response.data);
+
+                    /*
+                     console.log(response.data[0].local);
+                     for(var i = 0; i <response.data.length;i++){
+                     console.log("zzz");
+                     }
+                     */
+
+                    // this callback will be called asynchronously
+                    // when the response is available
+                }, function errorCallback(response) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                    alert("Sorry we were unable to send your request.Check if you have entered the admin email correctly");
+                });
+
+            }
+
+
+
+        }
+
+
+
+
+    }]);
+
+    app.directive('modal', function () {
+        return {
+            template: '<div class="modal fade">' +
+            '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+            '<h4 class="modal-title">{{ title }}</h4>' +
+            '</div>' +
+            '<div class="modal-body" ng-transclude></div>' +
+            '</div>' +
+            '</div>' +
+            '</div>',
+            restrict: 'E',
+            transclude: true,
+            replace:true,
+            scope:true,
+            link: function postLink(scope, element, attrs) {
+                scope.title = attrs.title;
+
+                scope.$watch(attrs.visible, function(value){
+                    if(value == true)
+                        $(element).modal('show');
+                    else
+                        $(element).modal('hide');
+                });
+
+                $(element).on('shown.bs.modal', function(){
+                    scope.$apply(function(){
+                        scope.$parent[attrs.visible] = true;
+                    });
+                });
+
+                $(element).on('hidden.bs.modal', function(){
+                    scope.$apply(function(){
+                        scope.$parent[attrs.visible] = false;
+                    });
+                });
+            }
+        };
+    });
+
+</script>
+
 </body>
 </html>

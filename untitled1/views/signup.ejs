@@ -9,7 +9,7 @@
         body        { padding-top:80px; }
     </style>
 </head>
-<body>
+<body ng-app="validationApp" ng-controller="signupController">
 <div class="container">
 
     <div class="col-sm-6 col-sm-offset-3">
@@ -22,17 +22,19 @@
         <% } %>
 
         <!-- LOGIN FORM -->
-        <form action="/signup" method="post">
+        <form  name = "userForm" action="/signup" method="post"  ng-submit="submitForm(userForm.$valid)" novalidate>
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" ng-model = "email">
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="password" ng-model = "password" required>
+                <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Password is required.</p>
             </div>
 
-            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+            <button type="submit" class="btn btn-warning btn-lg" ng-disabled="userForm.$invalid">Signup</button>
         </form>
 
         <hr>
@@ -43,5 +45,28 @@
     </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+<script>
+    var validationApp = angular.module('validationApp', []);
+
+    // create angular controller
+    validationApp.controller('signupController',['$scope','$http','$location', function($scope,$http) {
+
+        // function to submit the form after all validation has occurred
+        $scope.submitForm = function(isValid) {
+
+            // check to make sure the form is completely valid
+            if (isValid) {
+            alert("Form successfully submitted!");
+
+            }
+
+        };
+
+    }]);
+</script>
 </body>
 </html>
