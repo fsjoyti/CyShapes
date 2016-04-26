@@ -38,14 +38,5 @@ public abstract class GameObject extends View {
     {
         return width;
     }
-    public Rect getRectangle()
-    {
-        return new Rect((int)x, (int)y,(int) x+width,(int) y+height);
-    }
-
-    public boolean onTouch(View view, MotionEvent event){
-        return false;
-    };
-
-
+    public Rect getRectangle() {return new Rect((int)x, (int)y,(int) x+width,(int) y+height);}
 }

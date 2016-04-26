@@ -19,15 +19,18 @@ import java.util.Random;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 {
-    public static final int WIDTH = 2000;
-    public static final int HEIGHT = 1200;
+//    public static final int WIDTH = 2000;
+//    public static final int HEIGHT = 1200;
+    public static int WIDTH;
+    public static int HEIGHT;
     private long eshapesStartTime;
-    private MainThread thread;
+    protected MainThread thread;
+    public boolean Pause_game;
     private Background bg;
     private Player player;
     private ArrayList<Eshape> eshapes;
     private Random rand = new Random();
-
+    public GameInstanceActivity game;
     private boolean newGameCreated;
     private long startReset;
     private boolean reset;
@@ -39,18 +42,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     private boolean canDrag=false; //determine whether touch on the Player image
     private int offsetX=0, offsetY=0; //distance between point and left top of Player image
 
-    public GamePanel(Context context)
-    {
+    public GamePanel(Context context, GameInstanceActivity game,int ScreenWidth,int Screenheigt) {
         super(context);
-
-
-        //add the callback to the surfaceholder to intercept events
         getHolder().addCallback(this);
-
+        this.game = game;
         thread = new MainThread(getHolder(), this);
-
-        //make gamePanel focusable so it can handle events
         setFocusable(true);
+        WIDTH = ScreenWidth;
+        HEIGHT = Screenheigt;
     }
 
     @Override
@@ -75,9 +74,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceCreated(SurfaceHolder holder){
-
-        bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebg));
-        player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.playerstar), 60,60,1);
+        bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebg), WIDTH);
+        player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.playerstar), 80,80,1);
         eshapes = new ArrayList<Eshape>();
         eshapesStartTime = System.nanoTime();
 
@@ -229,19 +227,19 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         switch (n){
             case 0:case 1:case 2:case 3:case 9:case 10:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        star),WIDTH +10, WIDTH/2, 40, 40, 1,10));
+                        star),WIDTH +10, WIDTH/2, 60, 60, 1,10));
                 break;
             case 5:case 6:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 40, 40, 1,-10));
+                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-10));
                 break;
             case 7: case 4:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 40, 40, 1,20));
+                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,20));
                 break;
             case 8:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 40, 40, 1,-100));
+                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-100));
                 break;
         }
     }
@@ -249,26 +247,26 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
     public void draw(Canvas canvas)
     {
-        final float scaleFactorX = getWidth()/(WIDTH*1.f);
-        final float scaleFactorY = getHeight()/(HEIGHT*1.f);
+//        final float scaleFactorX = getWidth()/(WIDTH*1.f);
+//        final float scaleFactorY = getHeight()/(HEIGHT*1.f);
+        if (!Pause_game) {
+            if (canvas != null) {
+                final int savedState = canvas.save();
+//                canvas.scale(scaleFactorX, scaleFactorY);
+                bg.draw(canvas);
 
-        if(canvas!=null) {
-            final int savedState = canvas.save();
-            canvas.scale(scaleFactorX, scaleFactorY);
-            bg.draw(canvas);
+                if (!dissapear) {
+                    player.draw(canvas);
+                }
 
-            if(!dissapear) {
-                player.draw(canvas);
+                //draw eshapes
+                for (Eshape m : eshapes) {
+                    m.draw(canvas);
+                }
+                canvas.restoreToCount(savedState);
+                drawText(canvas);
+                canvas.restoreToCount(savedState);
             }
-
-            //draw eshapes
-            for(Eshape m: eshapes)
-            {
-                m.draw(canvas);
-            }
-            canvas.restoreToCount(savedState);
-            drawText(canvas);
-            canvas.restoreToCount(savedState);
         }
     }
 

@@ -5,19 +5,19 @@ import android.graphics.Canvas;
 
 public class Background {
 
-    private Bitmap image;
-    private int x, y, dx;
+    Bitmap image;
+    int x, y;
+    int ScreenWidth;
 
-    public Background(Bitmap res)
+    public Background(Bitmap res, int Screen_w)
     {
         image = res;
+        this.x=0;
+        this.y=0;
+        this.ScreenWidth=Screen_w;
     }
     public void update()
     {
-//        x+=dx;
-//        if(x<-GamePanel.WIDTH){
-//            x=0;
-//        }
     }
     public void draw(Canvas canvas)
     {
@@ -27,8 +27,8 @@ public class Background {
             canvas.drawBitmap(image, x, y, null);
         }
     }
-    public void setVector(int dx)
-    {
-        this.dx = dx;
-    }
+//    public void setVector(int dx)
+//    {
+//        this.ScreenWidth = dx;
+//    }
 }

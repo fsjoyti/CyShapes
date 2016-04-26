@@ -46,6 +46,46 @@ module.exports = function(app,passport){
         res.render('profile.ejs',{user:req.user});
         }
     );
+    app.get('/modifyprofile',isnotBanned,function(req,res){
+
+        res.json({user:req.user})   ;
+
+        }
+    );
+    app.put('/modifyprofile',isnotBanned,function(req,res){
+               // console.log(req.user);
+              console.log(req.body);
+        var user = req.body;
+        console.log(req.body.password);
+        User.find({'local.email':req.user.local.email,'local.password':req.user.local.password},function(error,player){
+
+            var playerobject = player[0];
+            console.log(playerobject);
+            if(user.email!=undefined){
+                playerobject.local.email = user.email;
+            }
+            if(user.password!=undefined){
+                playerobject.local.password = player[0].generateHash(user.password);
+            }
+
+
+
+
+
+            playerobject.save(function(err){
+                if(err)res.send(err);
+                else {
+                    res.json('Your information is updated');
+                }
+            });
+
+
+        });
+
+
+        }
+    );
+
 
     app.get('/chat', function(req, res){
         res.render('chat.ejs');
@@ -309,6 +349,38 @@ app.get("/report",function (req,res) {
 
 
     });
+
+    app.get("/adminrequest",function (req,res) {
+        User.find({'local.admin':true},function(error,data){
+            if (error) throw error;
+            res.json(data);
+        });
+
+    });
+
+    app.post("/adminrequest",function (req,res) {
+        
+        var emailAdmin =  req.body.adminEmail;
+        var request = req.body.request;
+        var transporter = nodemailer.createTransport('smtps://fam211092%40gmail.com:AnaSHINee21@smtp.gmail.com');
+        var messages = {
+            from : 'InterestedUser@Cyshapes.com',
+            to   :  ''+emailAdmin,
+            subject : 'Request to become an admin',
+            text : "You received the following request "+request +'\n\n' +"from " +req.user.local.email
+
+        };
+
+        transporter.sendMail(messages, function(err) {
+            // req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+
+            res.status('info').json('An e-mail has been sent to ' + emailAdmin + ' with your request.');
+        });
+
+
+    });
+
+
 
 };
 
