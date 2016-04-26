@@ -98,7 +98,7 @@ var thisGameId;
 io.sockets.on('connection', function(socket){
     console.log('a user connected');
 
-    socket.id = Math.random();
+    socket.id = Math.random() * 100;
     //player.id = socket.id;
 
     Socket_List[socket.id] = socket;
