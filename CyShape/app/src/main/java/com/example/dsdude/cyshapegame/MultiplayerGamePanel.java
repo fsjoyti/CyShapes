@@ -17,20 +17,20 @@ import android.view.View;
 import java.util.Random;
 
 
-public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
+public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.Callback
 {
-//    public static final int WIDTH = 2000;
+    //    public static final int WIDTH = 2000;
 //    public static final int HEIGHT = 1200;
     public static int WIDTH;
     public static int HEIGHT;
     private long eshapesStartTime;
-    protected MainThread thread;
+    protected MultiplayerThread thread;
     public boolean Pause_game;
     private Background bg;
     private Player player;
     private ArrayList<Eshape> eshapes;
     private Random rand = new Random();
-    public GameInstanceActivity game;
+    public MultiplayerInstanceActivity game;
     private boolean newGameCreated;
     private long startReset;
     private boolean reset;
@@ -42,11 +42,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     private boolean canDrag=false; //determine whether touch on the Player image
     private int offsetX=0, offsetY=0; //distance between point and left top of Player image
 
-    public GamePanel(Context context, GameInstanceActivity game,int ScreenWidth,int Screenheigt) {
+    public MultiplayerGamePanel(Context context, MultiplayerInstanceActivity game,int ScreenWidth,int Screenheigt) {
         super(context);
         getHolder().addCallback(this);
         this.game = game;
-        thread = new MainThread(getHolder(), this);
+        thread = new MultiplayerThread(getHolder(), this);
         setFocusable(true);
         WIDTH = ScreenWidth;
         HEIGHT = Screenheigt;
@@ -132,7 +132,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                     player.sety(HEIGHT - player.getheight());
                 }
 //            }
-            break;
+                break;
 
             case MotionEvent.ACTION_UP:
                 canDrag=false;

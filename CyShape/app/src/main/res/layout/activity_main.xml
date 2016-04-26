@@ -6,24 +6,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/homescreenbackground"
-    tools:context=".HomeScreenActivity"
-    android:id="@+id/homescreen">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter IP Address"
-        android:layout_centerVertical="true"
-        android:id="@+id/ipAddress"
-        android:layout_centerHorizontal="true" />
+    tools:context=".MainActivity" >
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Game"
-        android:id="@+id/startGame"
-        android:layout_above="@id/ipAddress"
+        android:id="@+id/button2"
+        android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="13dp" />
 
@@ -31,10 +21,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:id="@+id/loginButton"
-        android:layout_below="@id/ipAddress"
+        android:id="@+id/button3"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:id="@+id/button4"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"/>
+        android:layout_marginBottom="74dp" />
 
     <TextView
         android:layout_width="wrap_content"

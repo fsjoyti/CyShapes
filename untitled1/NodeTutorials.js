@@ -300,22 +300,13 @@ http.listen(3000,function (socket) {
     console.log("Example app listening at http://localhost:3000");
 });
 
-
-function createEnemies(){
-
-}
-
-
-var Enemy = function(id){
-
-}
-
+/*
 socket.on('connection', function(socket){
     socket.on('enemy', function(enemy){
         io.emit('enemy', enemy);
     });
 });
-
+*/
 
 
 // For whatever reason the code below didn't want to play nicely with socket.io, so I commented it out

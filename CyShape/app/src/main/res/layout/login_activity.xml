@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/homescreenbackground"
     tools:context=".LoginActivity" >
 
     <TextView
@@ -13,8 +14,48 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Login Screen"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:text="Login"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinGuest"
+        android:text="Join as Guest"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login"
+        android:layout_marginTop="13dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:text="password"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/login"
+        android:layout_marginBottom="13dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:inputType="textEmailAddress"
+        android:text="example@example.com"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/password"
+        android:layout_marginBottom="13dp"/>
 
 </RelativeLayout>

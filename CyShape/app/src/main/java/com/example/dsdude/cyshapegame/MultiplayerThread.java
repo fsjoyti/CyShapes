@@ -1,24 +1,20 @@
 package com.example.dsdude.cyshapegame;
 
 import android.graphics.Canvas;
-
-/**
- * Created by DsDude on 3/27/2016.
- */
-
-import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
-public class MainThread extends Thread
-{
+/**
+ * Created by Andrew Snyder on 4/26/2016.
+ */
+public class MultiplayerThread extends Thread {
     private int FPS = 30;
     private double averageFPS;
     private SurfaceHolder surfaceHolder;
-    private GamePanel gamePanel;
+    private MultiplayerGamePanel gamePanel;
     private boolean running;
     public static Canvas canvas;
 
-    public MainThread(SurfaceHolder surfaceHolder, GamePanel gamePanel)
+    public MultiplayerThread(SurfaceHolder surfaceHolder, MultiplayerGamePanel gamePanel)
     {
         super();
         this.surfaceHolder = surfaceHolder;
@@ -39,7 +35,7 @@ public class MainThread extends Thread
             startTime = System.nanoTime();
             canvas = null;
             long checkTime = endTime - System.currentTimeMillis();
-            if(checkTime < 0) {
+            if(checkTime <= 0) {
                 break;
             }
             //try locking the canvas for pixel editing

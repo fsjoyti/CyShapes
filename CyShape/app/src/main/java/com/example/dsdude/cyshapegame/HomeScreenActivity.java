@@ -8,8 +8,10 @@ package com.example.dsdude.cyshapegame;
         import android.view.Window;
         import android.view.WindowManager;
         import android.widget.Button;
+        import android.widget.EditText;
         import android.widget.ImageView;
         import android.widget.RelativeLayout;
+        import android.widget.Toast;
 
 public class HomeScreenActivity extends Activity {
 
@@ -26,14 +28,20 @@ public class HomeScreenActivity extends Activity {
         //set to full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button loginButton = (Button)findViewById(R.id.loginButton);
+        final EditText ipAddress = (EditText)findViewById(R.id.ipAddress);
+        final Button loginButton = (Button)findViewById(R.id.loginButton);
         Button startGame = (Button)findViewById(R.id.startGame);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(loginIntent);
+                if(ipAddress.getText().toString().equals("Enter IP Address"))
+                    Toast.makeText(v.getContext(), "Enter a Valid IP", Toast.LENGTH_LONG).show();
+                else {
+                    Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                    loginIntent.putExtra("ip", ipAddress.getText().toString());
+                    startActivity(loginIntent);
+                }
             }
         });
 
