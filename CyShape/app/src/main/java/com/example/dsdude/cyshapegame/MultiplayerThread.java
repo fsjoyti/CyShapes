@@ -3,6 +3,13 @@ package com.example.dsdude.cyshapegame;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
+import com.github.nkzawa.emitter.Emitter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 /**
  * Created by Andrew Snyder on 4/26/2016.
  */
@@ -13,12 +20,14 @@ public class MultiplayerThread extends Thread {
     private MultiplayerGamePanel gamePanel;
     private boolean running;
     public static Canvas canvas;
+    private ArrayList<Integer> xs, ys, ids;
 
     public MultiplayerThread(SurfaceHolder surfaceHolder, MultiplayerGamePanel gamePanel)
     {
         super();
         this.surfaceHolder = surfaceHolder;
         this.gamePanel = gamePanel;
+        SocketHandler.getSocket().on("update_positions", update_positions);
     }
     @Override
     public void run()
@@ -42,7 +51,7 @@ public class MultiplayerThread extends Thread {
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
-                    this.gamePanel.update();
+                    this.gamePanel.update(xs, ys, ids);
                     this.gamePanel.draw(canvas, checkTime/1000);
                 }
             } catch (Exception e) {
@@ -82,4 +91,34 @@ public class MultiplayerThread extends Thread {
     {
         running=b;
     }
+
+    private Emitter.Listener update_positions = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            // Update the other players
+            JSONObject data = (JSONObject) args[0];
+            try {
+                //TODO
+                // Clear all the x, y, and id values so there isn't any duplicate data
+                xs.clear();
+                ys.clear();
+                ids.clear();
+
+                // I need to double check what data is being received, then parse it and make new pshapes if necessary
+                int newx = (int) data.get("x");
+                int newy = (int) data.get("y");
+                int id = (int) data.get("id");
+
+                if(!gamePanel.checkPshapes(id)){
+                    gamePanel.createPshapes(id, newx, newy);
+                }
+
+                xs.add(newx);
+                ys.add(newy);
+                ids.add(id);
+            } catch (JSONException e) {
+                return;
+            }
+        }
+    };
 }

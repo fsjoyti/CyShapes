@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.graphics.Rect;
 import android.view.View;
 
+import java.util.HashMap;
 import java.util.Random;
 
 
@@ -24,11 +25,13 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
     public static int WIDTH;
     public static int HEIGHT;
     private long eshapesStartTime;
+    private long pshapesStartTime;
     protected MultiplayerThread thread;
     public boolean Pause_game;
     private Background bg;
     private Player player;
     private ArrayList<Eshape> eshapes;
+    private HashMap<Integer, Pshape> pshapes;
     private Random rand = new Random();
     public MultiplayerInstanceActivity game;
     private boolean newGameCreated;
@@ -77,7 +80,10 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebg), WIDTH);
         player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.playerstar), 80,80,1);
         eshapes = new ArrayList<Eshape>();
+        pshapes = new HashMap<Integer, Pshape>();
         eshapesStartTime = System.nanoTime();
+        pshapesStartTime = eshapesStartTime;
+
 
 
         //we can safely start the game loop
@@ -86,7 +92,9 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
 
     }
 
-
+    public void createPshapes(int id, int x, int y) {
+        pshapes.put(id, new Pshape(this.getContext(), BitmapFactory.decodeResource(getResources(), R.drawable.redsquare), x, y, 60, 60, 1, -10));
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event)
@@ -144,7 +152,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         return true;
     }
 
-    public void update()
+    public void update(ArrayList<Integer> xs, ArrayList<Integer> ys, ArrayList<Integer> ids)
 
     {
 
@@ -152,6 +160,11 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
 
             bg.update();
             player.update();
+
+            // Update each player enemy
+            for(int i = 0; i < ids.size(); i++) {
+                pshapes.get(ids.get(i)).update(xs.get(i), ys.get(i));
+            }
 
             //add eshapes on timer
             long missileElapsed = (System.nanoTime()-eshapesStartTime)/1000000;
@@ -316,5 +329,9 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         paint.setTextSize(40);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         canvas.drawText("TIME: " + Long.toString(time), 0, HEIGHT/2-450, paint);
+    }
+
+    public boolean checkPshapes(Integer id) {
+        return pshapes.containsKey(id);
     }
 }
