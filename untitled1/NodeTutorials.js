@@ -156,7 +156,7 @@ var array  = {};
     socket.on('update_score',function(data){
         console.log(data);
         console.log("score:"+data.scores);
-        var playerScore = ''+data.scores;
+        var playerScore = data.scores;
 
         //var playerData = new PlayerDatabase();
 
@@ -178,6 +178,8 @@ var array  = {};
 
             });
         });
+
+       
 
 
 

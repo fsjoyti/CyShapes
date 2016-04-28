@@ -353,7 +353,17 @@ app.get("/report",function (req,res) {
 
 
     });
+    app.get("/scores",function (req,res) {
+        User.find({},function(error,data){
+            if (error) throw error;
+            res.json(data);
+        });
 
+    });
+    app.get("/leaderboard",function (req,res) {
+        res.render('leaderboard.ejs');
+
+    });
     app.get("/adminrequest",function (req,res) {
         User.find({'local.admin':true},function(error,data){
             if (error) throw error;

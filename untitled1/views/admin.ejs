@@ -29,7 +29,7 @@
             <td>{{ x._id }}</td>
             <td>{{ x.local.email }}</td>
             <td>{{ x.local.password }}</td>
-            <td>{{ x.local.timeCreated }}</td>
+
 
         </tr>
     </table>
@@ -116,8 +116,7 @@
             method: 'GET',
             url: '/admin/api/Players'
         }).then(function successCallback(response) {
-            console.log(response.data[0]);
-            console.log(response.data[0].local.email);
+
 
             $scope.test = response.data;
             $scope.setSelected = function() {

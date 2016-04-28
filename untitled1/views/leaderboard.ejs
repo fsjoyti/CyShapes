@@ -1,0 +1,88 @@
+<html ng-app="App">
+
+<head>
+    <title>Leaderboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+
+</head>
+
+<body ng-controller="ScoresController">
+<h2>Leaderboard Page</h2>
+<table>
+
+
+    <tr ng-repeat="x in array"  >
+        <td>{{ x.email }}</td>
+        <td>{{ x.scores }}</td>
+        <td>{{ x.gamesPlayed }}</td>
+
+
+    </tr>
+</table>
+
+<script>
+    var app = angular.module('App', []);
+    var scores = [];
+    var details = [];
+    app.controller('ScoresController',['$scope','$http',function($scope,$http){
+        console.log('Controller is ready!');
+        $http({
+            method: 'GET',
+            url: '/scores'
+        }).then(function successCallback(response) {
+            var i = 0;
+            var j = 0;
+
+            var sum = 0;
+
+            for ( i = 0; i < response.data.length;i++){
+                //console.log(response.data[i].local.scores);
+                scores[i] = 0;
+
+                for (var j = 0;j<response.data[i].local.scores.length;j++){
+
+
+
+                    scores[i] = scores[i]+response.data[i].local.scores[j];
+
+
+
+
+                }
+
+
+                var jsonObject = {email:response.data[i].local.email,scores:scores[i],gamesPlayed:response.data[i].local.scores.length};
+
+                details.push(jsonObject);
+
+
+
+
+
+            }
+
+
+            details.sort(function(a, b)
+            {
+                return b.scores - a.scores;
+            });
+
+            $scope.array = details;
+
+
+            // this callback will be called asynchronously
+            // when the response is available
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        });
+
+    }]);
+
+</script>
+
+</body>
+</html>
