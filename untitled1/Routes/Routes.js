@@ -5,11 +5,14 @@ var User = require('./Models/Users');
 var nodemailer = require('nodemailer');
 var async = require ('async');
 var crypto = require ('crypto');
+
 var smtpTransport = require('nodemailer-smtp-transport');
 
 
 
 module.exports = function(app,passport){
+    var http = require('http').Server(app);
+    var socket = require('socket.io')(http);
     app.get('/index',function(req,res){
         res.render('home.ejs');
 
@@ -254,7 +257,8 @@ module.exports = function(app,passport){
     app.get("/game", function(req, res) {
         // if we got here, the `app.all` call above has already
         // ensured that the user is logged in
-        res.render('game.ejs');
+       socket.emit('on',{user:req.user});
+        res.render('game.ejs',{user:req.user});
     });
     
     app.get("/search", function(req, res) {

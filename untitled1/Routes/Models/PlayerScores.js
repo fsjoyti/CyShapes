@@ -6,8 +6,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var PlayerSchema = new Schema({
 
-
-    scores : {type:Array},
+    //id: { type: Schema.Types.ObjectId, ref: 'Players' },
+    //scores : {type:Array}
+    scores:[
+        {type: Schema.Types.ObjectId, ref: 'Players'}
+    ]
     ///socket_id:  {type:String,default:''}
    
 });

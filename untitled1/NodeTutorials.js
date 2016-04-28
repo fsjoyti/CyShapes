@@ -22,6 +22,7 @@ var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 mongoose.connect('mongodb://localhost:27017');
 var PlayerDatabase = require('./Routes/Models/PlayerScores');
+var User = require('./Routes/Models/Users');
 var flash = require('connect-flash');
 
 var node_restful = require ('node-restful');
@@ -46,18 +47,7 @@ require('./Routes/Routes.js')(app,passport);
 require('./Controllers/admin.js')(app);
 
 
-app.get('/process_get', urlencodedParser, function (req, res) {
-    // Prepare output in JSON format
-    var response = {
 
-        username:req.query.username,
-        password:req.query.password
-
-    };
-    console.log(response);
-    res.end(JSON.stringify(response));
-
-});
 
 app.get('/chat', function(req, res){
     res.render('chat.ejs');
@@ -96,6 +86,9 @@ var Player = function(id){
 var thisGameId;
 
 io.sockets.on('connection', function(socket){
+    socket.on('on',function(data){
+       console.log("on data "+data) ;
+    });
     console.log('a user connected');
   var enemies=  createEnemies();
     console.log(enemies);
@@ -135,7 +128,9 @@ io.sockets.on('connection', function(socket){
             //Join the Room and wait for the players
             socket.join(thisGameId.toString());
                 socket.room = thisGameId.toString();
+        //sockets in a room
             var clients = io.sockets.adapter.rooms[thisGameId.toString()];
+
             console.log(clients);
 
 
@@ -159,13 +154,34 @@ var array  = {};
 
     });
     socket.on('update_score',function(data){
+        console.log(data);
         console.log("score:"+data.scores);
         var playerScore = ''+data.scores;
-        var playerData = new PlayerDatabase();
-        playerData.scores.push("9");
-        playerData.save(function(err){
-            console.log('saved!');
+
+        //var playerData = new PlayerDatabase();
+
+       var Users = new User();
+        var email = data.email;
+
+
+        User.find({'local.email':email},function(err,Player){
+
+
+           console.log(Player);
+            Player[0].local.scores.push(playerScore);
+
+            Player[0].save(function (err) {
+
+                if (err) res.send(err);
+
+                
+
+            });
         });
+
+
+
+
 
     });
 
@@ -263,7 +279,7 @@ function createEnemies(){
         var xposition = Math.random();
         var yposition =Math.random();
         var jsonObject = {x:xposition,y:yposition};
-       console.log(jsonObject);
+
         enemies.push(jsonObject);
 
 
