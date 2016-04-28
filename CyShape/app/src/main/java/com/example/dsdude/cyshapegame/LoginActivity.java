@@ -45,6 +45,7 @@ public class LoginActivity extends Activity {
         joinGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SocketHandler.setPlayerID("Guest");
                 Intent multiplayerIntent = new Intent(getApplicationContext(), MultiplayerInstanceActivity.class);
                 startActivity(multiplayerIntent);
             }

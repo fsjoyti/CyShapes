@@ -20,7 +20,7 @@ public class Eshape extends GameObject{
     private int xspeed;
     private int yspeed;
     private Random rand = new Random();
-    private Animation animation = new Animation();
+    protected Animation animation = new Animation();
     private Bitmap bmp;
     public Eshape(Context context,Bitmap res, int x, int y, int w, int h, int numFrames, int s)
     {
