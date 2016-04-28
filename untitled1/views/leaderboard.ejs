@@ -13,11 +13,16 @@
 <h2>Leaderboard Page</h2>
 <table>
 
-
+    <tr>
+        <th>Email Address</th>
+        <th>Total Scores</th>
+        <th>Number of games played</th>
+    </tr>
     <tr ng-repeat="x in array"  >
-        <td>{{ x.email }}</td>
-        <td>{{ x.scores }}</td>
-        <td>{{ x.gamesPlayed }}</td>
+
+        <td title="'Email Address'">{{ x.email }}</td>
+        <td title = "'Total Scores'">{{ x.scores }}</td>
+        <td title = "'Number of games Played'">{{ x.gamesPlayed }}</td>
 
 
     </tr>
