@@ -27,7 +27,8 @@ public class MultiplayerThread extends Thread {
         super();
         this.surfaceHolder = surfaceHolder;
         this.gamePanel = gamePanel;
-        SocketHandler.getSocket().on("update_positions", update_positions);
+
+
     }
     @Override
     public void run()
@@ -45,13 +46,14 @@ public class MultiplayerThread extends Thread {
             canvas = null;
             long checkTime = endTime - System.currentTimeMillis();
             if(checkTime <= 0) {
+                gamePanel.updateScore();
                 break;
             }
             //try locking the canvas for pixel editing
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
-                    this.gamePanel.update(xs, ys, ids);
+                    this.gamePanel.update();
                     this.gamePanel.draw(canvas, checkTime/1000);
                 }
             } catch (Exception e) {
@@ -92,33 +94,4 @@ public class MultiplayerThread extends Thread {
         running=b;
     }
 
-    private Emitter.Listener update_positions = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            // Update the other players
-            JSONObject data = (JSONObject) args[0];
-            try {
-                //TODO
-                // Clear all the x, y, and id values so there isn't any duplicate data
-                xs.clear();
-                ys.clear();
-                ids.clear();
-
-                // I need to double check what data is being received, then parse it and make new pshapes if necessary
-                int newx = (int) data.get("x");
-                int newy = (int) data.get("y");
-                int id = (int) data.get("id");
-
-                if(!gamePanel.checkPshapes(id)){
-                    gamePanel.createPshapes(id, newx, newy);
-                }
-
-                xs.add(newx);
-                ys.add(newy);
-                ids.add(id);
-            } catch (JSONException e) {
-                return;
-            }
-        }
-    };
 }

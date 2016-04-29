@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".HostActivity" ></activity>
+        <activity android:name=".ProfileActivity" ></activity>
+        <activity android:name=".RoomActivity" ></activity>
         <activity android:name=".MultiplayerInstanceActivity" ></activity>
         <activity android:name=".GameInstanceActivity" ></activity>
         <activity android:name=".LoginActivity" ></activity>

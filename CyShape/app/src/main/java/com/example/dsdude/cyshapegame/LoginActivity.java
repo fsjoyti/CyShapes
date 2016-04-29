@@ -16,17 +16,20 @@ import com.github.nkzawa.emitter.Emitter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class LoginActivity extends Activity {
 
-    private WebView loginScreen;
+
+    private ArrayList<String> userList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        EditText email = (EditText)findViewById(R.id.email);
-        EditText password = (EditText)findViewById(R.id.password);
+        final EditText email = (EditText)findViewById(R.id.email);
         Button login = (Button)findViewById(R.id.login);
         Button joinGuest = (Button)findViewById(R.id.joinGuest);
 
@@ -35,13 +38,19 @@ public class LoginActivity extends Activity {
         Log.d("SocketIP", ip);
         SocketHandler.setSocket(ip);
         SocketHandler.getSocket().on("onconnected", onconnected);
+
+        SocketHandler.getSocket().on("get_users", get_users);
+
         SocketHandler.getSocket().connect();
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("SocketConnected", Boolean.toString(SocketHandler.getSocket().connected()));
-                Log.d("SocketID", Integer.toString(SocketHandler.getId()));
+
+                SocketHandler.setPlayerID(email.getText().toString());
+                Intent roomIntent = new Intent(getApplicationContext(), RoomActivity.class);
+                startActivity(roomIntent);
+
             }
         });
 
@@ -54,11 +63,13 @@ public class LoginActivity extends Activity {
             }
         });
 
-//         I might need to keep this in case my stuff doesn't work
-        loginScreen = new WebView(this);
-        loginScreen.getSettings().setJavaScriptEnabled(true);
 
-        final Activity activity = this;
+        // I might need to keep this in case my stuff doesn't work
+//        loginScreen = new WebView(this);
+//        loginScreen.getSettings().setJavaScriptEnabled(true);
+//
+//        final Activity activity = this;
+//
 
 //        loginScreen.setWebViewClient(new WebViewClient() {
 //            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
@@ -70,13 +81,30 @@ public class LoginActivity extends Activity {
 //        setContentView(loginScreen);
     }
 
+
+    private Emitter.Listener get_users = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            // Update the other players
+            JSONObject data = (JSONObject) args[0];
+            try {
+                Log.d("UserData", data.toString());
+            } catch (Exception e) {
+                return;
+            }
+        }
+    };
+
+
     private Emitter.Listener onconnected = new Emitter.Listener() {
         @Override
         public void call(Object... args) {
             // Update the other players
             JSONObject data = (JSONObject) args[0];
             try {
-                SocketHandler.setId(data.getInt("id"));
+
+                SocketHandler.setId(data.getDouble("id"));
+
             } catch (JSONException e) {
                 return;
             }

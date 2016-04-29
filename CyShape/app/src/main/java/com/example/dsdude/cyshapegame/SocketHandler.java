@@ -11,8 +11,12 @@ import java.net.URISyntaxException;
  */
 public class SocketHandler {
     private static Socket socket;
-    private static int id;
+
+    private static String socketIP;
+    private static Double id;
     private static String playerID;
+    private static int gameRoom;
+
 
     public static synchronized Socket getSocket(){
         return SocketHandler.socket;
@@ -21,16 +25,21 @@ public class SocketHandler {
     public static synchronized void setSocket(String address){
         try {
             socket = IO.socket("http://" + address + ":3000");
+
+            socketIP = "http://" + address + ":3000";
+
         } catch (URISyntaxException e) {
 
         }
     }
 
-    public static synchronized void setId(int id){
+
+    public static synchronized void setId(Double id){
+
         SocketHandler.id = id;
     }
 
-    public static synchronized int getId(){
+    public static synchronized Double getId(){
         return SocketHandler.id;
     }
 
@@ -40,5 +49,17 @@ public class SocketHandler {
 
     public static synchronized String getPlayerID(){
         return SocketHandler.playerID;
+    }
+
+    public static synchronized String getSocketIP() {
+        return SocketHandler.socketIP;
+    }
+
+    public static synchronized void setGameRoom(int room){
+        SocketHandler.gameRoom = room;
+    }
+
+    public static synchronized int getGameRoom(){
+        return SocketHandler.gameRoom;
     }
 }

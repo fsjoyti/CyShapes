@@ -22,7 +22,6 @@ public class Eshape extends GameObject{
     private Random rand = new Random();
     protected Animation animation = new Animation();
     private Bitmap bmp;
-    Bitmap[] image;
     int WIDTH;
     int HEIGHT;
     public Eshape(Context context,Bitmap res, int x, int y, int w, int h, int numFrames, int s,int WIDTH,int HEIGHT)
@@ -43,18 +42,17 @@ public class Eshape extends GameObject{
         else {yspeed=-1*rand.nextInt(20);}
 
         //animation
-        image = new Bitmap[numFrames];
+        Bitmap[] image = new Bitmap[numFrames];
 
         bmp = res;
 
         for(int i = 0; i<image.length;i++)
         {
-            image[i] = Bitmap.createBitmap(bmp,  i*width, 0, width, height);
+            image[i] = Bitmap.createBitmap(bmp, 0, i*height, width, height);
         }
 
         animation.setFrames(image);
         animation.setDelay(500 - xspeed);
-
     }
     public void update()
     {
@@ -62,11 +60,13 @@ public class Eshape extends GameObject{
         x-=xspeed;
         y-=yspeed;
         if(score<0){
-            if (x < 0 || x + width > WIDTH) {
+            if (x < 0 || x + width > 2000) {
                 xspeed = -1 * xspeed;
+                score=-5;
             }
-            if (y < 0 || y + height > HEIGHT) {
+            if (y < 0 || y + height > 1200) {
                 yspeed = -1 * yspeed;
+                score=-5;
             }
         }
         animation.update();

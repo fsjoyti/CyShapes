@@ -208,7 +208,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         }
         else{
             player.resetDY();
-            player.rednumber=0;
             if(!reset)
             {
                 newGameCreated = false;
