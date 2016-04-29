@@ -5,14 +5,22 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
 import java.util.ArrayList;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.graphics.Rect;
 import android.view.View;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.github.nkzawa.emitter.Emitter;
+import com.github.nkzawa.socketio.client.Socket;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -31,7 +39,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
     private Background bg;
     private Player player;
     private ArrayList<Eshape> eshapes;
-    private HashMap<Integer, Pshape> pshapes;
+    private HashMap<Double, Pshape> pshapes;
     private Random rand = new Random();
     public MultiplayerInstanceActivity game;
     private boolean newGameCreated;
@@ -40,6 +48,10 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
     private boolean dissapear;
     private boolean started;
     private int eshapesCN;
+    private Socket socket;
+    private ArrayList<Integer> xs;
+    private ArrayList<Integer> ys;
+    private ArrayList<Double> ids;
 
     private Point point=new Point(); //touch point
     private boolean canDrag=false; //determine whether touch on the Player image
@@ -53,6 +65,12 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         setFocusable(true);
         WIDTH = ScreenWidth;
         HEIGHT = Screenheigt;
+        socket = SocketHandler.getSocket();
+        socket.on("update", update);
+        socket.on("player_destroyed", player_destroyed);
+        xs = new ArrayList<Integer>();
+        ys = new ArrayList<Integer>();
+        ids = new ArrayList<Double>();
     }
 
     @Override
@@ -80,7 +98,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.spacebg), WIDTH);
         player = new Player(this.getContext(),BitmapFactory.decodeResource(getResources(), R.drawable.playerstar), 80,80,1);
         eshapes = new ArrayList<Eshape>();
-        pshapes = new HashMap<Integer, Pshape>();
+        pshapes = new HashMap<Double, Pshape>();
         eshapesStartTime = System.nanoTime();
         pshapesStartTime = eshapesStartTime;
 
@@ -92,7 +110,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
 
     }
 
-    public void createPshapes(int id, int x, int y) {
+    public void createPshapes(Double id, int x, int y) {
         pshapes.put(id, new Pshape(this.getContext(), BitmapFactory.decodeResource(getResources(), R.drawable.redsquare), x, y, 60, 60, 1, -10));
     }
 
@@ -152,18 +170,55 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         return true;
     }
 
-    public void update(ArrayList<Integer> xs, ArrayList<Integer> ys, ArrayList<Integer> ids)
+    private void sendPosition(){
+        JSONObject coordData = new JSONObject();
+        try {
+            coordData.put("x", player.getx());
+            coordData.put("y", player.gety());
+            socket.emit("send_position", coordData);
+        }catch(JSONException e){
+
+        }
+    }
+
+    private void destroy_player(Double id) {
+        JSONObject data = new JSONObject();
+        try {
+            data.put("id", id);
+            socket.emit("destroy_player", data);
+        } catch(JSONException e) {
+
+        }
+    }
+
+    public void update()
 
     {
 
         if(player.getPlaying()) {
+            // Clear all the x, y, and id values so there isn't any duplicate data
+            xs.clear();
+            ys.clear();
+            ids.clear();
 
             bg.update();
             player.update();
-
+            sendPosition();
+            for(int i = 0; i < ids.size(); i++) {
+                Log.d("NPCInfo", "X:" + Integer.toString(xs.get(i)) + " Y:" + Integer.toString(ys.get(i)) + " ID:" + Double.toString(ids.get(i)));
+            }
             // Update each player enemy
             for(int i = 0; i < ids.size(); i++) {
                 pshapes.get(ids.get(i)).update(xs.get(i), ys.get(i));
+
+                if(collision(pshapes.get(ids.get(i)),player))
+                {
+                    player.setCollision(true, 0);
+                    destroy_player(ids.get(i));
+                    player.setCollision(false,0);
+                    if(player.getScore()<0){player.setPlaying(false);eshapesCN=0;}
+                    break;
+                }
             }
 
             //add eshapes on timer
@@ -272,6 +327,10 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
                     player.draw(canvas);
                 }
 
+                for(Pshape p : pshapes.values()) {
+                    p.draw(canvas);
+                }
+
                 //draw eshapes
                 for (Eshape m : eshapes) {
                     m.draw(canvas);
@@ -331,7 +390,58 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
         canvas.drawText("TIME: " + Long.toString(time), 0, HEIGHT/2-450, paint);
     }
 
-    public boolean checkPshapes(Integer id) {
+    public boolean checkPshapes(Double id) {
+        Log.d("CheckPshape", "ID:" + Double.toString(id) + " Contained:" + Boolean.toString(pshapes.containsKey(id)));
         return pshapes.containsKey(id);
     }
+
+    private Emitter.Listener player_destroyed = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            // Update the other players
+            JSONObject data = (JSONObject) args[0];
+            try {
+                double id = (double) data.get("id");
+
+                if(id != SocketHandler.getId()){
+                    pshapes.remove(id);
+                }
+                else
+                {
+                    // Terminate game
+                    player.setPlaying(false);
+                }
+
+            } catch (JSONException e) {
+                return;
+            }
+        }
+    };
+
+    private Emitter.Listener update = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            // Update the other players
+            JSONObject data = (JSONObject) args[0];
+            try {
+                //TODO
+
+                // I need to double check what data is being received, then parse it and make new pshapes if necessary
+                int newx = (int) data.get("x");
+                int newy = (int) data.get("y");
+                double id = (double) data.get("id");
+
+                if(id != SocketHandler.getId()){
+                    createPshapes(id, newx, newy);
+                    Log.d("PlayerInfo", "X:" + Integer.toString(newx) + " Y:" + Integer.toString(newy) + " ID:" + Double.toString(id));
+                }
+
+                xs.add(newx);
+                ys.add(newy);
+                ids.add(id);
+            } catch (JSONException e) {
+                return;
+            }
+        }
+    };
 }

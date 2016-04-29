@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.d("SocketConnected", Boolean.toString(SocketHandler.getSocket().connected()));
-                Log.d("SocketID", Integer.toString(SocketHandler.getId()));
+                Log.d("SocketID", Double.toString(SocketHandler.getId()));
             }
         });
 
@@ -73,7 +73,7 @@ public class LoginActivity extends Activity {
             // Update the other players
             JSONObject data = (JSONObject) args[0];
             try {
-                SocketHandler.setId(data.getInt("id"));
+                SocketHandler.setId(data.getDouble("id"));
             } catch (JSONException e) {
                 return;
             }

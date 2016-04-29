@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
  */
 public class SocketHandler {
     private static Socket socket;
-    private static int id;
+    private static Double id;
     private static String playerID;
 
     public static synchronized Socket getSocket(){
@@ -26,11 +26,11 @@ public class SocketHandler {
         }
     }
 
-    public static synchronized void setId(int id){
+    public static synchronized void setId(Double id){
         SocketHandler.id = id;
     }
 
-    public static synchronized int getId(){
+    public static synchronized Double getId(){
         return SocketHandler.id;
     }
 
