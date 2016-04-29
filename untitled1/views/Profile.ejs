@@ -43,7 +43,9 @@
         <a href="/search" class="btn btn-default btn-sm">Search other users</a>
         <a href="/leaderboard" class="btn btn-default btn-sm">View the leaderboard page</a>
         <button ng-click="editmyInfo()" class="btn btn-default">Edit my info</button>
+        <% if (!user.local.admin ) { %>
         <button ng-click="becomeanAdmin()" class="btn btn-default">Request to become an admin</button>
+        <% } %>
         <modal title="Update my info" visible="showModal" ng-submit="modifyInfo()">
             <form role="form">
 
