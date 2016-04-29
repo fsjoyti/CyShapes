@@ -112,7 +112,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
     }
 
     public void createPshapes(Double id, int x, int y) {
-        pshapes.put(id, new Pshape(this.getContext(), BitmapFactory.decodeResource(getResources(), R.drawable.redsquare), x, y, 60, 60, 1, -10));
+        pshapes.put(id, new Pshape(this.getContext(), BitmapFactory.decodeResource(getResources(), R.drawable.redsquare), x, y, 60, 60, 1, -10, WIDTH,HEIGHT));
     }
 
     @Override
