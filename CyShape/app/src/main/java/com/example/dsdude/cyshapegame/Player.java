@@ -14,7 +14,7 @@ public class Player extends GameObject {
 	int lastAction;
     private int lastEshapeScore=0;
     private int sameShapeRecord=1;
-    int rednumber=0;
+    private int rednumber=0;
     private boolean collision;
     private boolean playing;
     private Animation animation = new Animation();

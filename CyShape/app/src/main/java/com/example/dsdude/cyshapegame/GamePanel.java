@@ -196,7 +196,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         }
         else{
             player.resetDY();
-            player.rednumber=0;
             if(!reset)
             {
                 newGameCreated = false;
@@ -228,19 +227,19 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         switch (n){
             case 0:case 1:case 2:case 3:case 9:case 10:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        cyshapes_transparentbg),WIDTH +10, WIDTH/2, 32, 32, 3,10,WIDTH,HEIGHT));
+                        star),WIDTH +10, WIDTH/2, 60, 60, 1,10));
                 break;
             case 5:case 6:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-10,WIDTH,HEIGHT));
+                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-10));
                 break;
             case 7: case 4:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,20,WIDTH,HEIGHT));
+                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,20));
                 break;
             case 8:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-100,WIDTH,HEIGHT));
+                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-100));
                 break;
         }
     }
