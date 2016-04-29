@@ -17,12 +17,14 @@
         <th>Email Address</th>
         <th>Total Scores</th>
         <th>Number of games played</th>
+        <th>Highest score </th>
     </tr>
     <tr ng-repeat="x in array"  >
 
         <td title="'Email Address'">{{ x.email }}</td>
         <td title = "'Total Scores'">{{ x.scores }}</td>
         <td title = "'Number of games Played'">{{ x.gamesPlayed }}</td>
+        <td title = "'Number of games Played'">{{ x.score }}</td>
 
 
     </tr>
@@ -50,6 +52,12 @@
                 for (var j = 0;j<response.data[i].local.scores.length;j++){
 
 
+                    var min = 0;
+                    if( response.data[i].local.scores[j]>min ){
+                        min = response.data[i].local.scores[j];
+                        console.log(scores[i]);
+                    }
+
 
                     scores[i] = scores[i]+response.data[i].local.scores[j];
 
@@ -59,7 +67,7 @@
                 }
 
 
-                var jsonObject = {email:response.data[i].local.email,scores:scores[i],gamesPlayed:response.data[i].local.scores.length};
+                var jsonObject = {email:response.data[i].local.email,scores:scores[i],gamesPlayed:response.data[i].local.scores.length,score:min};
 
                 details.push(jsonObject);
 

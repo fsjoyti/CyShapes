@@ -69,7 +69,7 @@ var Player = function(id){
         pressingDown:false,
         maxSpd:10
     }
-    
+
 
     return self;
 
@@ -153,19 +153,24 @@ var array  = {};
         var email = data.email;
 
 
+
         User.find({'local.email':email},function(err,Player){
 
 
            console.log(Player);
-            Player[0].local.scores.push(playerScore);
 
-            Player[0].save(function (err) {
 
-                if (err) res.send(err);
+                Player[0].local.scores.push(playerScore);
 
-                
+                Player[0].save(function (err) {
 
-            });
+                    if (err) res.send(err);
+
+
+                });
+
+            
+
         });
 
        
