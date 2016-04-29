@@ -10,8 +10,7 @@ import android.util.Log;
 public class Pshape extends Eshape {
     public Pshape(Context context, Bitmap res, int x, int y, int w, int h, int numFrames, int s) {
         super(context, res, x, y, w, h, numFrames, s);
-        Log.d("EnemyPosition", "X:" + Integer.toString(x) + " Y:" + Integer.toString(y));
-
+        Log.d("EnemyCreated", "X:" + Integer.toString(x) + " Y:" + Integer.toString(y));
     }
 
     public void update(int x, int y) {

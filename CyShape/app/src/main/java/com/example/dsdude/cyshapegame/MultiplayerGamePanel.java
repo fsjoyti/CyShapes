@@ -208,18 +208,20 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
                 Log.d("NPCInfo", "X:" + Integer.toString(xs.get(i)) + " Y:" + Integer.toString(ys.get(i)) + " ID:" + Double.toString(ids.get(i)));
             }
             // Update each player enemy
-            for(int i = 0; i < ids.size(); i++) {
-                pshapes.get(ids.get(i)).update(xs.get(i), ys.get(i));
-
-                if(collision(pshapes.get(ids.get(i)),player))
-                {
-                    player.setCollision(true, 0);
-                    destroy_player(ids.get(i));
-                    player.setCollision(false,0);
-                    if(player.getScore()<0){player.setPlaying(false);eshapesCN=0;}
-                    break;
-                }
-            }
+//            int count = 0;
+//            for(Pshape p : pshapes.values()) {
+////                p.update(xs.get(count), ys.get(count));
+//                Log.d("Collision", "PShapeX:" + Integer.toString(p.getx()) + " PShapeY:" + Integer.toString(p.gety()) + " PShapeID:" + Double.toString(ids.get(count)));
+////                if(collision(p,player))
+////                {
+////                    player.setCollision(true, 0);
+////                    destroy_player(ids.get(count));
+////                    player.setCollision(false,0);
+////                    if(player.getScore()<0){player.setPlaying(false);eshapesCN=0;}
+////                    break;
+////                }
+//                count++;
+//            }
 
             //add eshapes on timer
             long missileElapsed = (System.nanoTime()-eshapesStartTime)/1000000;
@@ -404,6 +406,8 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
                 double id = (double) data.get("id");
 
                 if(id != SocketHandler.getId()){
+                    Log.d("DestroyID", Double.toString(id));
+                    Log.d("MyID", Double.toString(SocketHandler.getId()));
                     pshapes.remove(id);
                 }
                 else

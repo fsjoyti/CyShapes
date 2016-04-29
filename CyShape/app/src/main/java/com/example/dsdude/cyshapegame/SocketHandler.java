@@ -11,6 +11,7 @@ import java.net.URISyntaxException;
  */
 public class SocketHandler {
     private static Socket socket;
+    private static String socketIP;
     private static Double id;
     private static String playerID;
 
@@ -21,6 +22,7 @@ public class SocketHandler {
     public static synchronized void setSocket(String address){
         try {
             socket = IO.socket("http://" + address + ":3000");
+            socketIP = "http://" + address + ":3000";
         } catch (URISyntaxException e) {
 
         }
@@ -40,5 +42,9 @@ public class SocketHandler {
 
     public static synchronized String getPlayerID(){
         return SocketHandler.playerID;
+    }
+
+    public static synchronized String getSocketIP() {
+        return SocketHandler.socketIP;
     }
 }

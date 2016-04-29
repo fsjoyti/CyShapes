@@ -155,6 +155,7 @@ var array  = {};
 
     });
     socket.on('destroy_player',function(data){
+        console.log("Player ID to be destroyed: " + data.id);
         socket.emit('player_destroyed',data.id);
     });
     socket.on('update_score',function(data){
