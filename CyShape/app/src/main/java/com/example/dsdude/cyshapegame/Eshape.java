@@ -48,7 +48,7 @@ public class Eshape extends GameObject{
 
         for(int i = 0; i<image.length;i++)
         {
-            image[i] = Bitmap.createBitmap(bmp, 0, i*height, width, height);
+            image[i] = Bitmap.createBitmap(bmp, i*width,0, width, height);
         }
 
         animation.setFrames(image);
