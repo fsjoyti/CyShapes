@@ -53,7 +53,7 @@ public class Eshape extends GameObject{
         }
 
         animation.setFrames(image);
-        animation.setDelay(1000 - xspeed);
+        animation.setDelay(500 - xspeed);
 
     }
     public void update()

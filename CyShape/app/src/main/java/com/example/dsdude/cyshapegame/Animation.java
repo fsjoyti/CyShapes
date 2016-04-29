@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 
 public class Animation {
     private Bitmap[] frames;
-    private int currentFrame;
+    int currentFrame;
     private long startTime;
     private long delay;
     private boolean playedOnce;

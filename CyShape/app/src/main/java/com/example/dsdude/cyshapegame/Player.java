@@ -10,7 +10,7 @@ import android.view.View;
 
 public class Player extends GameObject {
     private Bitmap spritesheet;
-    private int score;
+    protected int score;
 	int lastAction;
     private int lastEshapeScore=0;
     private int sameShapeRecord=1;
