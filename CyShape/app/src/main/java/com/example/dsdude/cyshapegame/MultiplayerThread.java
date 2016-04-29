@@ -3,7 +3,7 @@ package com.example.dsdude.cyshapegame;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
-import com.github.nkzawa.emitter.Emitter;
+//import com.github.nkzawa.emitter.Emitter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +27,7 @@ public class MultiplayerThread extends Thread {
         super();
         this.surfaceHolder = surfaceHolder;
         this.gamePanel = gamePanel;
-        SocketHandler.getSocket().on("update_positions", update_positions);
+//        SocketHandler.getSocket().on("update_positions", update_positions);
     }
     @Override
     public void run()
@@ -92,33 +92,33 @@ public class MultiplayerThread extends Thread {
         running=b;
     }
 
-    private Emitter.Listener update_positions = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            // Update the other players
-            JSONObject data = (JSONObject) args[0];
-            try {
-                //TODO
-                // Clear all the x, y, and id values so there isn't any duplicate data
-                xs.clear();
-                ys.clear();
-                ids.clear();
-
-                // I need to double check what data is being received, then parse it and make new pshapes if necessary
-                int newx = (int) data.get("x");
-                int newy = (int) data.get("y");
-                int id = (int) data.get("id");
-
-                if(!gamePanel.checkPshapes(id)){
-                    gamePanel.createPshapes(id, newx, newy);
-                }
-
-                xs.add(newx);
-                ys.add(newy);
-                ids.add(id);
-            } catch (JSONException e) {
-                return;
-            }
-        }
-    };
+//    private Emitter.Listener update_positions = new Emitter.Listener() {
+//        @Override
+//        public void call(Object... args) {
+//            // Update the other players
+//            JSONObject data = (JSONObject) args[0];
+//            try {
+//                //TODO
+//                // Clear all the x, y, and id values so there isn't any duplicate data
+//                xs.clear();
+//                ys.clear();
+//                ids.clear();
+//
+//                // I need to double check what data is being received, then parse it and make new pshapes if necessary
+//                int newx = (int) data.get("x");
+//                int newy = (int) data.get("y");
+//                int id = (int) data.get("id");
+//
+//                if(!gamePanel.checkPshapes(id)){
+//                    gamePanel.createPshapes(id, newx, newy);
+//                }
+//
+//                xs.add(newx);
+//                ys.add(newy);
+//                ids.add(id);
+//            } catch (JSONException e) {
+//                return;
+//            }
+//        }
+//    };
 }
