@@ -202,13 +202,13 @@ io.sockets.emit('message',{message:'hello'});
         console.log(io.sockets.adapter.rooms[data.gameId]);
         if(io.sockets.adapter.rooms[data.gameId]!=undefined){
             socket.join(data.gameId);
-            console.log(io.sockets.adapter.rooms[data.gameId]);
-            socket.emit('joinPlayer',{message:'You successfully  joined the game'});
+            //console.log(io.sockets.adapter.rooms[data.gameId]);
+            socket.emit('joinPlayer',{sockets:io.sockets.adapter.rooms[data.gameId]});
         }
 
 
         else {
-            console.log("Sorry the following room doesn't exist");
+            console.log("Sorry the following room doesn't exist: " + data.gameId);
             socket.emit('joinPlayer',{message:'Sorry the following room doesnot exist'});
         }
 

@@ -78,6 +78,7 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder){
+        updateScore();
         boolean retry = true;
         int counter = 0;
         while(retry && counter<1000)
@@ -448,4 +449,15 @@ public class MultiplayerGamePanel extends SurfaceView implements SurfaceHolder.C
             }
         }
     };
+
+    public void updateScore(){
+        JSONObject data = new JSONObject();
+        try {
+            data.put("email", SocketHandler.getPlayerID());
+            data.put("scores", player.getScore());
+        } catch (JSONException e) {
+
+        }
+        socket.emit("update_score", data);
+    }
 }

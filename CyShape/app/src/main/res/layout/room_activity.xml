@@ -46,4 +46,15 @@
         android:layout_above="@id/host"
         android:layout_marginBottom="13dp"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gameID"
+        android:inputType="number"
+        android:text="Enter Game ID Here"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/join"
+        android:layout_marginBottom="13dp" />
+
 </RelativeLayout>

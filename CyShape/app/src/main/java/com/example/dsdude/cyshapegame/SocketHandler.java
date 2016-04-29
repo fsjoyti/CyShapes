@@ -14,6 +14,7 @@ public class SocketHandler {
     private static String socketIP;
     private static Double id;
     private static String playerID;
+    private static int gameRoom;
 
     public static synchronized Socket getSocket(){
         return SocketHandler.socket;
@@ -46,5 +47,13 @@ public class SocketHandler {
 
     public static synchronized String getSocketIP() {
         return SocketHandler.socketIP;
+    }
+
+    public static synchronized void setGameRoom(int room){
+        SocketHandler.gameRoom = room;
+    }
+
+    public static synchronized int getGameRoom(){
+        return SocketHandler.gameRoom;
     }
 }

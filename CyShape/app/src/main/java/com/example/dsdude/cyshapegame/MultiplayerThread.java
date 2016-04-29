@@ -44,6 +44,7 @@ public class MultiplayerThread extends Thread {
             canvas = null;
             long checkTime = endTime - System.currentTimeMillis();
             if(checkTime <= 0) {
+                gamePanel.updateScore();
                 break;
             }
             //try locking the canvas for pixel editing
