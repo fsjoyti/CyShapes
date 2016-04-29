@@ -91,7 +91,7 @@ io.sockets.on('connection', function(socket){
     });
     console.log('a user connected');
   var enemies=  createEnemies();
-    console.log(enemies);
+   
     socket.on('onstart',function(){
         socket.emit('enemies',enemies);
     });
@@ -147,15 +147,18 @@ var array  = {};
           positionx[player.id] = data.x;
            positiony[player.id] = data.y;
         socket.broadcast.emit('update', {x:positionx[player.id] ,y:positiony[player.id],id:player.id});
+
         //io.sockets.emit('update',{x:positionx[player.id],y:positiony[player.id],id:player.id});
 
 
 
 
     });
+    socket.on('destroy_player',function(data){
+        socket.emit('player_destroyed',data.id);
+    });
     socket.on('update_score',function(data){
-        console.log(data);
-        console.log("score:"+data.scores);
+
         var playerScore = data.scores;
 
         //var playerData = new PlayerDatabase();
@@ -191,6 +194,8 @@ io.sockets.emit('message',{message:'hello'});
     io.sockets.emit('message',{x:positionx[player.id],y:positiony[player.id],id:player.id});
 
 
+
+
     socket.on('sendMessage', function (data) {
         console.log(data.gameId);
         console.log(io.sockets.adapter.rooms[data.gameId]);
@@ -220,8 +225,10 @@ io.sockets.emit('message',{message:'hello'});
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
+
         socket.leave(socket.room);
         socket.emit('playerleft',{message:'another player left the room'});
+
         delete Socket_List[socket.id];
         delete Player_List[socket.id];
     });
@@ -275,7 +282,7 @@ function hostStartGame(){
 }
 
 function createEnemies(){
-    console.log("Inside create enemies");
+
     var enemies = [];
     for(var i = 0; i < 10 ; i++){
         var xposition = Math.random();
