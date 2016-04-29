@@ -22,7 +22,9 @@ public class Eshape extends GameObject{
     private Random rand = new Random();
     protected Animation animation = new Animation();
     private Bitmap bmp;
-    public Eshape(Context context,Bitmap res, int x, int y, int w, int h, int numFrames, int s)
+    int WIDTH;
+    int HEIGHT;
+    public Eshape(Context context,Bitmap res, int x, int y, int w, int h, int numFrames, int s,int WIDTH,int HEIGHT)
     {
         super (context);
         super.x = x;
@@ -30,6 +32,8 @@ public class Eshape extends GameObject{
         width = w;
         height = h;
         score=s;
+        this.WIDTH=WIDTH;
+        this.HEIGHT=HEIGHT;
 
         //random direction and speed
         if(rand.nextInt(2)==1){xspeed=rand.nextInt(20);}
@@ -57,11 +61,11 @@ public class Eshape extends GameObject{
         x-=xspeed;
         y-=yspeed;
         if(score<0){
-            if (x < 0 || x + width > 2000) {
+            if (x < 0 || x + width > WIDTH) {
                 xspeed = -1 * xspeed;
                 score=-5;
             }
-            if (y < 0 || y + height > 1200) {
+            if (y < 0 || y + height > HEIGHT) {
                 yspeed = -1 * yspeed;
                 score=-5;
             }

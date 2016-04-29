@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.github.nkzawa.emitter.Emitter;
+//import com.github.nkzawa.emitter.Emitter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,19 +28,19 @@ public class LoginActivity extends Activity {
         Button joinGuest = (Button)findViewById(R.id.joinGuest);
 
         // Set up Socket information
-        String ip = this.getIntent().getStringExtra("ip");
-        Log.d("SocketIP", ip);
-        SocketHandler.setSocket(ip);
-        SocketHandler.getSocket().on("onconnected", onconnected);
-        SocketHandler.getSocket().connect();
+//        String ip = this.getIntent().getStringExtra("ip");
+//        Log.d("SocketIP", ip);
+//        SocketHandler.setSocket(ip);
+//        SocketHandler.getSocket().on("onconnected", onconnected);
+//        SocketHandler.getSocket().connect();
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("SocketConnected", Boolean.toString(SocketHandler.getSocket().connected()));
-                Log.d("SocketID", Integer.toString(SocketHandler.getId()));
-            }
-        });
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("SocketConnected", Boolean.toString(SocketHandler.getSocket().connected()));
+//                Log.d("SocketID", Integer.toString(SocketHandler.getId()));
+//            }
+//        });
 
         joinGuest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,17 +67,17 @@ public class LoginActivity extends Activity {
 //        setContentView(loginScreen);
     }
 
-    private Emitter.Listener onconnected = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            // Update the other players
-            JSONObject data = (JSONObject) args[0];
-            try {
-                SocketHandler.setId(data.getInt("id"));
-            } catch (JSONException e) {
-                return;
-            }
-        }
-    };
+//    private Emitter.Listener onconnected = new Emitter.Listener() {
+//        @Override
+//        public void call(Object... args) {
+//            // Update the other players
+//            JSONObject data = (JSONObject) args[0];
+//            try {
+//                SocketHandler.setId(data.getInt("id"));
+//            } catch (JSONException e) {
+//                return;
+//            }
+//        }
+//    };
 }
 

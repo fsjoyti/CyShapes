@@ -227,19 +227,19 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         switch (n){
             case 0:case 1:case 2:case 3:case 9:case 10:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        star),WIDTH +10, WIDTH/2, 60, 60, 1,10));
+                        star),WIDTH +10, WIDTH/2, 60, 60, 1,10,WIDTH,HEIGHT));
                 break;
             case 5:case 6:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-10));
+                        redstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-10,WIDTH,HEIGHT));
                 break;
             case 7: case 4:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,20));
+                        superstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,20,WIDTH,HEIGHT));
                 break;
             case 8:
                 eshapes.add(new Eshape(this.getContext(),BitmapFactory.decodeResource(getResources(),R.drawable.
-                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-100));
+                        blackstar),(int) (rand.nextDouble() * (HEIGHT)), (int) (rand.nextDouble() * (HEIGHT)), 60, 60, 1,-100,WIDTH,HEIGHT));
                 break;
         }
     }
