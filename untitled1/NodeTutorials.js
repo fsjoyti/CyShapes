@@ -69,16 +69,7 @@ var Player = function(id){
         pressingDown:false,
         maxSpd:10
     }
-    self.updatePosition = function(){
-        if(self.pressingRight)
-            self.x += self.maxSpd;
-        if(self.pressingLeft)
-            self.x -= self.maxSpd;
-        if(self.pressingUp)
-            self.y -= self.maxSpd;
-        if(self.pressingDown)
-            self.y += self.maxSpd;
-    }
+    
 
     return self;
 
@@ -111,27 +102,22 @@ io.sockets.on('connection', function(socket){
        console.log(data) ;
     });
     socket.broadcast.emit('new player connected' ,{id: socket.id});
-    //Useful to know when someone connects
+
     console.log('\t socket.io:: player ' + socket.id + ' connected');
     socket.on('hostCreateNewGame', function(data){
-                console.log(data);
-            //socket.room = 'room1';
-        //socket.join('room1');
+
+
             thisGameId = ( Math.random() * 100000 ) | 0;
 
             socket.emit('newGameCreated', {gameId: thisGameId, mySocketId: socket.id,room:1});
 
 
 
-           // console.log(""+'newGameCreated', {gameId: thisGameId, mySocketId: this.id});
-
-            //Join the Room and wait for the players
             socket.join(thisGameId.toString());
                 socket.room = thisGameId.toString();
-        //sockets in a room
+
             var clients = io.sockets.adapter.rooms[thisGameId.toString()];
 
-            console.log(clients);
 
 
     }
@@ -148,7 +134,6 @@ var array  = {};
            positiony[player.id] = data.y;
         socket.broadcast.emit('update', {x:positionx[player.id] ,y:positiony[player.id],id:player.id});
 
-        //io.sockets.emit('update',{x:positionx[player.id],y:positiony[player.id],id:player.id});
 
 
 
@@ -222,7 +207,7 @@ io.sockets.emit('message',{message:'hello'});
 
     });
 
-//TO DO LISTEN FOR JSON FROM THE CLIENT AND THEN TAKE THE JSON FROM THE CLIENT AND EMIT ALL THE POSITIONS WITH THEIR ID
+
     socket.on('disconnect', function(){
         console.log('user disconnected');
         console.log('\t socket.io:: client disconnected ' + socket.id );
@@ -244,37 +229,13 @@ io.sockets.emit('message',{message:'hello'});
             player.pressingDown = data.state;
     });
 });
-/*
-socket.on('hostRoomFull',function(data){
 
-
-        var sock = this;
-        var data = {
-            mySocketId : sock.id,
-            gameId :data.gameId
-        };
-
-        try {
-
-            io.sockets.in(data.gameId).emit('beginNewGame',data);
-            // generates an exception
-        }
-        catch (e) {
-            // statements to handle any exceptions
-            console.log("Error!");// pass exception object to error handler
-        }
-
-
-
-    }
-);
-*/
 function hostPrepareNewGame(){
     var data = {
         mySocketId : socket.id,
         gameId : thisGameId
     };
-    //console.log("All Players Present. Preparing game...");
+
     sockets.in(data.gameId).emit('beginNewGame', data);
 
 }
@@ -339,10 +300,3 @@ http.listen(3000,function (socket) {
 
 
 
-// For whatever reason the code below didn't want to play nicely with socket.io, so I commented it out
-
-//var server = app.listen(3000, function (socket) {
-//    var host = server.address().address;
-//    var port = server.address().port;
-//    console.log("Example app listening at http://%s:%s", host, port);
-//});

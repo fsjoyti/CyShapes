@@ -254,12 +254,7 @@ module.exports = function(app,passport){
     );
     
     
-    app.get("/game", function(req, res) {
-        // if we got here, the `app.all` call above has already
-        // ensured that the user is logged in
-       socket.emit('on',{user:req.user});
-        res.render('game.ejs',{user:req.user});
-    });
+   
     
     app.get("/search", function(req, res) {
         // if we got here, the `app.all` call above has already
