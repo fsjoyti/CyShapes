@@ -1,1 +1,3 @@
-Everyone should have their own branch now. If you don't, let me know at acsnyder@iastate.edu.
+Untitled 1 contains all the contributions I made to this project. I basically worked on the server for the CyShapes game using Node.JS and MongoDB.
+Also I created a basic CyShapes website which allows user to view their scores and compare their scores with other player using Angular JS in the frontend and used Node.JS for the backend development. I used EJS as the teplating engine.
+I had very little knowledge of web development when I initially started this project but ended up learning a lot about fullstack web deveopment while working on this project.
